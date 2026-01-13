@@ -15,7 +15,5 @@ struct Order {
 
     public: Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp)
         : transactionSide(side), price(priceTemp), quantity(quantityTemp), transactionId(transactionIdTemp), userId(userIdTemp)
-    {
-
-    }
+    {}
 };
