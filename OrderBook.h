@@ -3,18 +3,19 @@
 #include <string>
 
 struct Order {
-    public: 
+    public:       
+        enum class OrderType {buy, sell};
+        OrderType transactionSide; 
         double price;
-        std::string orderType;
-        bool isBuyOffer;
+        double quantity;
     private:
+        
         int userId;
+        int transactionId;
 
-    public: Order(double price, const std::string& orderType, bool buyOffer, int userID)
+    public: Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp)
+        : transactionSide(side), price(priceTemp), quantity(quantityTemp), transactionId(transactionIdTemp), userId(userIdTemp)
     {
-        this->price = price;
-        this->orderType = orderType;
-        this->isBuyOffer = buyOffer;
-        this->userId = userID;
+
     }
 };
