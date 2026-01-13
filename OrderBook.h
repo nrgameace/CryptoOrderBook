@@ -6,7 +6,7 @@ struct Order {
     public: 
         double price;
         std::string orderType;
-        bool buyOffer;
+        bool isBuyOffer;
     private:
         int userId;
 
@@ -14,7 +14,7 @@ struct Order {
     {
         this->price = price;
         this->orderType = orderType;
-        this->buyOffer = buyOffer;
+        this->isBuyOffer = buyOffer;
         this->userId = userID;
     }
 };
