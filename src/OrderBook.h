@@ -1,19 +1,12 @@
 #pragma once
-
+#include <queue>
+#include "Order.h"
 #include <string>
+class OrderBook {
+    std::queue<Order> buyOffers;
+    std::priority_queue<Order> sellOffers;
 
-struct Order {
-    public:       
-        enum class OrderType {buy, sell};
-        OrderType transactionSide; 
-        double price;
-        double quantity;
-    private:
-        
-        int userId;
-        int transactionId;
+    public:
+        bool addOrder(const std::string& side, const Order& order);
 
-    public: Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp)
-        : transactionSide(side), price(priceTemp), quantity(quantityTemp), transactionId(transactionIdTemp), userId(userIdTemp)
-    {}
 };
