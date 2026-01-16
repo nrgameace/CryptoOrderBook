@@ -7,6 +7,7 @@ class OrderBook {
     std::priority_queue<Order> sellOffers;
 
     public:
+        OrderBook(const std::queue<Order>& buyOffersTemp, const std::priority_queue<Order>& sellOffersTemp);
         bool addOrder(const std::string& side, const Order& order);
 
 };
