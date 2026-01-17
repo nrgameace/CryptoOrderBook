@@ -1,6 +1,6 @@
 #include "OrderBook.h"
-#include <queue>
 #include "Order.h"
+#include <queue>
 
 
 OrderBook::OrderBook(const std::queue<Order>& buyOffersTemp, const std::priority_queue<Order>& sellOffersTemp) 
@@ -18,4 +18,12 @@ bool OrderBook::addOrder(const std::string& side, const Order& order) {
     }
     else 
         return false;
+}
+
+std::queue<Order> OrderBook::getBuyOffers() {
+    return this->buyOffers;
+}
+
+std::priority_queue<Order> OrderBook::getSellOffers() {
+    return this->sellOffers;
 }

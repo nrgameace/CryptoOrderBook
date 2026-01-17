@@ -30,4 +30,6 @@ int main() {
     sell.push(order8);
 
     OrderBook book {OrderBook(buy,sell)};
+
+    std::cout << book.getBuyOffers().size() << std::endl;
 }
