@@ -11,5 +11,6 @@ class OrderBook {
         bool addOrder(const std::string& side, const Order& order);
         std::queue<Order> getBuyOffers();
         std::priority_queue<Order> getSellOffers();
+        void checkSellOrders();
 
 };
