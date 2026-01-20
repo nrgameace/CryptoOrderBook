@@ -1,5 +1,6 @@
 #pragma once
-
+#include <ctime>
+#include <chrono>
 
 struct Order {
     public:       
@@ -7,17 +8,22 @@ struct Order {
         OrderType transactionSide; 
         double price;
         double quantity;
-    private:
-        
-        int userId;
+        std::chrono::system_clock::time_point timestamp = std::chrono::system_clock::now();
         int transactionId;
+    private:
+        int userId;
+        
 
-    public: Order(OrderType side, double priceTemp, double quantityTemp, int userIdTemp, int transactionIdTemp)
-        : transactionSide(side), price(priceTemp), quantity(quantityTemp), userId(userIdTemp), transactionId(transactionIdTemp)
+    public: Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp)
+        : transactionSide(side), price(priceTemp), quantity(quantityTemp), transactionId(transactionIdTemp), userId(userIdTemp)
     {}
 
     bool operator<(const Order& b) const {
-        return price < b.price;
+        return timestamp > b.timestamp;
+    }
+
+    std::chrono::system_clock::time_point getTimestamp() {
+        return timestamp;
     }
 
 };

@@ -2,39 +2,65 @@
 #include "Order.h"
 #include <queue>
 #include <iostream>
+#include <map>
 
 
-OrderBook::OrderBook(const std::queue<Order>& buyOffersTemp, const std::priority_queue<Order>& sellOffersTemp) 
-    : buyOffers(buyOffersTemp), sellOffers(sellOffersTemp)
+OrderBook::OrderBook() 
+    : buyOffers(), sellOffers()
 {}
 
-bool OrderBook::addOrder(const std::string& side, const Order& order) {
-    if (side == "buy") {
-        buyOffers.push(order);
+bool OrderBook::addOrder(const Order& order) {
+    std::vector<double> keys;
+
+    if (order.transactionSide == Order::OrderType::buy) {
+        for (const auto& pair: buyOffers) {
+            keys.push_back(pair.first);
+        }
+        
+        for (double key : keys) {
+            if (key == order.price) {
+                std::priority_queue<Order> ordersInBracket {buyOffers[key]};
+                ordersInBracket.push(order);
+                return true;
+            }
+        }
+
+        std::priority_queue<Order> tempOrderStore;
+        tempOrderStore.push(order);
+        buyOffers[order.price] = std::move(tempOrderStore);
+
         return true;
     }
-    else if (side == "sell") {
-        sellOffers.push(order);
+
+    else if (order.transactionSide == Order::OrderType::sell) {
+        for (const auto& pair: sellOffers) {
+            keys.push_back(pair.first);
+        }
+        
+        for (double key : keys) {
+            if (key == order.price) {
+                std::priority_queue<Order> ordersInBracket {sellOffers[key]};
+                ordersInBracket.push(order);
+                return true;
+            }
+        }
+        std::priority_queue<Order> tempOrderStore;
+        tempOrderStore.push(order);
+        sellOffers[order.price] = std::move(tempOrderStore);
+
         return true;
+        
     }
-    else 
-        return false;
+    return false;
 }
 
-std::queue<Order> OrderBook::getBuyOffers() {
+const std::map<double, std::priority_queue<Order>, std::greater<double>>& OrderBook::getBuyOffers() {
     return buyOffers;
 }
 
-std::priority_queue<Order> OrderBook::getSellOffers() {
+const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
     return sellOffers;
 }
 
-void OrderBook::checkSellOrders() {
-    std::priority_queue<Order> sellOffersTemp {sellOffers};
-    int length {static_cast<int>(sellOffersTemp.size())};
-    for (int i{}; i < length; i++) {
-        std::cout << (sellOffersTemp.top().price) << std::endl;
-        sellOffersTemp.pop();
-    }
-}
+
 
