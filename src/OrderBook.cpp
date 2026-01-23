@@ -19,8 +19,7 @@ bool OrderBook::addOrder(const Order& order) {
         
         for (double key : keys) {
             if (key == order.price) {
-                std::priority_queue<Order> ordersInBracket {buyOffers[key]};
-                ordersInBracket.push(order);
+                buyOffers[key].push(order);
                 return true;
             }
         }
@@ -39,8 +38,7 @@ bool OrderBook::addOrder(const Order& order) {
         
         for (double key : keys) {
             if (key == order.price) {
-                std::priority_queue<Order> ordersInBracket {sellOffers[key]};
-                ordersInBracket.push(order);
+                sellOffers[key].push(order);
                 return true;
             }
         }

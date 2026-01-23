@@ -10,7 +10,7 @@ int main() {
     Order order1 {Order(type, 10.0, 1.0, 101, 111)};
     Order order2 {Order(type, 20.0, 1.0, 102, 111)};
     Order order3 {Order(type, 30.0, 1.0, 103, 111)};
-    Order order4 {Order(type, 49.0, 1.0, 104, 111)};
+    Order order4 {Order(type, 30.0, 1.0, 104, 111)};
 
     Order::OrderType type2 = Order::OrderType::sell;
     Order order5 {Order(type2, 10.0, 1.0, 111, 111)};
@@ -35,27 +35,28 @@ int main() {
     auto buyBook = book.getBuyOffers();
     auto sellBook = book.getSellOffers();
     //Check for proper ordering
-    for (auto& pair : buyBook) {
+    for (auto& pair : sellBook) {
         std::cout << pair.first << std::endl;
         auto tempQueue = pair.second;
         while (!tempQueue.empty()) {
             auto order = tempQueue.top();
             auto time = tempQueue.top().timestamp;
+            std::cout << tempQueue.size() << " size of queue" << std::endl;
             std::time_t t = std::chrono::system_clock::to_time_t(time);
             std::cout << std::ctime(&t);
             std::cout << order.transactionId << std::endl;
             tempQueue.pop();
         }
     }
-    std::cout << "Sell book" << std::endl;
+    //std::cout << "Sell book" << std::endl;
 
-    for (auto& pair : sellBook) {
-        std::cout << pair.first << std::endl;
+    //for (auto& pair : sellBook) {
+      //  std::cout << pair.first << std::endl;
         
-    }
+    //}
 
-    std::cout << buyBook.size() << std::endl;
-    std::cout << sellBook.size() << std::endl;
+    //std::cout << buyBook.size() << std::endl;
+    //std::cout << sellBook.size() << std::endl;
 
 
 }
