@@ -17,6 +17,6 @@ class OrderBook {
         const std::map<double, std::priority_queue<Order>>& getSellOffers();
         void checkSellOrders();
         bool simulateMarket();
-        bool matchOrder();
+        bool processOrder(Order& orderBuy, Order& orderSell);
 
 };
