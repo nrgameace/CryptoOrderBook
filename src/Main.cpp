@@ -33,7 +33,7 @@ int main() {
     book.addOrder(order8);
 
 
-    book.processOrder(order1, order5);
+    book.simulateMarket();
     std::cout << "Buy order: " << order1.quantity << std::endl;
     std::cout << "Sell order: " << order5.quantity << std::endl;
     
