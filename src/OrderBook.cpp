@@ -9,6 +9,11 @@ OrderBook::OrderBook()
     : buyOffers(), sellOffers()
 {}
 
+/**
+ * @brief Adds an order to the respective side and priority queue based on price
+ * @param order Pass through a singular order by constant reference in order to add it to the market
+ * @return True if the order was successfully added, False if not
+ */
 bool OrderBook::addOrder(const Order& order) {
     std::vector<double> keys;
 
@@ -52,14 +57,28 @@ bool OrderBook::addOrder(const Order& order) {
     return false;
 }
 
+/**
+ * @brief Accessor method for all buy offers
+ * @return A copy of the all the buy offers in the orderbook
+ */
 const std::map<double, std::priority_queue<Order>, std::greater<double>>& OrderBook::getBuyOffers() {
     return buyOffers;
 }
 
+/**
+ * @brief Accessor method for all sell offers
+ * @return A copy of the all the sell offers in the orderbook
+ */
 const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
     return sellOffers;
 }
 
+/**
+ * @brief Processes two orders one from each side at a time
+ * @param orderBuy buy order that is being processed
+ * @param orderSell sell order that is being processed
+ * @return True if both orders are fully fufilled, False if not
+ */
 bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
     //Go to top of hashmap for both
     //Find which one was the resting price (created earlier)
@@ -132,6 +151,10 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
 
 }
 
+/**
+ * @brief simulates the entire market by repeadetly processing orders based on timestamp and price
+ * @return True if all orders have been fufilled and market is empty, False if not
+ */
 bool OrderBook::simulateMarket() {
     // Goes until one hashmap is empty
     // While loop that goes through and processes the order using the function
