@@ -160,22 +160,37 @@ bool OrderBook::simulateMarket() {
     // While loop that goes through and processes the order using the function
     // Return true if both sides are empty return false if not
     // After market open, on new order added run simulate Market
+    constexpr double EPS = .001;
+    auto iteratorBuyOffers = buyOffers.begin();
+    auto iteratorSellOffers = sellOffers.begin();
     while (!buyOffers.empty() && !sellOffers.empty())
     {
-        auto iteratorBuyOffers = buyOffers.begin();
-        auto iteratorSellOffers = sellOffers.begin();
 
+        if (iteratorBuyOffers->second.empty()) {
+            ++iteratorBuyOffers;
+        }
         Order highestBuy = (iteratorBuyOffers->second).top();
-        iteratorBuyOffers->second.pop();
 
+        if (iteratorSellOffers->second.empty()) {
+            ++iteratorSellOffers;
+        }
         Order lowestSell = (iteratorSellOffers->second).top();
-        iteratorSellOffers->second.pop();
+
+
+        std::cout << "Buy offer quantity: " << highestBuy.quantity << std::endl;
+        std::cout << "Sell offer quantity: " << lowestSell.quantity << std::endl;
+
 
         processOrder(highestBuy, lowestSell);
-        if (highestBuy.quantity == 0.0)
+
+        if (std::abs(highestBuy.quantity) <= EPS) {
+            std::cout << "Pop buy offer" << std::endl;
             iteratorBuyOffers->second.pop();
-        if (lowestSell.quantity == 0.0)
+        }
+        if (std::abs(lowestSell.quantity) <= EPS) {
             iteratorSellOffers->second.pop();
+            std::cout << "Pop sell offer" << std::endl;
+        }
         
     }
 
