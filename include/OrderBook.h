@@ -22,7 +22,7 @@ class OrderBook {
         void checkSellOrders();
         bool simulateMarket();
         bool processOrder(Order& orderBuy, Order& orderSell);
-        void logTrade(sqlite3* db, int buyUserId, int sellUserId, double buyQuantity, double sellQuantity, double price, int timestamp);
+        void logTrade(sqlite3* db, int buyUserId, int sellUserId, double quantity, double price, int timestamp);
         
 
 };

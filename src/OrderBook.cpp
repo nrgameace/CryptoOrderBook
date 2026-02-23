@@ -9,7 +9,7 @@
 OrderBook::OrderBook() 
     : buyOffers(), sellOffers(), db(nullptr)
 {
-    int rc = sqlite3_open("/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/Database/TransactionHistory.db", &db);
+    int rc = sqlite3_open("Database/TransactionHistory.db", &db);
     if (rc != 0) {
         std::cout << "Error connecting to database: " << sqlite3_errmsg(db) << std::endl;    
         db = nullptr;
@@ -167,9 +167,18 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
 
 }
 
-
-void OrderBook::logTrade(sqlite3* db, int buyUserId, int sellUserId, double buyQuantity, double sellQuantity, double price, int timestamp) {
-    const char* sql = "INSERT INTO TRADES (buyUserId, sellUserId, buyQuantity, sellQuantity, price, timestamp) VALUES (?, ?, ?, ?, ?, ?);";
+/**
+ * @brief Method that logs a transaction in the TRADES database
+ * @param db Database pointer that maintains connection
+ * @param buyUserId The buying user's ID pertaining to that transaction
+ * @param sellUserId The selling user's ID that pertains to that transaction
+ * @param buyQuantity The amount that was agreed upon in the trade
+ * @param sellQuantity The amount the seller is trading
+ * @param price The agreed upon price
+ * @param timestamp The time at which the transaction occurred
+ */
+void OrderBook::logTrade(sqlite3* db, int buyUserId, int sellUserId, double quantity, double price, int timestamp) {
+    const char* sql = "INSERT INTO TRADES (buyUserId, sellUserId, quantity, price, timestamp) VALUES (?, ?, ?, ?, ?);";
     sqlite3_stmt* stmt;
 
     // 2. Prepare the SQL statement into a prepared statement object (sqlite3_stmt)
@@ -183,10 +192,9 @@ void OrderBook::logTrade(sqlite3* db, int buyUserId, int sellUserId, double buyQ
     // The first parameter '1' refers to the first '?'
     sqlite3_bind_int(stmt, 1, buyUserId); 
     sqlite3_bind_int(stmt, 2, sellUserId);
-    sqlite3_bind_double(stmt, 3, buyQuantity);
-    sqlite3_bind_double(stmt, 4, sellQuantity);
-    sqlite3_bind_double(stmt, 5, price);
-    sqlite3_bind_int(stmt, 6, timestamp);
+    sqlite3_bind_double(stmt, 3, quantity);
+    sqlite3_bind_double(stmt, 4, price);
+    sqlite3_bind_int(stmt, 5, timestamp);
 
     // 4. Execute the statement
     rc = sqlite3_step(stmt);
