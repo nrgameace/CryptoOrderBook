@@ -4,19 +4,22 @@
 #include <queue>
 #include <ctime>
 #include <chrono>
+#include <thread>
+#include <sqlite3.h>
 
 int main() {
     Order::OrderType type = Order::OrderType::buy;
-    Order order1 {Order(type, 20.0, 1.5, 101, 111)};
-    Order order2 {Order(type, 20.0, 1.0, 102, 111)};
-    Order order3 {Order(type, 30.0, 1.0, 103, 111)};
-    Order order4 {Order(type, 30.0, 1.0, 104, 111)};
+    Order order1 {Order(type, 20.0, 1.0, 101, 111)};
+    Order order2 {Order(type, 20.0, 2.0, 102, 111)};
+    Order order3 {Order(type, 20.0, 1.0, 103, 111)};
+    Order order4 {Order(type, 20.0, 1.0, 104, 111)};
 
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     Order::OrderType type2 = Order::OrderType::sell;
-    Order order5 {Order(type2, 10.0, 2.0, 111, 111)};
+    Order order5 {Order(type2, 20.0, 1.0, 111, 111)};
     Order order6 {Order(type2, 20.0, 1.0, 112, 111)};
-    Order order7 {Order(type2, 35.0, 1.0, 113, 111)};
-    Order order8 {Order(type2, 35.0, 1.0, 114, 111)};
+    Order order7 {Order(type2, 20.0, 1.0, 113, 111)};
+    Order order8 {Order(type2, 20.0, 1.0, 114, 111)};
 
     
 
@@ -56,15 +59,9 @@ int main() {
             tempQueue.pop();
         }
     }
-    //std::cout << "Sell book" << std::endl;
 
-    //for (auto& pair : sellBook) {
-      //  std::cout << pair.first << std::endl;
-        
-    //}
+    book.logTrade(book.db, 10, 20, 10.0, 10.0, 35.40, 100);
 
-    //std::cout << buyBook.size() << std::endl;
-    //std::cout << sellBook.size() << std::endl;
 
 
 }

@@ -3,11 +3,26 @@
 #include <queue>
 #include <iostream>
 #include <map>
+#include <sqlite3.h>
 
 
 OrderBook::OrderBook() 
-    : buyOffers(), sellOffers()
-{}
+    : buyOffers(), sellOffers(), db(nullptr)
+{
+    int rc = sqlite3_open("/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/Database/TransactionHistory.db", &db);
+    if (rc != 0) {
+        std::cout << "Error connecting to database: " << sqlite3_errmsg(db) << std::endl;    
+        db = nullptr;
+    }
+    else {
+        std::cout << "Database connection successful!" << std::endl;
+    }
+}
+
+OrderBook::~OrderBook() {
+    if (db)
+        sqlite3_close(db);
+}
 
 /**
  * @brief Adds an order to the respective side and priority queue based on price
@@ -80,6 +95,7 @@ const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
  * @return True if both orders are fully fufilled, False if not
  */
 bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
+    std::cout << "In the process order method" << std::endl;
     //Go to top of hashmap for both
     //Find which one was the resting price (created earlier)
     //Excecute trade -- if not enough quantity, go to next
@@ -106,14 +122,14 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
                 double quantityLeftOver = orderBuy.quantity - orderSell.quantity;
                 orderBuy.quantity = quantityLeftOver;
                 orderSell.quantity = 0.0;
-                std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over."<<std::endl;
+                std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
                 return false;
             }
             else {
                 double quantityLeftOver = orderSell.quantity - orderBuy.quantity;
                 orderSell.quantity = quantityLeftOver;
                 orderBuy.quantity = 0.0;
-                std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over."<<std::endl;
+                std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
                 return false;
             }
 
@@ -123,11 +139,11 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
             double buyValue = orderBuy.price * orderBuy.quantity;
             double difference = sellValue - buyValue;
 
-            constexpr double EPS = 1e-9;   
+            constexpr double EPS = 1e-2;   
             if (std::abs(difference) < EPS) {
                 orderBuy.quantity = 0.0;
                 orderSell.quantity = 0.0;
-                std::cout << "The offers are perfectly mathced" << std::endl;
+                std::cout << "The offers are perfectly matched" << std::endl;
                 return true;
             }
 
@@ -135,14 +151,14 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
                 double quantityLeftOver = orderBuy.quantity - orderSell.quantity;
                 orderBuy.quantity = quantityLeftOver;
                 orderSell.quantity = 0.0;
-                std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over."<<std::endl;
+                std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
                 return false;
             }
             else {
                 double quantityLeftOver = orderSell.quantity - orderBuy.quantity;
                 orderSell.quantity = quantityLeftOver;
                 orderBuy.quantity = 0.0;
-                std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over."<<std::endl;
+                std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
                 return false;
             }
         }
@@ -150,6 +166,42 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
     return false;
 
 }
+
+
+void OrderBook::logTrade(sqlite3* db, int buyUserId, int sellUserId, double buyQuantity, double sellQuantity, double price, int timestamp) {
+    const char* sql = "INSERT INTO TRADES (buyUserId, sellUserId, buyQuantity, sellQuantity, price, timestamp) VALUES (?, ?, ?, ?, ?, ?);";
+    sqlite3_stmt* stmt;
+
+    // 2. Prepare the SQL statement into a prepared statement object (sqlite3_stmt)
+    int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
+    if (rc != SQLITE_OK) {
+        std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
+        return;
+    }
+
+    // 3. Bind C++ variables to the placeholders
+    // The first parameter '1' refers to the first '?'
+    sqlite3_bind_int(stmt, 1, buyUserId); 
+    sqlite3_bind_int(stmt, 2, sellUserId);
+    sqlite3_bind_double(stmt, 3, buyQuantity);
+    sqlite3_bind_double(stmt, 4, sellQuantity);
+    sqlite3_bind_double(stmt, 5, price);
+    sqlite3_bind_int(stmt, 6, timestamp);
+
+    // 4. Execute the statement
+    rc = sqlite3_step(stmt);
+    if (rc != SQLITE_DONE) {
+        std::cerr << "Execution failed: " << sqlite3_errmsg(db) << std::endl;
+    } else {
+        std::cout << "Row inserted successfully." << std::endl;
+    }
+
+    sqlite3_finalize(stmt);
+
+    
+}
+
+
 
 /**
  * @brief simulates the entire market by repeadetly processing orders based on timestamp and price
@@ -161,39 +213,52 @@ bool OrderBook::simulateMarket() {
     // Return true if both sides are empty return false if not
     // After market open, on new order added run simulate Market
     constexpr double EPS = .001;
-    auto iteratorBuyOffers = buyOffers.begin();
-    auto iteratorSellOffers = sellOffers.begin();
-    while (!buyOffers.empty() && !sellOffers.empty())
-    {
 
+    
+    
+
+    // Go until the market is empty or biy price is less than sell price
+    while (!buyOffers.empty() && !sellOffers.empty()) {
+
+        // Create an iterator to go through each pair in market
+        auto iteratorBuyOffers = buyOffers.begin();
+        auto iteratorSellOffers = sellOffers.begin();
+
+        // If queue is empty, erase the entire key-value pair
         if (iteratorBuyOffers->second.empty()) {
-            ++iteratorBuyOffers;
+            buyOffers.erase(iteratorBuyOffers);
+            continue;
         }
-        Order highestBuy = (iteratorBuyOffers->second).top();
-
         if (iteratorSellOffers->second.empty()) {
-            ++iteratorSellOffers;
+            sellOffers.erase(iteratorSellOffers);
+            continue;
         }
-        Order lowestSell = (iteratorSellOffers->second).top();
 
+        // Get orders and check
+        Order highestBuy = iteratorBuyOffers->second.top();
+        Order lowestSell = iteratorSellOffers->second.top();
 
-        std::cout << "Buy offer quantity: " << highestBuy.quantity << std::endl;
-        std::cout << "Sell offer quantity: " << lowestSell.quantity << std::endl;
+        if (highestBuy.price < lowestSell.price) {
+            break;
+        }
 
-
+        
         processOrder(highestBuy, lowestSell);
 
-        if (std::abs(highestBuy.quantity) <= EPS) {
-            std::cout << "Pop buy offer" << std::endl;
-            iteratorBuyOffers->second.pop();
-        }
-        if (std::abs(lowestSell.quantity) <= EPS) {
-            iteratorSellOffers->second.pop();
-            std::cout << "Pop sell offer" << std::endl;
-        }
-        
-    }
+        // Check to see if quantity is equal to zero, if it is, remove off the hashmap
+        iteratorBuyOffers->second.pop();
+        if (highestBuy.quantity > EPS)
+            iteratorBuyOffers->second.push(highestBuy);
+        else if (iteratorBuyOffers->second.empty())
+            buyOffers.erase(iteratorBuyOffers);
 
+        iteratorSellOffers->second.pop();
+        if (lowestSell.quantity > EPS)
+            iteratorSellOffers->second.push(lowestSell);
+        else if (iteratorSellOffers->second.empty())
+            sellOffers.erase(iteratorSellOffers);
+
+    }
 
     if (buyOffers.empty() && sellOffers.empty()){
         std::cout << "Market is fully empty" << std::endl;
