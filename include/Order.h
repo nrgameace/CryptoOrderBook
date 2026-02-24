@@ -10,8 +10,8 @@ struct Order {
         double quantity;
         std::chrono::system_clock::time_point timestamp = std::chrono::system_clock::now();
         int transactionId;
-    private:
         int userId;
+    
         
     
     public: Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp)

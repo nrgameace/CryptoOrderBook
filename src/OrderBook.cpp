@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <sqlite3.h>
+#include <ctime>
 
 
 OrderBook::OrderBook() 
@@ -95,22 +96,26 @@ const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
  * @return True if both orders are fully fufilled, False if not
  */
 bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
-    std::cout << "In the process order method" << std::endl;
     //Go to top of hashmap for both
     //Find which one was the resting price (created earlier)
     //Excecute trade -- if not enough quantity, go to next
+
     
     //Ensure that buy offer is at least greater than or equal to the sell price
     if (orderBuy.price >= orderSell.price) {
 
     // Check which order was a resting order and which was a incoming order
         if (orderSell.getTimestamp() < orderBuy.getTimestamp()) {
-            // Check to see 
-            double sellValue = orderSell.price * orderSell.quantity;
-            double buyValue = orderSell.price * orderBuy.quantity;
-            double difference = sellValue - buyValue;
+
+            double difference = orderSell.quantity - orderBuy.quantity;
 
             constexpr double EPS = 1e-9;  
+            auto time = std::time(nullptr);
+            if (difference <= 0)
+                logTrade(db, orderBuy.userId, orderSell.userId, orderSell.quantity, orderSell.price, time);
+            else
+                logTrade(db, orderBuy.userId, orderSell.userId, orderBuy.quantity, orderSell.price, time);
+
             if (std::abs(difference) < EPS) {
                 orderBuy.quantity = 0.0;
                 orderSell.quantity = 0.0;
@@ -135,9 +140,14 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
 
         }
         else {
-            double sellValue = orderBuy.price * orderSell.quantity;
-            double buyValue = orderBuy.price * orderBuy.quantity;
-            double difference = sellValue - buyValue;
+            double difference = orderSell.quantity - orderBuy.quantity;
+
+
+            auto time = std::time(nullptr);
+            if (difference <= 0)
+                logTrade(db, orderBuy.userId, orderSell.userId, orderBuy.quantity, orderBuy.price, time);
+            else
+                logTrade(db, orderBuy.userId, orderSell.userId, orderSell.quantity, orderBuy.price, time);
 
             constexpr double EPS = 1e-2;   
             if (std::abs(difference) < EPS) {
@@ -163,6 +173,7 @@ bool OrderBook::processOrder(Order& orderBuy, Order& orderSell) {
             }
         }
     }
+    
     return false;
 
 }
