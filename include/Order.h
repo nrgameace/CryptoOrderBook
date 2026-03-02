@@ -14,16 +14,10 @@ struct Order {
     
         
     
-    public: Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp)
-        : transactionSide(side), price(priceTemp), quantity(quantityTemp), transactionId(transactionIdTemp), userId(userIdTemp)
-    {}
+    public: 
+    Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp);
+    bool operator<(const Order& b) const;
 
-    bool operator<(const Order& b) const {
-        return timestamp > b.timestamp;
-    }
-
-    std::chrono::system_clock::time_point getTimestamp() {
-        return timestamp;
-    }
+    std::chrono::system_clock::time_point getTimestamp();
 
 };

@@ -60,7 +60,6 @@ int main() {
         }
     }
 
-    book.logTrade(book.db, 10, 20, 10.0, 35.40, 100);
 
 
 
