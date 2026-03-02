@@ -6,6 +6,7 @@
 #include <chrono>
 #include <thread>
 #include <sqlite3.h>
+#include "MatchingEngine.h"
 
 int main() {
     Order::OrderType type = Order::OrderType::buy;
@@ -36,7 +37,11 @@ int main() {
     book.addOrder(order8);
 
 
-    book.simulateMarket();
+    MatchingEngine matchEng {MatchingEngine(book)};
+
+
+    matchEng.simulateMarket();
+    
     std::cout << "Buy order: " << order1.quantity << std::endl;
     std::cout << "Sell order: " << order5.quantity << std::endl;
     

@@ -1,9 +1,12 @@
+#pragma once
 #include <sqlite3.h>
 
 
 class TransactionLogger {
-     sqlite3* db;
-
-     TransactionLogger(sqlite3* db);
-     void logTrade(int buyUserId, int sellUserId, double quantity, double price, int timestamp);
+    sqlite3* db;
+    
+    public:
+    TransactionLogger();
+    ~TransactionLogger();
+    void logTrade(int buyUserId, int sellUserId, double quantity, double price, int timestamp);
 };

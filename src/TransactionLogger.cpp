@@ -4,7 +4,7 @@
 
 
 
-TransactionLogger::TransactionLogger(sqlite3* db) {
+TransactionLogger::TransactionLogger() {
     int rc = sqlite3_open("Database/TransactionHistory.db", &db);
     if (rc != 0) {
         std::cout << "Error connecting to database: " << sqlite3_errmsg(db) << std::endl;    
@@ -16,6 +16,21 @@ TransactionLogger::TransactionLogger(sqlite3* db) {
 }
 
 
+TransactionLogger::~TransactionLogger() {
+    if (db) {
+        sqlite3_close(db);
+    }
+}
+
+/**
+ * @brief Method that logs a transaction in the TRADES database
+ * @param buyUserId The buying user's ID pertaining to that transaction
+ * @param sellUserId The selling user's ID that pertains to that transaction
+ * @param buyQuantity The amount that was agreed upon in the trade
+ * @param sellQuantity The amount the seller is trading
+ * @param price The agreed upon price
+ * @param timestamp The time at which the transaction occurred
+ */
 void TransactionLogger::logTrade(int buyUserId, int sellUserId, double quantity, double price, int timestamp) {
     const char* sql = "INSERT INTO TRADES (buyUserId, sellUserId, quantity, price, timestamp) VALUES (?, ?, ?, ?, ?);";
     sqlite3_stmt* stmt;
