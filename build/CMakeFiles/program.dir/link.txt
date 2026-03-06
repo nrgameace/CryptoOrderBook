@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/program.dir/src/Main.cpp.o CMakeFiles/program.dir/src/OrderBook.cpp.o CMakeFiles/program.dir/src/Order.cpp.o CMakeFiles/program.dir/src/TransactionLogger.cpp.o CMakeFiles/program.dir/src/MatchingEngine.cpp.o -o program  -lsqlite3
