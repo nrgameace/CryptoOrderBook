@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrder
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -84,6 +94,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/opt/homebrew/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/opt/homebrew/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -117,137 +172,93 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named program
+# Target rules for targets named my_tests
 
 # Build rule for target.
-program: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 program
-.PHONY : program
+my_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_tests
+.PHONY : my_tests
 
 # fast build rule for target.
-program/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/build
-.PHONY : program/fast
+my_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/build
+.PHONY : my_tests/fast
 
-src/Main.o: src/Main.cpp.o
-.PHONY : src/Main.o
+#=============================================================================
+# Target rules for targets named gmock
 
-# target to build an object file
-src/Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Main.cpp.o
-.PHONY : src/Main.cpp.o
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
 
-src/Main.i: src/Main.cpp.i
-.PHONY : src/Main.i
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
 
-# target to preprocess a source file
-src/Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Main.cpp.i
-.PHONY : src/Main.cpp.i
+#=============================================================================
+# Target rules for targets named gmock_main
 
-src/Main.s: src/Main.cpp.s
-.PHONY : src/Main.s
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
 
-# target to generate assembly for a file
-src/Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Main.cpp.s
-.PHONY : src/Main.cpp.s
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
 
-src/MatchingEngine.o: src/MatchingEngine.cpp.o
-.PHONY : src/MatchingEngine.o
+#=============================================================================
+# Target rules for targets named gtest
 
-# target to build an object file
-src/MatchingEngine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/MatchingEngine.cpp.o
-.PHONY : src/MatchingEngine.cpp.o
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
 
-src/MatchingEngine.i: src/MatchingEngine.cpp.i
-.PHONY : src/MatchingEngine.i
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
-# target to preprocess a source file
-src/MatchingEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/MatchingEngine.cpp.i
-.PHONY : src/MatchingEngine.cpp.i
+#=============================================================================
+# Target rules for targets named gtest_main
 
-src/MatchingEngine.s: src/MatchingEngine.cpp.s
-.PHONY : src/MatchingEngine.s
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
 
-# target to generate assembly for a file
-src/MatchingEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/MatchingEngine.cpp.s
-.PHONY : src/MatchingEngine.cpp.s
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
-src/Order.o: src/Order.cpp.o
-.PHONY : src/Order.o
-
-# target to build an object file
-src/Order.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Order.cpp.o
-.PHONY : src/Order.cpp.o
-
-src/Order.i: src/Order.cpp.i
-.PHONY : src/Order.i
-
-# target to preprocess a source file
-src/Order.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Order.cpp.i
-.PHONY : src/Order.cpp.i
-
-src/Order.s: src/Order.cpp.s
-.PHONY : src/Order.s
-
-# target to generate assembly for a file
-src/Order.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Order.cpp.s
-.PHONY : src/Order.cpp.s
-
-src/OrderBook.o: src/OrderBook.cpp.o
-.PHONY : src/OrderBook.o
+tests/TestOrder.o: tests/TestOrder.cpp.o
+.PHONY : tests/TestOrder.o
 
 # target to build an object file
-src/OrderBook.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/OrderBook.cpp.o
-.PHONY : src/OrderBook.cpp.o
+tests/TestOrder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/TestOrder.cpp.o
+.PHONY : tests/TestOrder.cpp.o
 
-src/OrderBook.i: src/OrderBook.cpp.i
-.PHONY : src/OrderBook.i
-
-# target to preprocess a source file
-src/OrderBook.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/OrderBook.cpp.i
-.PHONY : src/OrderBook.cpp.i
-
-src/OrderBook.s: src/OrderBook.cpp.s
-.PHONY : src/OrderBook.s
-
-# target to generate assembly for a file
-src/OrderBook.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/OrderBook.cpp.s
-.PHONY : src/OrderBook.cpp.s
-
-src/TransactionLogger.o: src/TransactionLogger.cpp.o
-.PHONY : src/TransactionLogger.o
-
-# target to build an object file
-src/TransactionLogger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/TransactionLogger.cpp.o
-.PHONY : src/TransactionLogger.cpp.o
-
-src/TransactionLogger.i: src/TransactionLogger.cpp.i
-.PHONY : src/TransactionLogger.i
+tests/TestOrder.i: tests/TestOrder.cpp.i
+.PHONY : tests/TestOrder.i
 
 # target to preprocess a source file
-src/TransactionLogger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/TransactionLogger.cpp.i
-.PHONY : src/TransactionLogger.cpp.i
+tests/TestOrder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/TestOrder.cpp.i
+.PHONY : tests/TestOrder.cpp.i
 
-src/TransactionLogger.s: src/TransactionLogger.cpp.s
-.PHONY : src/TransactionLogger.s
+tests/TestOrder.s: tests/TestOrder.cpp.s
+.PHONY : tests/TestOrder.s
 
 # target to generate assembly for a file
-src/TransactionLogger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/TransactionLogger.cpp.s
-.PHONY : src/TransactionLogger.cpp.s
+tests/TestOrder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/TestOrder.cpp.s
+.PHONY : tests/TestOrder.cpp.s
 
 # Help Target
 help:
@@ -256,23 +267,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... program"
-	@echo "... src/Main.o"
-	@echo "... src/Main.i"
-	@echo "... src/Main.s"
-	@echo "... src/MatchingEngine.o"
-	@echo "... src/MatchingEngine.i"
-	@echo "... src/MatchingEngine.s"
-	@echo "... src/Order.o"
-	@echo "... src/Order.i"
-	@echo "... src/Order.s"
-	@echo "... src/OrderBook.o"
-	@echo "... src/OrderBook.i"
-	@echo "... src/OrderBook.s"
-	@echo "... src/TransactionLogger.o"
-	@echo "... src/TransactionLogger.i"
-	@echo "... src/TransactionLogger.s"
+	@echo "... test"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... my_tests"
+	@echo "... tests/TestOrder.o"
+	@echo "... tests/TestOrder.i"
+	@echo "... tests/TestOrder.s"
 .PHONY : help
 
 

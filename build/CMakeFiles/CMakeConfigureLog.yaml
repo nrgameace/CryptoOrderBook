@@ -22,11 +22,9 @@ events:
     candidate_directories:
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
@@ -39,16 +37,13 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/uname"
       - "/opt/homebrew/opt/openjdk/bin/uname"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/uname"
       - "/opt/homebrew/bin/uname"
       - "/opt/homebrew/sbin/uname"
-      - "/Users/nickolasregas/.pyenv/shims/uname"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/uname"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/uname"
       - "/usr/local/bin/uname"
       - "/System/Cryptexes/App/usr/bin/uname"
     found: "/usr/bin/uname"
@@ -56,11 +51,9 @@ events:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -73,14 +66,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -112,11 +97,9 @@ events:
     candidate_directories:
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
@@ -129,16 +112,13 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/gmake"
       - "/opt/homebrew/opt/openjdk/bin/gmake"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/gmake"
       - "/opt/homebrew/bin/gmake"
       - "/opt/homebrew/sbin/gmake"
-      - "/Users/nickolasregas/.pyenv/shims/gmake"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gmake"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/gmake"
       - "/usr/local/bin/gmake"
       - "/System/Cryptexes/App/usr/bin/gmake"
       - "/usr/bin/gmake"
@@ -151,15 +131,12 @@ events:
       - "/opt/pmk/env/global/bin/gmake"
       - "/Library/Apple/usr/bin/gmake"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/gmake"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/gmake"
       - "/Users/nickolasregas/.lmstudio/bin/gmake"
       - "/Users/nickolasregas/.local/bin/make"
       - "/opt/homebrew/opt/openjdk/bin/make"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/make"
       - "/opt/homebrew/bin/make"
       - "/opt/homebrew/sbin/make"
-      - "/Users/nickolasregas/.pyenv/shims/make"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/make"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/make"
       - "/usr/local/bin/make"
       - "/System/Cryptexes/App/usr/bin/make"
     found: "/usr/bin/make"
@@ -167,11 +144,9 @@ events:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -184,102 +159,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
-        - "/Users/nickolasregas/.lmstudio/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_C_COMPILER"
-    description: "C compiler"
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "cc"
-      - "gcc"
-      - "cl"
-      - "bcc"
-      - "xlc"
-      - "icx"
-      - "clang"
-    candidate_directories:
-      - "/Users/nickolasregas/.local/bin/"
-      - "/opt/homebrew/opt/openjdk/bin/"
-      - "/opt/homebrew/bin/"
-      - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
-      - "/usr/local/bin/"
-      - "/System/Cryptexes/App/usr/bin/"
-      - "/usr/bin/"
-      - "/bin/"
-      - "/usr/sbin/"
-      - "/sbin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
-      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/pmk/env/global/bin/"
-      - "/Library/Apple/usr/bin/"
-      - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
-      - "/Users/nickolasregas/.lmstudio/bin/"
-    searched_directories:
-      - "/Users/nickolasregas/.local/bin/cc"
-      - "/opt/homebrew/opt/openjdk/bin/cc"
-      - "/opt/homebrew/bin/cc"
-      - "/opt/homebrew/sbin/cc"
-      - "/Users/nickolasregas/.pyenv/shims/cc"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/cc"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/cc"
-      - "/usr/local/bin/cc"
-      - "/System/Cryptexes/App/usr/bin/cc"
-    found: "/usr/bin/cc"
-    search_context:
-      ENV{PATH}:
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/pmk/env/global/bin"
-        - "/Library/Apple/usr/bin"
-        - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -310,11 +189,9 @@ events:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -327,14 +204,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -345,7 +214,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/cc 
+      Compiler: /usr/bin/clang 
       Build flags: 
       Id flags:  
       
@@ -365,7 +234,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Detecting C compiler apple sysroot: "/usr/bin/cc" "-E" "apple-sdk.c"
+      Detecting C compiler apple sysroot: "/usr/bin/clang" "-E" "apple-sdk.c"
         # 1 "apple-sdk.c"
         # 1 "<built-in>" 1
         # 1 "<built-in>" 3
@@ -422,11 +291,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -438,18 +305,15 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -462,14 +326,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -494,11 +350,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -510,18 +364,15 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -534,14 +385,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -566,11 +409,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -582,18 +423,15 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -606,14 +444,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -638,11 +468,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -654,18 +482,15 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -678,14 +503,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -710,11 +527,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -726,18 +541,15 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -750,14 +562,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -782,11 +586,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -798,18 +600,15 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -822,14 +621,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -854,11 +645,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -870,17 +659,14 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/objcopy"
       - "/Users/nickolasregas/.local/bin/objcopy"
       - "/opt/homebrew/opt/openjdk/bin/objcopy"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/objcopy"
       - "/opt/homebrew/bin/objcopy"
       - "/opt/homebrew/sbin/objcopy"
-      - "/Users/nickolasregas/.pyenv/shims/objcopy"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/objcopy"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/objcopy"
       - "/usr/local/bin/objcopy"
       - "/System/Cryptexes/App/usr/bin/objcopy"
       - "/bin/objcopy"
@@ -892,18 +678,15 @@ events:
       - "/opt/pmk/env/global/bin/objcopy"
       - "/Library/Apple/usr/bin/objcopy"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/objcopy"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/objcopy"
       - "/Users/nickolasregas/.lmstudio/bin/objcopy"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -916,14 +699,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -948,11 +723,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -964,17 +737,14 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/readelf"
       - "/Users/nickolasregas/.local/bin/readelf"
       - "/opt/homebrew/opt/openjdk/bin/readelf"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/readelf"
       - "/opt/homebrew/bin/readelf"
       - "/opt/homebrew/sbin/readelf"
-      - "/Users/nickolasregas/.pyenv/shims/readelf"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/readelf"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/readelf"
       - "/usr/local/bin/readelf"
       - "/System/Cryptexes/App/usr/bin/readelf"
       - "/bin/readelf"
@@ -986,18 +756,15 @@ events:
       - "/opt/pmk/env/global/bin/readelf"
       - "/Library/Apple/usr/bin/readelf"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/readelf"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/readelf"
       - "/Users/nickolasregas/.lmstudio/bin/readelf"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1010,14 +777,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -1042,11 +801,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -1058,17 +815,14 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/dlltool"
       - "/Users/nickolasregas/.local/bin/dlltool"
       - "/opt/homebrew/opt/openjdk/bin/dlltool"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/dlltool"
       - "/opt/homebrew/bin/dlltool"
       - "/opt/homebrew/sbin/dlltool"
-      - "/Users/nickolasregas/.pyenv/shims/dlltool"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/dlltool"
       - "/usr/local/bin/dlltool"
       - "/System/Cryptexes/App/usr/bin/dlltool"
       - "/bin/dlltool"
@@ -1080,18 +834,15 @@ events:
       - "/opt/pmk/env/global/bin/dlltool"
       - "/Library/Apple/usr/bin/dlltool"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/dlltool"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/dlltool"
       - "/Users/nickolasregas/.lmstudio/bin/dlltool"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1104,14 +855,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -1136,11 +879,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -1152,17 +893,14 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/addr2line"
       - "/Users/nickolasregas/.local/bin/addr2line"
       - "/opt/homebrew/opt/openjdk/bin/addr2line"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/addr2line"
       - "/opt/homebrew/bin/addr2line"
       - "/opt/homebrew/sbin/addr2line"
-      - "/Users/nickolasregas/.pyenv/shims/addr2line"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/addr2line"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/addr2line"
       - "/usr/local/bin/addr2line"
       - "/System/Cryptexes/App/usr/bin/addr2line"
       - "/bin/addr2line"
@@ -1174,18 +912,15 @@ events:
       - "/opt/pmk/env/global/bin/addr2line"
       - "/Library/Apple/usr/bin/addr2line"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/addr2line"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/addr2line"
       - "/Users/nickolasregas/.lmstudio/bin/addr2line"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1198,14 +933,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -1230,11 +957,9 @@ events:
       - "/usr/bin/"
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/bin/"
@@ -1246,17 +971,14 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/tapi"
       - "/Users/nickolasregas/.local/bin/tapi"
       - "/opt/homebrew/opt/openjdk/bin/tapi"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/tapi"
       - "/opt/homebrew/bin/tapi"
       - "/opt/homebrew/sbin/tapi"
-      - "/Users/nickolasregas/.pyenv/shims/tapi"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/tapi"
       - "/usr/local/bin/tapi"
       - "/System/Cryptexes/App/usr/bin/tapi"
       - "/bin/tapi"
@@ -1268,18 +990,15 @@ events:
       - "/opt/pmk/env/global/bin/tapi"
       - "/Library/Apple/usr/bin/tapi"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/tapi"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/tapi"
       - "/Users/nickolasregas/.lmstudio/bin/tapi"
     found: false
     search_context:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1292,72 +1011,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
-        - "/Users/nickolasregas/.lmstudio/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt:2 (project)"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER"
-    description: "CXX compiler"
-    settings:
-      SearchFramework: "FIRST"
-      SearchAppBundle: "FIRST"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "c++"
-      - "g++"
-      - "cl"
-      - "bcc"
-      - "icpx"
-      - "icx"
-      - "clang++"
-    candidate_directories:
-      - "/usr/bin/"
-    found: "/usr/bin/c++"
-    search_context:
-      ENV{PATH}:
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/pmk/env/global/bin"
-        - "/Library/Apple/usr/bin"
-        - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -1388,11 +1041,9 @@ events:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1405,14 +1056,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -1423,7 +1066,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/c++ 
+      Compiler: /usr/bin/clang++ 
       Build flags: 
       Id flags:  
       
@@ -1443,7 +1086,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-E" "apple-sdk.cpp"
+      Detecting CXX compiler apple sysroot: "/usr/bin/clang++" "-E" "apple-sdk.cpp"
         # 1 "apple-sdk.cpp"
         # 1 "<built-in>" 1
         # 1 "<built-in>" 3
@@ -1499,11 +1142,9 @@ events:
     candidate_directories:
       - "/Users/nickolasregas/.local/bin/"
       - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
-      - "/Users/nickolasregas/.pyenv/shims/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "/usr/local/bin/"
       - "/System/Cryptexes/App/usr/bin/"
       - "/usr/bin/"
@@ -1516,16 +1157,13 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
-      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/install_name_tool"
       - "/opt/homebrew/opt/openjdk/bin/install_name_tool"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/install_name_tool"
       - "/opt/homebrew/bin/install_name_tool"
       - "/opt/homebrew/sbin/install_name_tool"
-      - "/Users/nickolasregas/.pyenv/shims/install_name_tool"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/install_name_tool"
-      - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli/install_name_tool"
       - "/usr/local/bin/install_name_tool"
       - "/System/Cryptexes/App/usr/bin/install_name_tool"
     found: "/usr/bin/install_name_tool"
@@ -1533,11 +1171,9 @@ events:
       ENV{PATH}:
         - "/Users/nickolasregas/.local/bin"
         - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.pyenv/shims"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
         - "/usr/local/bin"
         - "/System/Cryptexes/App/usr/bin"
         - "/usr/bin"
@@ -1550,14 +1186,6 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-        - "/Users/nickolasregas/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli"
-        - "/Users/nickolasregas/.local/bin"
-        - "/opt/homebrew/opt/openjdk/bin"
-        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Users/nickolasregas/.lmstudio/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
@@ -1569,8 +1197,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb"
-      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb"
+      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx"
+      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1582,18 +1210,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb'
+        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_03075/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_03075.dir/build.make CMakeFiles/cmTC_03075.dir/build
-        Building C object CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_23199/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_23199.dir/build.make CMakeFiles/cmTC_23199.dir/build
+        Building C object CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Apple clang version 17.0.0 (clang-1700.6.3.2)
         Target: arm64-apple-darwin25.3.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 17.0.0 (clang-1700.6.3.2) default target arm64-apple-darwin25.3.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1606,13 +1234,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_03075
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03075.dir/link.txt --verbose=1
+        Linking C executable cmTC_23199
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23199.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.6.3.2)
         Target: arm64-apple-darwin25.3.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_03075 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_23199 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1230.1
         BUILD 06:36:05 Dec  2 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1624,7 +1252,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -o cmTC_03075
+        /usr/bin/clang  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -o cmTC_23199
         
       exitCode: 0
   -
@@ -1666,18 +1294,18 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb']
+        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_03075/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_03075.dir/build.make CMakeFiles/cmTC_03075.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_23199/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_23199.dir/build.make CMakeFiles/cmTC_23199.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Apple clang version 17.0.0 (clang-1700.6.3.2)]
         ignore line: [Target: arm64-apple-darwin25.3.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-X94FRb -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-YPP2jx -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.6.3.2) default target arm64-apple-darwin25.3.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1690,13 +1318,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_03075]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03075.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_23199]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23199.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.6.3.2)]
         ignore line: [Target: arm64-apple-darwin25.3.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_03075 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_23199 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1713,12 +1341,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_03075] ==> ignore
+          arg [cmTC_23199] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_03075.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_23199.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
         linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld
@@ -1760,8 +1388,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw"
-      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw"
+      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd"
+      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1774,19 +1402,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw'
+        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ae887/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ae887.dir/build.make CMakeFiles/cmTC_ae887.dir/build
-        Building CXX object CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2ecbc/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2ecbc.dir/build.make CMakeFiles/cmTC_2ecbc.dir/build
+        Building CXX object CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 17.0.0 (clang-1700.6.3.2)
         Target: arm64-apple-darwin25.3.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 17.0.0 (clang-1700.6.3.2) default target arm64-apple-darwin25.3.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1800,13 +1428,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_ae887
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae887.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_2ecbc
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ecbc.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.6.3.2)
         Target: arm64-apple-darwin25.3.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_ae887 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_2ecbc -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1230.1
         BUILD 06:36:05 Dec  2 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1818,7 +1446,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_ae887
+        /usr/bin/clang++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2ecbc
         
       exitCode: 0
   -
@@ -1862,19 +1490,19 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw']
+        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ae887/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ae887.dir/build.make CMakeFiles/cmTC_ae887.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2ecbc/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2ecbc.dir/build.make CMakeFiles/cmTC_2ecbc.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 17.0.0 (clang-1700.6.3.2)]
         ignore line: [Target: arm64-apple-darwin25.3.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-BbOGWw -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.2 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd -target-linker-version 1230.1 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-MYEUgd -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.6.3.2) default target arm64-apple-darwin25.3.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1888,13 +1516,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_ae887]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae887.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_2ecbc]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2ecbc.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.6.3.2)]
         ignore line: [Target: arm64-apple-darwin25.3.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_ae887 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_2ecbc -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1911,12 +1539,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_ae887] ==> ignore
+          arg [cmTC_2ecbc] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_ae887.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_2ecbc.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
@@ -1950,4 +1578,301 @@ events:
       will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
       LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindGit.cmake:111 (find_program)"
+      - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:1884 (find_package)"
+      - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:1619 (__FetchContent_populateSubbuild)"
+      - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:2155:EVAL:2 (__FetchContent_doPopulation)"
+      - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:2155 (cmake_language)"
+      - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:2394 (__FetchContent_Populate)"
+      - "CMakeLists.txt:13 (FetchContent_MakeAvailable)"
+    mode: "program"
+    variable: "GIT_EXECUTABLE"
+    description: "Git command line client"
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "/Users/nickolasregas/.local/bin/"
+      - "/opt/homebrew/opt/openjdk/bin/"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/usr/local/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Apple/usr/bin/"
+      - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.lmstudio/bin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/opt/homebrew/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+      - "/sw/bin/"
+      - "/sw/sbin/"
+      - "/sw/"
+      - "/opt/local/bin/"
+      - "/opt/local/sbin/"
+      - "/opt/local/"
+      - "/Users/nickolasregas/Applications/"
+      - "/Applications/"
+    searched_directories:
+      - "/Users/nickolasregas/.local/bin/git"
+      - "/opt/homebrew/opt/openjdk/bin/git"
+      - "/opt/homebrew/Caskroom/miniconda/base/condabin/git"
+      - "/opt/homebrew/bin/git"
+      - "/opt/homebrew/sbin/git"
+      - "/usr/local/bin/git"
+      - "/System/Cryptexes/App/usr/bin/git"
+    found: "/usr/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/Users/nickolasregas/.local/bin"
+        - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_APPBUNDLE_PATH:
+        - "/Users/nickolasregas/Applications"
+        - "/Applications"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindPython/Support.cmake:2165 (find_program)"
+      - "/opt/homebrew/share/cmake/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:250 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:81 (include)"
+    mode: "program"
+    variable: "_Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.15mu"
+      - "python3.15m"
+      - "python3.15u"
+      - "python3.15"
+      - "python3.15dmu"
+      - "python3.15dm"
+      - "python3.15du"
+      - "python3.15d"
+      - "python3"
+      - "python"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/Users/nickolasregas/.local/bin"
+        - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_APPBUNDLE_PATH:
+        - "/Users/nickolasregas/Applications"
+        - "/Applications"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/FindPython/Support.cmake:2165 (find_program)"
+      - "/opt/homebrew/share/cmake/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:250 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:81 (include)"
+    mode: "program"
+    variable: "_Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.14mu"
+      - "python3.14m"
+      - "python3.14u"
+      - "python3.14"
+      - "python3.14dmu"
+      - "python3.14dm"
+      - "python3.14du"
+      - "python3.14d"
+      - "python3"
+      - "python"
+    candidate_directories:
+      - "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/"
+      - "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/Scripts/"
+      - "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/"
+    searched_directories:
+      - "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14mu"
+      - "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14m"
+      - "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14u"
+    found: "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14"
+    search_context:
+      ENV{PATH}:
+        - "/Users/nickolasregas/.local/bin"
+        - "/opt/homebrew/opt/openjdk/bin"
+        - "/opt/homebrew/Caskroom/miniconda/base/condabin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+        - "/Library/Apple/usr/bin"
+        - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_APPBUNDLE_PATH:
+        - "/Users/nickolasregas/Applications"
+        - "/Applications"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:160 (check_c_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:66 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:83 (config_compiler_and_linker)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-0Lmm6U"
+      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-0Lmm6U"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-0Lmm6U'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3f967/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3f967.dir/build.make CMakeFiles/cmTC_3f967.dir/build
+        Building C object CMakeFiles/cmTC_3f967.dir/src.c.o
+        /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_3f967.dir/src.c.o -MF CMakeFiles/cmTC_3f967.dir/src.c.o.d -o CMakeFiles/cmTC_3f967.dir/src.c.o -c /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-0Lmm6U/src.c
+        Linking C executable cmTC_3f967
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f967.dir/link.txt --verbose=1
+        /usr/bin/clang  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3f967.dir/src.c.o -o cmTC_3f967
+        
+      exitCode: 0
 ...

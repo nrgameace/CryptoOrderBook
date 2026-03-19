@@ -1,0 +1,3 @@
+/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir
