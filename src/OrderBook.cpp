@@ -76,3 +76,34 @@ const std::map<double, std::priority_queue<Order>, std::greater<double>>& OrderB
 const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
     return sellOffers;
 }
+
+bool OrderBook::operator==(const OrderBook& other) {
+    if (sellOffers.size() != other.sellOffers.size()) {
+        return false;
+    }
+
+    if (buyOffers.size() != other.buyOffers.size()) {
+        return false;
+    }
+
+
+    for (auto& [price, queue] : sellOffers) {
+        if (other.sellOffers.find(price) == other.sellOffers.end())
+            return false;
+        
+        auto otherQueue = other.sellOffers.at(price);
+
+        if (queue.size() != otherQueue.size()) return false;
+
+        while (!queue.empty()) {
+            if (!(queue.top() == otherQueue.top()))
+                return false;
+            queue.pop();
+            otherQueue.pop();
+        }
+
+
+    }
+
+    return true;
+}

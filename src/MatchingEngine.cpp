@@ -168,3 +168,12 @@ bool MatchingEngine::simulateMarket() {
     }
     
 }
+
+
+const OrderBook& MatchingEngine::getBook() {
+    return book;
+}
+
+const TransactionLogger& MatchingEngine::getLog() {
+    return log;
+}

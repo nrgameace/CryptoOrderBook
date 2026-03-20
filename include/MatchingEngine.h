@@ -11,6 +11,8 @@ class MatchingEngine {
     MatchingEngine(OrderBook& book);
     bool processOrder(Order& orderBuy, Order& orderSell);
     bool simulateMarket();
+    const OrderBook& getBook();
+    const TransactionLogger& getLog();
 
 
 };
