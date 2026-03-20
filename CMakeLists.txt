@@ -26,7 +26,7 @@ include_directories(include)
 
 #target_link_libraries(program sqlite3)
 
-add_executable(my_tests tests/TestOrder.cpp)
+add_executable(my_tests tests/TestOrder.cpp src/Order.cpp)
 target_link_libraries(my_tests PRIVATE gtest gtest_main)
 
 # Register tests with ctest

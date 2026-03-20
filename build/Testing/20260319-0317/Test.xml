@@ -2,7 +2,7 @@
 <Site BuildName="(empty)"
 	BuildStamp="20260319-0317-Experimental"
 	Name="(empty)"
-	Generator="ctest-4.2.3"
+	Generator="ctest-4.3.0"
 	CompilerName=""
 	CompilerVersion=""
 	OSName="macOS"
@@ -19,17 +19,17 @@
 	ProcessorCacheSize="131072"
 	NumberOfLogicalCPU="8"
 	NumberOfPhysicalCPU="8"
-	TotalVirtualMemory="4096"
+	TotalVirtualMemory="6144"
 	TotalPhysicalMemory="16384"
 	LogicalProcessorsPerPhysical="8"
-	ProcessorClockFrequency="0"
+	ProcessorClockFrequency="0.000000"
 	>
 	<Testing>
-		<StartDateTime>Mar 19 00:40 CDT</StartDateTime>
-		<StartTestTime>1773898819</StartTestTime>
+		<StartDateTime>Mar 19 23:24 CDT</StartDateTime>
+		<StartTestTime>1773980698</StartTestTime>
 		<TestList/>
-		<EndDateTime>Mar 19 00:40 CDT</EndDateTime>
-		<EndTestTime>1773898819</EndTestTime>
+		<EndDateTime>Mar 19 23:24 CDT</EndDateTime>
+		<EndTestTime>1773980698</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
