@@ -17,7 +17,7 @@ class OrderBook {
         bool addOrder(const Order& order);
         const std::map<double, std::priority_queue<Order>, std::greater<double>>& getBuyOffers();
         const std::map<double, std::priority_queue<Order>>& getSellOffers();
-        bool operator==(const OrderBook& other);
+        bool operator==(const OrderBook& other) const;
 
         
         

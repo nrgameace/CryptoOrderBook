@@ -77,7 +77,7 @@ const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
     return sellOffers;
 }
 
-bool OrderBook::operator==(const OrderBook& other) {
+bool OrderBook::operator==(const OrderBook& other) const{
     if (sellOffers.size() != other.sellOffers.size()) {
         return false;
     }
@@ -91,18 +91,34 @@ bool OrderBook::operator==(const OrderBook& other) {
         if (other.sellOffers.find(price) == other.sellOffers.end())
             return false;
         
-        auto otherQueue = other.sellOffers.at(price);
+        auto q1 = queue;
+        auto q2 = other.sellOffers.at(price);
 
-        if (queue.size() != otherQueue.size()) return false;
+        if (q1.size() != q2.size()) return false;
 
-        while (!queue.empty()) {
-            if (!(queue.top() == otherQueue.top()))
+        while (!q1.empty()) {
+            if (!(q1.top() == q2.top()))
                 return false;
-            queue.pop();
-            otherQueue.pop();
+            q1.pop();
+            q2.pop();
         }
+    }
 
+    for (auto& [price, queue] : buyOffers) {
+        if (other.buyOffers.find(price) == other.buyOffers.end())
+            return false;
+        
+        auto q1 = queue;
+        auto q2 = other.buyOffers.at(price);
 
+        if (q1.size() != q2.size()) return false;
+
+        while (!q1.empty()) {
+            if (!(q1.top() == q2.top()))
+                return false;
+            q1.pop();
+            q2.pop();
+        }
     }
 
     return true;
