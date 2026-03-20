@@ -12,3 +12,11 @@ bool Order::operator<(const Order& b) const {
 std::chrono::system_clock::time_point Order::getTimestamp() {
         return timestamp;
     }
+
+bool Order::operator==(const Order& other) const {
+return price == other.price
+    && quantity == other.quantity
+    && userId == other.userId
+    && transactionId == other.transactionId
+    && transactionSide == other.transactionSide;
+}

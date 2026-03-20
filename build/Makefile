@@ -172,17 +172,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named my_tests
+# Target rules for targets named my_lib
 
 # Build rule for target.
-my_tests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_tests
-.PHONY : my_tests
+my_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_lib
+.PHONY : my_lib
 
 # fast build rule for target.
-my_tests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/build
-.PHONY : my_tests/fast
+my_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/build
+.PHONY : my_lib/fast
+
+#=============================================================================
+# Target rules for targets named main.out
+
+# Build rule for target.
+main.out: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main.out
+.PHONY : main.out
+
+# fast build rule for target.
+main.out/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/build
+.PHONY : main.out/fast
+
+#=============================================================================
+# Target rules for targets named all_tests
+
+# Build rule for target.
+all_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all_tests
+.PHONY : all_tests
+
+# fast build rule for target.
+all_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/build
+.PHONY : all_tests/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -236,12 +262,60 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+src/Main.o: src/Main.cpp.o
+.PHONY : src/Main.o
+
+# target to build an object file
+src/Main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Main.cpp.o
+.PHONY : src/Main.cpp.o
+
+src/Main.i: src/Main.cpp.i
+.PHONY : src/Main.i
+
+# target to preprocess a source file
+src/Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Main.cpp.i
+.PHONY : src/Main.cpp.i
+
+src/Main.s: src/Main.cpp.s
+.PHONY : src/Main.s
+
+# target to generate assembly for a file
+src/Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Main.cpp.s
+.PHONY : src/Main.cpp.s
+
+src/MatchingEngine.o: src/MatchingEngine.cpp.o
+.PHONY : src/MatchingEngine.o
+
+# target to build an object file
+src/MatchingEngine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MatchingEngine.cpp.o
+.PHONY : src/MatchingEngine.cpp.o
+
+src/MatchingEngine.i: src/MatchingEngine.cpp.i
+.PHONY : src/MatchingEngine.i
+
+# target to preprocess a source file
+src/MatchingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MatchingEngine.cpp.i
+.PHONY : src/MatchingEngine.cpp.i
+
+src/MatchingEngine.s: src/MatchingEngine.cpp.s
+.PHONY : src/MatchingEngine.s
+
+# target to generate assembly for a file
+src/MatchingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MatchingEngine.cpp.s
+.PHONY : src/MatchingEngine.cpp.s
+
 src/Order.o: src/Order.cpp.o
 .PHONY : src/Order.o
 
 # target to build an object file
 src/Order.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/src/Order.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Order.cpp.o
 .PHONY : src/Order.cpp.o
 
 src/Order.i: src/Order.cpp.i
@@ -249,7 +323,7 @@ src/Order.i: src/Order.cpp.i
 
 # target to preprocess a source file
 src/Order.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/src/Order.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Order.cpp.i
 .PHONY : src/Order.cpp.i
 
 src/Order.s: src/Order.cpp.s
@@ -257,15 +331,63 @@ src/Order.s: src/Order.cpp.s
 
 # target to generate assembly for a file
 src/Order.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/src/Order.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Order.cpp.s
 .PHONY : src/Order.cpp.s
+
+src/OrderBook.o: src/OrderBook.cpp.o
+.PHONY : src/OrderBook.o
+
+# target to build an object file
+src/OrderBook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/OrderBook.cpp.o
+.PHONY : src/OrderBook.cpp.o
+
+src/OrderBook.i: src/OrderBook.cpp.i
+.PHONY : src/OrderBook.i
+
+# target to preprocess a source file
+src/OrderBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/OrderBook.cpp.i
+.PHONY : src/OrderBook.cpp.i
+
+src/OrderBook.s: src/OrderBook.cpp.s
+.PHONY : src/OrderBook.s
+
+# target to generate assembly for a file
+src/OrderBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/OrderBook.cpp.s
+.PHONY : src/OrderBook.cpp.s
+
+src/TransactionLogger.o: src/TransactionLogger.cpp.o
+.PHONY : src/TransactionLogger.o
+
+# target to build an object file
+src/TransactionLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/TransactionLogger.cpp.o
+.PHONY : src/TransactionLogger.cpp.o
+
+src/TransactionLogger.i: src/TransactionLogger.cpp.i
+.PHONY : src/TransactionLogger.i
+
+# target to preprocess a source file
+src/TransactionLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/TransactionLogger.cpp.i
+.PHONY : src/TransactionLogger.cpp.i
+
+src/TransactionLogger.s: src/TransactionLogger.cpp.s
+.PHONY : src/TransactionLogger.s
+
+# target to generate assembly for a file
+src/TransactionLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/TransactionLogger.cpp.s
+.PHONY : src/TransactionLogger.cpp.s
 
 tests/TestOrder.o: tests/TestOrder.cpp.o
 .PHONY : tests/TestOrder.o
 
 # target to build an object file
 tests/TestOrder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/TestOrder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrder.cpp.o
 .PHONY : tests/TestOrder.cpp.o
 
 tests/TestOrder.i: tests/TestOrder.cpp.i
@@ -273,7 +395,7 @@ tests/TestOrder.i: tests/TestOrder.cpp.i
 
 # target to preprocess a source file
 tests/TestOrder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/TestOrder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrder.cpp.i
 .PHONY : tests/TestOrder.cpp.i
 
 tests/TestOrder.s: tests/TestOrder.cpp.s
@@ -281,8 +403,32 @@ tests/TestOrder.s: tests/TestOrder.cpp.s
 
 # target to generate assembly for a file
 tests/TestOrder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/TestOrder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrder.cpp.s
 .PHONY : tests/TestOrder.cpp.s
+
+tests/TestOrderBook.o: tests/TestOrderBook.cpp.o
+.PHONY : tests/TestOrderBook.o
+
+# target to build an object file
+tests/TestOrderBook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrderBook.cpp.o
+.PHONY : tests/TestOrderBook.cpp.o
+
+tests/TestOrderBook.i: tests/TestOrderBook.cpp.i
+.PHONY : tests/TestOrderBook.i
+
+# target to preprocess a source file
+tests/TestOrderBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrderBook.cpp.i
+.PHONY : tests/TestOrderBook.cpp.i
+
+tests/TestOrderBook.s: tests/TestOrderBook.cpp.s
+.PHONY : tests/TestOrderBook.s
+
+# target to generate assembly for a file
+tests/TestOrderBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrderBook.cpp.s
+.PHONY : tests/TestOrderBook.cpp.s
 
 # Help Target
 help:
@@ -297,17 +443,34 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... all_tests"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... my_tests"
+	@echo "... main.out"
+	@echo "... my_lib"
+	@echo "... src/Main.o"
+	@echo "... src/Main.i"
+	@echo "... src/Main.s"
+	@echo "... src/MatchingEngine.o"
+	@echo "... src/MatchingEngine.i"
+	@echo "... src/MatchingEngine.s"
 	@echo "... src/Order.o"
 	@echo "... src/Order.i"
 	@echo "... src/Order.s"
+	@echo "... src/OrderBook.o"
+	@echo "... src/OrderBook.i"
+	@echo "... src/OrderBook.s"
+	@echo "... src/TransactionLogger.o"
+	@echo "... src/TransactionLogger.i"
+	@echo "... src/TransactionLogger.s"
 	@echo "... tests/TestOrder.o"
 	@echo "... tests/TestOrder.i"
 	@echo "... tests/TestOrder.s"
+	@echo "... tests/TestOrderBook.o"
+	@echo "... tests/TestOrderBook.i"
+	@echo "... tests/TestOrderBook.s"
 .PHONY : help
 
 

@@ -16,19 +16,17 @@ FetchContent_MakeAvailable(googletest)
 # Add included header files
 include_directories(include)
 
-# add_executable(program
-    #src/Main.cpp
-    #src/OrderBook.cpp
-    #src/Order.cpp
-    #src/TransactionLogger.cpp
-    #src/MatchingEngine.cpp
-    #)
+# Shared source files as a library
+add_library(my_lib src/Order.cpp src/MatchingEngine.cpp src/OrderBook.cpp src/TransactionLogger.cpp)
+target_link_libraries(my_lib PRIVATE sqlite3)
 
-#target_link_libraries(program sqlite3)
+# Main executable
+add_executable(main.out src/Main.cpp)
+target_link_libraries(main.out PRIVATE my_lib)
 
-add_executable(my_tests tests/TestOrder.cpp src/Order.cpp)
-target_link_libraries(my_tests PRIVATE gtest gtest_main)
+# Test executable
+add_executable(all_tests tests/TestOrder.cpp tests/TestOrderBook.cpp)
+target_link_libraries(all_tests PRIVATE my_lib gtest gtest_main)
 
-# Register tests with ctest
 enable_testing()
-add_test(NAME MyTests COMMAND my_tests)
+add_test(NAME MyTests COMMAND all_tests)
