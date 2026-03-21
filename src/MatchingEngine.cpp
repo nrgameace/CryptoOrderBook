@@ -33,7 +33,7 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
 
             double difference = orderSell.quantity - orderBuy.quantity;
 
-            constexpr double EPS = 1e-9;  
+            constexpr double EPS = 1e-2;  
             auto time = std::time(nullptr);
             if (difference <= 0)
                 log.logTrade(orderBuy.userId, orderSell.userId, orderSell.quantity, orderSell.price, time);
