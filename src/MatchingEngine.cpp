@@ -162,11 +162,11 @@ bool MatchingEngine::simulateMarket() {
     }
 
     if (book.buyOffers.empty() && book.sellOffers.empty()){
-        std::cout << "Market is fully empty" << std::endl;
+        //std::cout << "Market is fully empty" << std::endl;
         return true;
     }
     else {
-        std::cout << "Market is not fully empty" << std::endl;
+        //std::cout << "Market is not fully empty" << std::endl;
         return false;
     }
     

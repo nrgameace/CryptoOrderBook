@@ -46,6 +46,8 @@ TEST(TestMatchingEngine, TestProcessOrder) {
 }
 
 TEST(TestMatchingEngine, TestSimulateMarket) {
+
+    // Check to ensure that if order quantities don't match up, then the method returns false
     Order::OrderType typeBuy = Order::OrderType::buy;
     Order order1 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order2 {Order(typeBuy, 25.0, 2.0, 102, 112)};
@@ -70,10 +72,10 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
 
     EXPECT_FALSE(engine1.simulateMarket());
 
-
+    // Check to see if order quantities are perfectly matched up and prices are valid, then return true
     Order order7 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order8 {Order(typeBuy, 20.0, 2.0, 102, 112)};
-    Order order9 {Order{typeBuy, 15.0, 1.0, 106, 116}};
+    Order order9 {Order{typeBuy, 25.0, 1.0, 106, 116}};
 
     Order order10 {Order(typeSell, 20.0, 1.0, 103, 113)};
     Order order11 {Order(typeSell, 20.0, 2.0, 104, 114)};
@@ -88,27 +90,12 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     book2.addOrder(order11);
     book2.addOrder(order12);
 
-
-
-
     MatchingEngine engine2 {MatchingEngine(book2)};
 
-    bool val = engine2.simulateMarket();
-
-    std::cout << order7.quantity << std::endl;
-    std::cout << order8.quantity << std::endl;
-    std::cout << order9.quantity << std::endl;
-    std::cout << order10.quantity << std::endl;
-    std::cout << order11.quantity << std::endl;
-    std::cout << order12.quantity << std::endl;
-    std::cout << std::endl;
-    std::cout << book2.buyOffers.size() << std::endl;
-    std::cout << book2.sellOffers.size() << std::endl;
+    EXPECT_TRUE(engine2.simulateMarket());
 
 
-    EXPECT_TRUE(val);
-
-
+    // If one side of the book is empty then the method should return false
     Order order13 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order14 {Order(typeBuy, 20.0, 2.0, 102, 112)};
     Order order15 {Order{typeBuy, 15.0, 1.0, 106, 116}};
@@ -124,7 +111,42 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
 
     EXPECT_FALSE(engine3.simulateMarket());
 
+    // The prices below don't match as one order will not be completed. Method should return false.
+    Order order16 {Order(typeBuy, 20.0, 1.0, 101, 111)};
+    Order order17 {Order(typeBuy, 20.0, 2.0, 102, 112)};
+    Order order18 {Order{typeBuy, 15.0, 1.0, 106, 116}};
+
+    Order order19 {Order(typeSell, 20.0, 1.0, 103, 113)};
+    Order order20 {Order(typeSell, 20.0, 2.0, 104, 114)};
+    Order order21 {Order(typeSell, 15.0, 1.0, 105, 115)};
+
+    OrderBook book4 {OrderBook()};
+
+    book4.addOrder(order16);
+    book4.addOrder(order17);
+    book4.addOrder(order18);
+    book4.addOrder(order19);
+    book4.addOrder(order20);
+    book4.addOrder(order21);
+
+    MatchingEngine engine4 {MatchingEngine(book4)};
+
+    EXPECT_FALSE(engine4.simulateMarket());
+
 
 
 
 }
+
+// Print statements to check for order quantity. Use for debug only
+/**
+ *  std::cout << order7.quantity << std::endl;
+    std::cout << order8.quantity << std::endl;
+    std::cout << order9.quantity << std::endl;
+    std::cout << order10.quantity << std::endl;
+    std::cout << order11.quantity << std::endl;
+    std::cout << order12.quantity << std::endl;
+    std::cout << std::endl;
+    std::cout << book2.buyOffers.size() << std::endl;
+    std::cout << book2.sellOffers.size() << std::endl;
+ */
