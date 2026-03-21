@@ -454,6 +454,30 @@ tests/TestOrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrderBook.cpp.s
 .PHONY : tests/TestOrderBook.cpp.s
 
+tests/TestTransactionLogger.o: tests/TestTransactionLogger.cpp.o
+.PHONY : tests/TestTransactionLogger.o
+
+# target to build an object file
+tests/TestTransactionLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.o
+.PHONY : tests/TestTransactionLogger.cpp.o
+
+tests/TestTransactionLogger.i: tests/TestTransactionLogger.cpp.i
+.PHONY : tests/TestTransactionLogger.i
+
+# target to preprocess a source file
+tests/TestTransactionLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.i
+.PHONY : tests/TestTransactionLogger.cpp.i
+
+tests/TestTransactionLogger.s: tests/TestTransactionLogger.cpp.s
+.PHONY : tests/TestTransactionLogger.s
+
+# target to generate assembly for a file
+tests/TestTransactionLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.s
+.PHONY : tests/TestTransactionLogger.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -498,6 +522,9 @@ help:
 	@echo "... tests/TestOrderBook.o"
 	@echo "... tests/TestOrderBook.i"
 	@echo "... tests/TestOrderBook.s"
+	@echo "... tests/TestTransactionLogger.o"
+	@echo "... tests/TestTransactionLogger.i"
+	@echo "... tests/TestTransactionLogger.s"
 .PHONY : help
 
 

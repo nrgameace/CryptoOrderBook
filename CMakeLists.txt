@@ -25,7 +25,7 @@ add_executable(main.out src/Main.cpp)
 target_link_libraries(main.out PRIVATE my_lib)
 
 # Test executable
-add_executable(all_tests tests/TestOrder.cpp tests/TestOrderBook.cpp tests/TestMatchingEngine.cpp)
+add_executable(all_tests tests/TestOrder.cpp tests/TestOrderBook.cpp tests/TestMatchingEngine.cpp tests/TestTransactionLogger.cpp)
 target_link_libraries(all_tests PRIVATE my_lib gtest gtest_main)
 
 enable_testing()
