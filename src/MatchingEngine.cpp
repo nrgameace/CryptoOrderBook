@@ -3,7 +3,7 @@
 #include "Order.h"
 #include "TransactionLogger.h"
 #include <iostream>
-
+#include <stdexcept>
 
 MatchingEngine::MatchingEngine(OrderBook& book)
     : book(book), log(TransactionLogger()) 
@@ -20,6 +20,9 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
     //Go to top of hashmap for both
     //Find which one was the resting price (created earlier)
     //Excecute trade -- if not enough quantity, go to next
+    if (orderBuy.transactionSide == Order::OrderType::sell || orderSell.transactionSide == Order::OrderType::buy) {
+        throw std::runtime_error("Wrong side is in one order.");
+    } 
 
     
     //Ensure that buy offer is at least greater than or equal to the sell price
@@ -40,7 +43,7 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
             if (std::abs(difference) < EPS) {
                 orderBuy.quantity = 0.0;
                 orderSell.quantity = 0.0;
-                std::cout << "The offers are perfectly mathced" << std::endl;
+                //std::cout << "The offers are perfectly mathced" << std::endl;
                 return true;
             }
 
@@ -48,14 +51,14 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
                 double quantityLeftOver = orderBuy.quantity - orderSell.quantity;
                 orderBuy.quantity = quantityLeftOver;
                 orderSell.quantity = 0.0;
-                std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
+                //std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
                 return false;
             }
             else {
                 double quantityLeftOver = orderSell.quantity - orderBuy.quantity;
                 orderSell.quantity = quantityLeftOver;
                 orderBuy.quantity = 0.0;
-                std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
+                //std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
                 return false;
             }
 
@@ -74,7 +77,7 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
             if (std::abs(difference) < EPS) {
                 orderBuy.quantity = 0.0;
                 orderSell.quantity = 0.0;
-                std::cout << "The offers are perfectly matched" << std::endl;
+                //std::cout << "The offers are perfectly matched" << std::endl;
                 return true;
             }
 
@@ -82,14 +85,14 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
                 double quantityLeftOver = orderBuy.quantity - orderSell.quantity;
                 orderBuy.quantity = quantityLeftOver;
                 orderSell.quantity = 0.0;
-                std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
+                //std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
                 return false;
             }
             else {
                 double quantityLeftOver = orderSell.quantity - orderBuy.quantity;
                 orderSell.quantity = quantityLeftOver;
                 orderBuy.quantity = 0.0;
-                std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
+                //std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
                 return false;
             }
         }
