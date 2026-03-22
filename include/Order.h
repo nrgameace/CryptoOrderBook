@@ -1,13 +1,14 @@
 #pragma once
 #include <ctime>
 #include <chrono>
+#include "Utils.h"
 
 struct Order {
-    public:       
+    public:
         enum class OrderType {buy, sell};
-        OrderType transactionSide; 
-        double price;
-        double quantity;
+        OrderType transactionSide;
+        int64_t price;
+        int64_t quantity;
         std::chrono::system_clock::time_point timestamp = std::chrono::system_clock::now();
         int transactionId;
         int userId;

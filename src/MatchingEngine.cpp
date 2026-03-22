@@ -31,41 +31,36 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
     // Check which order was a resting order and which was a incoming order
         if (orderSell.getTimestamp() < orderBuy.getTimestamp()) {
 
-            double difference = orderSell.quantity - orderBuy.quantity;
+            int64_t difference = orderSell.quantity - orderBuy.quantity;
 
-            constexpr double EPS = 1e-2;  
             auto time = std::time(nullptr);
             if (difference <= 0)
                 log.logTrade(orderBuy.userId, orderSell.userId, orderSell.quantity, orderSell.price, time);
             else
                 log.logTrade(orderBuy.userId, orderSell.userId, orderBuy.quantity, orderSell.price, time);
 
-            if (std::abs(difference) < EPS) {
-                orderBuy.quantity = 0.0;
-                orderSell.quantity = 0.0;
-                //std::cout << "The offers are perfectly mathced" << std::endl;
+            if (difference == 0) {
+                orderBuy.quantity = 0;
+                orderSell.quantity = 0;
                 return true;
             }
 
             else if (difference < 0) {
-                double quantityLeftOver = orderBuy.quantity - orderSell.quantity;
+                int64_t quantityLeftOver = orderBuy.quantity - orderSell.quantity;
                 orderBuy.quantity = quantityLeftOver;
-                orderSell.quantity = 0.0;
-                //std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
+                orderSell.quantity = 0;
                 return false;
             }
             else {
-                double quantityLeftOver = orderSell.quantity - orderBuy.quantity;
+                int64_t quantityLeftOver = orderSell.quantity - orderBuy.quantity;
                 orderSell.quantity = quantityLeftOver;
-                orderBuy.quantity = 0.0;
-                //std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
+                orderBuy.quantity = 0;
                 return false;
             }
 
         }
         else {
-            double difference = orderSell.quantity - orderBuy.quantity;
-
+            int64_t difference = orderSell.quantity - orderBuy.quantity;
 
             auto time = std::time(nullptr);
             if (difference <= 0)
@@ -73,26 +68,22 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
             else
                 log.logTrade(orderBuy.userId, orderSell.userId, orderSell.quantity, orderBuy.price, time);
 
-            constexpr double EPS = 1e-2;   
-            if (std::abs(difference) < EPS) {
-                orderBuy.quantity = 0.0;
-                orderSell.quantity = 0.0;
-                //std::cout << "The offers are perfectly matched" << std::endl;
+            if (difference == 0) {
+                orderBuy.quantity = 0;
+                orderSell.quantity = 0;
                 return true;
             }
 
             else if (difference < 0) {
-                double quantityLeftOver = orderBuy.quantity - orderSell.quantity;
+                int64_t quantityLeftOver = orderBuy.quantity - orderSell.quantity;
                 orderBuy.quantity = quantityLeftOver;
-                orderSell.quantity = 0.0;
-                //std::cout << "The buy offer was greater and " << orderBuy.quantity << " is left over. Transaction ID: " << orderBuy.transactionId << std::endl;
+                orderSell.quantity = 0;
                 return false;
             }
             else {
-                double quantityLeftOver = orderSell.quantity - orderBuy.quantity;
+                int64_t quantityLeftOver = orderSell.quantity - orderBuy.quantity;
                 orderSell.quantity = quantityLeftOver;
-                orderBuy.quantity = 0.0;
-                //std::cout << "The sell offer was greater and " << orderSell.quantity << " is left over. Transaction ID: "<< orderSell.transactionId << std::endl;
+                orderBuy.quantity = 0;
                 return false;
             }
         }
@@ -115,10 +106,7 @@ bool MatchingEngine::simulateMarket() {
     // While loop that goes through and processes the order using the function
     // Return true if both sides are empty return false if not
     // After market open, on new order added run simulate Market
-    constexpr double EPS = 1e-9;
-
-
-    // Go until the market is empty or biy price is less than sell price
+    // Go until the market is empty or buy price is less than sell price
     while (!book.buyOffers.empty() && !book.sellOffers.empty()) {
 
         // Create an iterator to go through each pair in market
@@ -148,13 +136,13 @@ bool MatchingEngine::simulateMarket() {
 
         // Check to see if quantity is equal to zero, if it is, remove off the hashmap
         iteratorBuyOffers->second.pop();
-        if (highestBuy.quantity > EPS)
+        if (highestBuy.quantity > 0)
             iteratorBuyOffers->second.push(highestBuy);
         else if (iteratorBuyOffers->second.empty())
             book.buyOffers.erase(iteratorBuyOffers);
 
         iteratorSellOffers->second.pop();
-        if (lowestSell.quantity > EPS)
+        if (lowestSell.quantity > 0)
             iteratorSellOffers->second.push(lowestSell);
         else if (iteratorSellOffers->second.empty())
             book.sellOffers.erase(iteratorSellOffers);

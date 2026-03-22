@@ -65,7 +65,7 @@ TEST(TestTransactionLogger, TestLogTrade) {
         timestamp = sqlite3_column_int(statement, 4);
     }
     else {
-        std::cout << "Error "
+        std::cout << "Error " << std::endl;
     }
 
     

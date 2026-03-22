@@ -19,14 +19,14 @@ OrderBook::OrderBook()
  * @return True if the order was successfully added, False if not
  */
 bool OrderBook::addOrder(const Order& order) {
-    std::vector<double> keys;
+    std::vector<int64_t> keys;
 
     if (order.transactionSide == Order::OrderType::buy) {
         for (const auto& pair: buyOffers) {
             keys.push_back(pair.first);
         }
-        
-        for (double key : keys) {
+
+        for (int64_t key : keys) {
             if (key == order.price) {
                 buyOffers[key].push(order);
                 return true;
@@ -45,7 +45,7 @@ bool OrderBook::addOrder(const Order& order) {
             keys.push_back(pair.first);
         }
         
-        for (double key : keys) {
+        for (int64_t key : keys) {
             if (key == order.price) {
                 sellOffers[key].push(order);
                 return true;
@@ -65,7 +65,7 @@ bool OrderBook::addOrder(const Order& order) {
  * @brief Accessor method for all buy offers
  * @return A copy of the all the buy offers in the orderbook
  */
-const std::map<double, std::priority_queue<Order>, std::greater<double>>& OrderBook::getBuyOffers() {
+const std::map<int64_t, std::priority_queue<Order>, std::greater<int64_t>>& OrderBook::getBuyOffers() {
     return buyOffers;
 }
 
@@ -73,7 +73,7 @@ const std::map<double, std::priority_queue<Order>, std::greater<double>>& OrderB
  * @brief Accessor method for all sell offers
  * @return A copy of the all the sell offers in the orderbook
  */
-const std::map<double, std::priority_queue<Order>>& OrderBook::getSellOffers() {
+const std::map<int64_t, std::priority_queue<Order>>& OrderBook::getSellOffers() {
     return sellOffers;
 }
 

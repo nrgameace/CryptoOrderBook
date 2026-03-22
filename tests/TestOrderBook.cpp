@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "Order.h"
 #include "OrderBook.h"
+#include "Utils.h"
 #include <chrono>
 #include <thread>
 

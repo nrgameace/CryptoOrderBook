@@ -2,6 +2,7 @@
 #include "Order.h"
 #include "OrderBook.h"
 #include "MatchingEngine.h"
+#include "Utils.h"
 #include <chrono>
 #include <thread>
 #include <iostream>

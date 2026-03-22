@@ -8,15 +8,15 @@ class OrderBook {
     //std::queue<Order> buyOffers;
     //std::priority_queue<Order> sellOffers;
     public:
-        std::map<double, std::priority_queue<Order>, std::greater<double>> buyOffers;
-        std::map<double, std::priority_queue<Order>> sellOffers;
+        std::map<int64_t, std::priority_queue<Order>, std::greater<int64_t>> buyOffers;
+        std::map<int64_t, std::priority_queue<Order>> sellOffers;
 
     
 
         OrderBook();
         bool addOrder(const Order& order);
-        const std::map<double, std::priority_queue<Order>, std::greater<double>>& getBuyOffers();
-        const std::map<double, std::priority_queue<Order>>& getSellOffers();
+        const std::map<int64_t, std::priority_queue<Order>, std::greater<int64_t>>& getBuyOffers();
+        const std::map<int64_t, std::priority_queue<Order>>& getSellOffers();
         bool operator==(const OrderBook& other) const;
 
         

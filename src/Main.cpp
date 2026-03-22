@@ -1,4 +1,5 @@
 #include "Order.h"
+#include "Utils.h"
 #include <iostream>
 #include "OrderBook.h"
 #include <queue>
@@ -42,8 +43,8 @@ int main() {
 
     matchEng.simulateMarket();
     
-    std::cout << "Buy order: " << order1.quantity << std::endl;
-    std::cout << "Sell order: " << order5.quantity << std::endl;
+    std::cout << "Buy order: " << convertToDouble(order1.quantity) << std::endl;
+    std::cout << "Sell order: " << convertToDouble(order5.quantity) << std::endl;
     
 
 

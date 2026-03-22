@@ -1,5 +1,6 @@
 #include <sqlite3.h>
 #include "TransactionLogger.h"
+#include "Utils.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -32,7 +33,7 @@ TransactionLogger::~TransactionLogger() {
  * @param price The agreed upon price
  * @param timestamp The time at which the transaction occurred
  */
-void TransactionLogger::logTrade(int buyUserId, int sellUserId, double quantity, double price, int timestamp) {
+void TransactionLogger::logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int timestamp) {
     const char* sql = "INSERT INTO TRADES (buyUserId, sellUserId, quantity, price, timestamp) VALUES (?, ?, ?, ?, ?);";
     sqlite3_stmt* stmt;
 
@@ -47,8 +48,8 @@ void TransactionLogger::logTrade(int buyUserId, int sellUserId, double quantity,
     // The first parameter '1' refers to the first '?'
     sqlite3_bind_int(stmt, 1, buyUserId); 
     sqlite3_bind_int(stmt, 2, sellUserId);
-    sqlite3_bind_double(stmt, 3, quantity);
-    sqlite3_bind_double(stmt, 4, price);
+    sqlite3_bind_double(stmt, 3, convertToDouble(quantity));
+    sqlite3_bind_double(stmt, 4, convertToDouble(price));
     sqlite3_bind_int(stmt, 5, timestamp);
 
     // 4. Execute the statement
