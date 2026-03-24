@@ -19,42 +19,15 @@ OrderBook::OrderBook()
  * @return True if the order was successfully added, False if not
  */
 bool OrderBook::addOrder(const Order& order) {
-    std::vector<int64_t> keys;
 
     if (order.transactionSide == Order::OrderType::buy) {
-        for (const auto& pair: buyOffers) {
-            keys.push_back(pair.first);
-        }
 
-        for (int64_t key : keys) {
-            if (key == order.price) {
-                buyOffers[key].push(order);
-                return true;
-            }
-        }
-
-        std::priority_queue<Order> tempOrderStore;
-        tempOrderStore.push(order);
-        buyOffers[order.price] = std::move(tempOrderStore);
-
+        buyOffers[order.price].push(order);
         return true;
     }
 
     else if (order.transactionSide == Order::OrderType::sell) {
-        for (const auto& pair: sellOffers) {
-            keys.push_back(pair.first);
-        }
-        
-        for (int64_t key : keys) {
-            if (key == order.price) {
-                sellOffers[key].push(order);
-                return true;
-            }
-        }
-        std::priority_queue<Order> tempOrderStore;
-        tempOrderStore.push(order);
-        sellOffers[order.price] = std::move(tempOrderStore);
-
+        sellOffers[order.price].push(order);
         return true;
         
     }

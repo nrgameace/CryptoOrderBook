@@ -33,7 +33,6 @@ TEST(TestTransactionLogger, TestLogTrade) {
     int time = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch()).count();
     log.logTrade(order1.userId, order3.userId, order1.quantity, order1.price, time);
 
-    log.~TransactionLogger();
 
 
     sqlite3* db;
