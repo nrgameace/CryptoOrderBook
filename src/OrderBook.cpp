@@ -34,21 +34,6 @@ bool OrderBook::addOrder(const Order& order) {
     return false;
 }
 
-/**
- * @brief Accessor method for all buy offers
- * @return A copy of the all the buy offers in the orderbook
- */
-const std::map<int64_t, std::priority_queue<Order>, std::greater<int64_t>>& OrderBook::getBuyOffers() {
-    return buyOffers;
-}
-
-/**
- * @brief Accessor method for all sell offers
- * @return A copy of the all the sell offers in the orderbook
- */
-const std::map<int64_t, std::priority_queue<Order>>& OrderBook::getSellOffers() {
-    return sellOffers;
-}
 
 bool OrderBook::operator==(const OrderBook& other) const{
     if (sellOffers.size() != other.sellOffers.size()) {

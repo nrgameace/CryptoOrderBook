@@ -48,8 +48,8 @@ int main() {
     
 
 
-    auto buyBook = book.getBuyOffers();
-    auto sellBook = book.getSellOffers();
+    auto buyBook = book.buyOffers;
+    auto sellBook = book.sellOffers;
     //Check for proper ordering
     for (auto& pair : sellBook) {
         //std::cout << pair.first << std::endl;

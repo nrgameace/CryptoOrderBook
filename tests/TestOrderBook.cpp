@@ -22,8 +22,8 @@ TEST(TestOrderBook, AddOrder) {
     EXPECT_TRUE(value2);
     EXPECT_TRUE(value3);
 
-    auto mapBuy = book.getBuyOffers();
-    auto mapSell = book.getSellOffers();
+    auto mapBuy = book.buyOffers;
+    auto mapSell = book.sellOffers;
 
     EXPECT_EQ(mapBuy[order1.price].top(), order1);
     EXPECT_EQ(mapSell[order2.price].top(), order2);
