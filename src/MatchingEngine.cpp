@@ -2,7 +2,6 @@
 #include "OrderBook.h"
 #include "Order.h"
 #include "TransactionLogger.h"
-#include <iostream>
 #include <stdexcept>
 
 MatchingEngine::MatchingEngine(OrderBook& book)
@@ -10,88 +9,39 @@ MatchingEngine::MatchingEngine(OrderBook& book)
     {}
 
 
-/**
- * @brief Processes two orders one from each side at a time
- * @param orderBuy buy order that is being processed
- * @param orderSell sell order that is being processed
- * @return True if both orders are fully fufilled, False if not
- */
+bool MatchingEngine::executeTrade(Order& buy, Order& sell, int64_t tradePrice) {
+    int64_t difference = sell.quantity - buy.quantity;
+    int64_t tradeQty = (difference <= 0) ? sell.quantity : buy.quantity;
+
+    log.logTrade(buy.userId, sell.userId, tradeQty, tradePrice, std::time(nullptr));
+
+    if (difference == 0) {
+        buy.quantity = 0;
+        sell.quantity = 0;
+        return true;
+    }
+
+    if (difference < 0) {
+        buy.quantity = buy.quantity - sell.quantity;
+        sell.quantity = 0;
+    } else {
+        sell.quantity = sell.quantity - buy.quantity;
+        buy.quantity = 0;
+    }
+    return false;
+}
+
 bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
-    //Go to top of hashmap for both
-    //Find which one was the resting price (created earlier)
-    //Excecute trade -- if not enough quantity, go to next
     if (orderBuy.transactionSide == Order::OrderType::sell || orderSell.transactionSide == Order::OrderType::buy) {
         throw std::runtime_error("Wrong side is in one order.");
-    } 
-
-    
-    //Ensure that buy offer is at least greater than or equal to the sell price
-    if (orderBuy.price >= orderSell.price) {
-
-    // Check which order was a resting order and which was a incoming order
-        if (orderSell.getTimestamp() < orderBuy.getTimestamp()) {
-
-            int64_t difference = orderSell.quantity - orderBuy.quantity;
-
-            auto time = std::time(nullptr);
-            if (difference <= 0)
-                log.logTrade(orderBuy.userId, orderSell.userId, orderSell.quantity, orderSell.price, time);
-            else
-                log.logTrade(orderBuy.userId, orderSell.userId, orderBuy.quantity, orderSell.price, time);
-
-            if (difference == 0) {
-                orderBuy.quantity = 0;
-                orderSell.quantity = 0;
-                return true;
-            }
-
-            else if (difference < 0) {
-                int64_t quantityLeftOver = orderBuy.quantity - orderSell.quantity;
-                orderBuy.quantity = quantityLeftOver;
-                orderSell.quantity = 0;
-                return false;
-            }
-            else {
-                int64_t quantityLeftOver = orderSell.quantity - orderBuy.quantity;
-                orderSell.quantity = quantityLeftOver;
-                orderBuy.quantity = 0;
-                return false;
-            }
-
-        }
-        else {
-            int64_t difference = orderSell.quantity - orderBuy.quantity;
-
-            auto time = std::time(nullptr);
-            if (difference <= 0)
-                log.logTrade(orderBuy.userId, orderSell.userId, orderBuy.quantity, orderBuy.price, time);
-            else
-                log.logTrade(orderBuy.userId, orderSell.userId, orderSell.quantity, orderBuy.price, time);
-
-            if (difference == 0) {
-                orderBuy.quantity = 0;
-                orderSell.quantity = 0;
-                return true;
-            }
-
-            else if (difference < 0) {
-                int64_t quantityLeftOver = orderBuy.quantity - orderSell.quantity;
-                orderBuy.quantity = quantityLeftOver;
-                orderSell.quantity = 0;
-                return false;
-            }
-            else {
-                int64_t quantityLeftOver = orderSell.quantity - orderBuy.quantity;
-                orderSell.quantity = quantityLeftOver;
-                orderBuy.quantity = 0;
-                return false;
-            }
-        }
     }
-    
-    return false;
 
+    if (orderBuy.price < orderSell.price) {
+        return false;
+    }
 
+    int64_t tradePrice = (orderSell.getTimestamp() < orderBuy.getTimestamp()) ? orderSell.price : orderBuy.price;
+    return executeTrade(orderBuy, orderSell, tradePrice);
 }
 
 

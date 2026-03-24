@@ -6,6 +6,7 @@ class MatchingEngine {
 
     OrderBook& book;
     TransactionLogger log;
+    bool executeTrade(Order& buy, Order& sell, int64_t tradePrice);
 
     public:
     MatchingEngine(OrderBook& book);
