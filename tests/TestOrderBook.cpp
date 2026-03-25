@@ -6,6 +6,8 @@
 #include <thread>
 
 TEST(TestOrderBook, AddOrder) {
+    // Both orders share the same price (20.0) to verify that buy and sell sides are stored separately at the same price level.
+    // Other values are chosen at random. order2 is added twice to test that duplicate orders are correctly placed in the same price-level queue.
     Order::OrderType typeBuy = Order::OrderType::buy;
     Order order1 {Order(typeBuy, 20.0, 1.0, 101, 111)};
 

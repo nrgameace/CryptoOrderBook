@@ -40,7 +40,7 @@ TEST(TestTransactionLogger, TestLogTrade) {
     if (rc1 != 0) {
         std::cout << "Error connecting to database: " << sqlite3_errmsg(db) << std::endl;    
         db = nullptr;
-        std::runtime_error("Database Connection Failed");
+        throw std::runtime_error("Database Connection Failed");
     }
     else {
         std::cout << "Database connection successful!" << std::endl;

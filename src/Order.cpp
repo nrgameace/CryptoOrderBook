@@ -9,7 +9,7 @@ bool Order::operator<(const Order& b) const {
         return timestamp < b.timestamp;
     }
 
-std::chrono::system_clock::time_point Order::getTimestamp() {
+std::chrono::system_clock::time_point Order::getTimestamp() const {
         return timestamp;
     }
 

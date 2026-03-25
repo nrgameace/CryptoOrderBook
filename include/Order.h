@@ -18,7 +18,7 @@ struct Order {
     public: 
         Order(OrderType side, double priceTemp, double quantityTemp, int transactionIdTemp, int userIdTemp);
         bool operator<(const Order& b) const;
-        std::chrono::system_clock::time_point getTimestamp();
+        std::chrono::system_clock::time_point getTimestamp() const;
         bool operator==(const Order& other) const;
 
 };

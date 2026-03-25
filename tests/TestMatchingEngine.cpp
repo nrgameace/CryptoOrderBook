@@ -8,6 +8,7 @@
 #include <iostream>
 
 TEST(TestMatchingEngine, TestConstructor) {
+    // Values are chosen at random. Only one buy and one sell order are needed to verify the engine holds a correct reference to the order book.
     Order::OrderType typeBuy = Order::OrderType::buy;
     Order order1 {Order(typeBuy, 20.0, 1.0, 101, 111)};
 
@@ -26,11 +27,14 @@ TEST(TestMatchingEngine, TestConstructor) {
 
 
 TEST(TestMatchingEngine, TestProcessOrder) {
+    // order1 has qty 1.0 to create a partial fill against order4's qty 1.5. order2 is a second buy order used to test that passing two buy-side orders throws an exception.
+    // order3 has qty 1.0 matching order5's qty 1.0 to test a perfect fill. Other values are chosen at random.
     Order::OrderType typeBuy = Order::OrderType::buy;
     Order order1 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order2 {Order(typeBuy, 25.0, 2.0, 102, 112)};
     Order order3 {Order{typeBuy, 25.0, 1.0, 106, 116}};
 
+    // order4 has qty 1.5 (greater than order1's 1.0) to produce a partial fill. order5 has qty 1.0 matching order3 for a perfect fill. Prices are at 20.0 to ensure valid matching.
     Order::OrderType typeSell = Order::OrderType::sell;
     Order order4 {Order(typeSell, 20.0, 1.5, 103, 113)};
     Order order5 {Order(typeSell, 20.0, 1.0, 105, 115)};
@@ -48,7 +52,8 @@ TEST(TestMatchingEngine, TestProcessOrder) {
 
 TEST(TestMatchingEngine, TestSimulateMarket) {
 
-    // Check to ensure that if order quantities don't match up, then the method returns false
+    // Total buy qty (4.0) intentionally differs from total sell qty (5.5) so the market cannot fully clear.
+    // Prices overlap to ensure orders can match. Other values are chosen at random.
     Order::OrderType typeBuy = Order::OrderType::buy;
     Order order1 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order2 {Order(typeBuy, 25.0, 2.0, 102, 112)};
@@ -73,7 +78,8 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
 
     EXPECT_FALSE(engine1.simulateMarket());
 
-    // Check to see if order quantities are perfectly matched up and prices are valid, then return true
+    // Total buy qty (4.0) equals total sell qty (4.0) and all buy prices are >= sell prices, so the market fully clears.
+    // Other values are chosen at random.
     Order order7 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order8 {Order(typeBuy, 20.0, 2.0, 102, 112)};
     Order order9 {Order{typeBuy, 25.0, 1.0, 106, 116}};
@@ -96,7 +102,7 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     EXPECT_TRUE(engine2.simulateMarket());
 
 
-    // If one side of the book is empty then the method should return false
+    // Only buy-side orders are added to test that the method returns false when one side of the book is empty. Values are chosen at random.
     Order order13 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order14 {Order(typeBuy, 20.0, 2.0, 102, 112)};
     Order order15 {Order{typeBuy, 15.0, 1.0, 106, 116}};
@@ -112,7 +118,8 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
 
     EXPECT_FALSE(engine3.simulateMarket());
 
-    // The prices below don't match as one order will not be completed. Method should return false.
+    // Total quantities match (4.0 each) but the buy at 15.0 cannot match the sell at 20.0, leaving unmatched orders.
+    // This tests that the spread check prevents invalid matches. Other values are chosen at random.
     Order order16 {Order(typeBuy, 20.0, 1.0, 101, 111)};
     Order order17 {Order(typeBuy, 20.0, 2.0, 102, 112)};
     Order order18 {Order{typeBuy, 15.0, 1.0, 106, 116}};

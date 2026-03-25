@@ -11,7 +11,7 @@ TransactionLogger::TransactionLogger() {
     if (rc != 0) {
         std::cout << "Error connecting to database: " << sqlite3_errmsg(db) << std::endl;    
         db = nullptr;
-        std::runtime_error("Database Connection Failed");
+        throw std::runtime_error("Database Connection Failed");
     }
     else {
         std::cout << "Database connection successful!" << std::endl;
@@ -40,26 +40,33 @@ void TransactionLogger::logTrade(int buyUserId, int sellUserId, int64_t quantity
     // 2. Prepare the SQL statement into a prepared statement object (sqlite3_stmt)
     int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
     if (rc != SQLITE_OK) {
-        std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
-        return;
+        throw std::runtime_error(sqlite3_errmsg(db));
     }
 
     // 3. Bind C++ variables to the placeholders
     // The first parameter '1' refers to the first '?'
-    sqlite3_bind_int(stmt, 1, buyUserId); 
-    sqlite3_bind_int(stmt, 2, sellUserId);
-    sqlite3_bind_double(stmt, 3, convertToDouble(quantity));
-    sqlite3_bind_double(stmt, 4, convertToDouble(price));
-    sqlite3_bind_int(stmt, 5, timestamp);
+    bindCheck(stmt, sqlite3_bind_int(stmt, 1, buyUserId)); 
+    bindCheck(stmt, sqlite3_bind_int(stmt, 2, sellUserId));
+    bindCheck(stmt, sqlite3_bind_double(stmt, 3, convertToDouble(quantity)));
+    bindCheck(stmt, sqlite3_bind_double(stmt, 4, convertToDouble(price)));
+    bindCheck(stmt, sqlite3_bind_int(stmt, 5, timestamp));
 
     // 4. Execute the statement
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE) {
-        std::cerr << "Execution failed: " << sqlite3_errmsg(db) << std::endl;
+        throw std::runtime_error(sqlite3_errmsg(db));
     } else {
         std::cout << "Row inserted successfully." << std::endl;
     }
 
     sqlite3_finalize(stmt);
 
+}
+
+
+void TransactionLogger::bindCheck(sqlite3_stmt* stmt, int returnCode) {
+    if (returnCode != SQLITE_OK) {
+        sqlite3_finalize(stmt);
+        throw std::runtime_error(sqlite3_errmsg(db));
+    }
 }
