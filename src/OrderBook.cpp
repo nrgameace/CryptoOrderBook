@@ -4,7 +4,6 @@
 #include <queue>
 #include <iostream>
 #include <map>
-#include <sqlite3.h>
 #include <ctime>
 
 
@@ -34,7 +33,7 @@ bool OrderBook::addOrder(const Order& order) {
     return false;
 }
 
-
+// For testing only 
 bool OrderBook::operator==(const OrderBook& other) const{
     if (sellOffers.size() != other.sellOffers.size()) {
         return false;
