@@ -17,7 +17,7 @@ FetchContent_MakeAvailable(googletest)
 include_directories(include)
 
 # Shared source files as a library
-add_library(my_lib src/Order.cpp src/MatchingEngine.cpp src/OrderBook.cpp src/TransactionLogger.cpp src/Utils.cpp)
+add_library(my_lib src/Order.cpp src/MatchingEngine.cpp src/OrderBook.cpp src/TransactionLogger.cpp src/Utils.cpp src/MockTransactionLogger.cpp)
 target_link_libraries(my_lib PRIVATE sqlite3)
 
 # Main executable
@@ -25,7 +25,7 @@ add_executable(main.out src/Main.cpp)
 target_link_libraries(main.out PRIVATE my_lib)
 
 # Test executable
-add_executable(all_tests tests/TestOrder.cpp tests/TestOrderBook.cpp tests/TestMatchingEngine.cpp)
+add_executable(all_tests tests/TestOrder.cpp tests/TestOrderBook.cpp tests/TestMatchingEngine.cpp tests/TestTransactionLogger.cpp)
 target_link_libraries(all_tests PRIVATE my_lib gtest gtest_main)
 
 enable_testing()

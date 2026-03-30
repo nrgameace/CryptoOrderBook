@@ -310,6 +310,30 @@ src/MatchingEngine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MatchingEngine.cpp.s
 .PHONY : src/MatchingEngine.cpp.s
 
+src/MockTransactionLogger.o: src/MockTransactionLogger.cpp.o
+.PHONY : src/MockTransactionLogger.o
+
+# target to build an object file
+src/MockTransactionLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MockTransactionLogger.cpp.o
+.PHONY : src/MockTransactionLogger.cpp.o
+
+src/MockTransactionLogger.i: src/MockTransactionLogger.cpp.i
+.PHONY : src/MockTransactionLogger.i
+
+# target to preprocess a source file
+src/MockTransactionLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MockTransactionLogger.cpp.i
+.PHONY : src/MockTransactionLogger.cpp.i
+
+src/MockTransactionLogger.s: src/MockTransactionLogger.cpp.s
+.PHONY : src/MockTransactionLogger.s
+
+# target to generate assembly for a file
+src/MockTransactionLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MockTransactionLogger.cpp.s
+.PHONY : src/MockTransactionLogger.cpp.s
+
 src/Order.o: src/Order.cpp.o
 .PHONY : src/Order.o
 
@@ -478,6 +502,30 @@ tests/TestOrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrderBook.cpp.s
 .PHONY : tests/TestOrderBook.cpp.s
 
+tests/TestTransactionLogger.o: tests/TestTransactionLogger.cpp.o
+.PHONY : tests/TestTransactionLogger.o
+
+# target to build an object file
+tests/TestTransactionLogger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.o
+.PHONY : tests/TestTransactionLogger.cpp.o
+
+tests/TestTransactionLogger.i: tests/TestTransactionLogger.cpp.i
+.PHONY : tests/TestTransactionLogger.i
+
+# target to preprocess a source file
+tests/TestTransactionLogger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.i
+.PHONY : tests/TestTransactionLogger.cpp.i
+
+tests/TestTransactionLogger.s: tests/TestTransactionLogger.cpp.s
+.PHONY : tests/TestTransactionLogger.s
+
+# target to generate assembly for a file
+tests/TestTransactionLogger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.s
+.PHONY : tests/TestTransactionLogger.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -504,6 +552,9 @@ help:
 	@echo "... src/MatchingEngine.o"
 	@echo "... src/MatchingEngine.i"
 	@echo "... src/MatchingEngine.s"
+	@echo "... src/MockTransactionLogger.o"
+	@echo "... src/MockTransactionLogger.i"
+	@echo "... src/MockTransactionLogger.s"
 	@echo "... src/Order.o"
 	@echo "... src/Order.i"
 	@echo "... src/Order.s"
@@ -525,6 +576,9 @@ help:
 	@echo "... tests/TestOrderBook.o"
 	@echo "... tests/TestOrderBook.i"
 	@echo "... tests/TestOrderBook.s"
+	@echo "... tests/TestTransactionLogger.o"
+	@echo "... tests/TestTransactionLogger.i"
+	@echo "... tests/TestTransactionLogger.s"
 .PHONY : help
 
 

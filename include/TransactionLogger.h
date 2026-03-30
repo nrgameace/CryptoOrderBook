@@ -1,9 +1,10 @@
 #pragma once
 #include <sqlite3.h>
 #include <cstdint>
+#include "TransactionLoggerInterface.h"
 
 
-class TransactionLogger {
+class TransactionLogger : TransactionLoggerInterface{
     sqlite3* db;
 
     public:
