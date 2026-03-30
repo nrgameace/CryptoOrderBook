@@ -4,8 +4,8 @@
 #include "TransactionLogger.h"
 #include <stdexcept>
 
-MatchingEngine::MatchingEngine(OrderBook& book)
-    : book(book), log(TransactionLogger()) 
+MatchingEngine::MatchingEngine(OrderBook& book, TransactionLoggerInterface& log)
+    : book(book), log(log) 
     {}
 
 
@@ -115,6 +115,6 @@ const OrderBook& MatchingEngine::getBook() {
     return book;
 }
 
-const TransactionLogger& MatchingEngine::getLog() {
+const TransactionLoggerInterface& MatchingEngine::getLog() {
     return log;
 }

@@ -2,6 +2,7 @@
 #include "Order.h"
 #include "OrderBook.h"
 #include "MatchingEngine.h"
+#include "MockTransactionLogger.h"
 #include "Utils.h"
 #include <chrono>
 #include <thread>
@@ -20,7 +21,9 @@ TEST(TestMatchingEngine, TestConstructor) {
     book.addOrder(order1);
     book.addOrder(order2);
 
-    MatchingEngine engine {MatchingEngine(book)};
+    MockTransactionLogger logTemp {MockTransactionLogger()};
+    TransactionLoggerInterface& log1 = logTemp;
+    MatchingEngine engine {MatchingEngine(book, log1)};
 
     EXPECT_EQ(engine.getBook(), book);
 }
@@ -40,9 +43,10 @@ TEST(TestMatchingEngine, TestProcessOrder) {
     Order order5 {Order(typeSell, 20.0, 1.0, 105, 115)};
 
     OrderBook book {OrderBook()};
+    MockTransactionLogger logTemp {MockTransactionLogger()};
+    TransactionLoggerInterface& log2 = logTemp;
 
-
-    MatchingEngine engine {MatchingEngine(book)};
+    MatchingEngine engine {MatchingEngine(book, log2)};
     EXPECT_FALSE(engine.processOrder(order1, order4));
     EXPECT_THROW(engine.processOrder(order1, order2), std::runtime_error);
     EXPECT_TRUE(engine.processOrder(order3, order5));
@@ -73,8 +77,9 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     book1.addOrder(order5);
     book1.addOrder(order6);
 
-
-    MatchingEngine engine1 {MatchingEngine(book1)};
+    MockTransactionLogger logTemp {MockTransactionLogger()};
+    TransactionLoggerInterface& log3 = logTemp;
+    MatchingEngine engine1 {MatchingEngine(book1, log3)};
 
     EXPECT_FALSE(engine1.simulateMarket());
 
@@ -97,7 +102,9 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     book2.addOrder(order11);
     book2.addOrder(order12);
 
-    MatchingEngine engine2 {MatchingEngine(book2)};
+    MockTransactionLogger logTemp1 {MockTransactionLogger()};
+    TransactionLoggerInterface& log4 = logTemp1;
+    MatchingEngine engine2 {MatchingEngine(book2, log4)};
 
     EXPECT_TRUE(engine2.simulateMarket());
 
@@ -114,7 +121,9 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     book3.addOrder(order14);
     book3.addOrder(order15);
 
-    MatchingEngine engine3 {MatchingEngine(book3)};
+    MockTransactionLogger logTemp2 {MockTransactionLogger()};
+    TransactionLoggerInterface& log5 = logTemp2;
+    MatchingEngine engine3 {MatchingEngine(book3, log5)};
 
     EXPECT_FALSE(engine3.simulateMarket());
 
@@ -137,7 +146,9 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     book4.addOrder(order20);
     book4.addOrder(order21);
 
-    MatchingEngine engine4 {MatchingEngine(book4)};
+    MockTransactionLogger logTemp3 {MockTransactionLogger()};
+    TransactionLoggerInterface& log6 = logTemp3;
+    MatchingEngine engine4 {MatchingEngine(book4, log6)};
 
     EXPECT_FALSE(engine4.simulateMarket());
 

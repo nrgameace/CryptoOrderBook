@@ -4,7 +4,7 @@
 #include "TransactionLoggerInterface.h"
 #include "TradeRecord.h"
 
-class MockTransactionLogger : TransactionLoggerInterface {
+class MockTransactionLogger : public TransactionLoggerInterface {
     std::vector<TradeRecord> log;
 
     public:

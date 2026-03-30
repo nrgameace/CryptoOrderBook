@@ -4,7 +4,7 @@
 #include "TransactionLoggerInterface.h"
 
 
-class TransactionLogger : TransactionLoggerInterface{
+class TransactionLogger : public TransactionLoggerInterface{
     sqlite3* db;
 
     public:
