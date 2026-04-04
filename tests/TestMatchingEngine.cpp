@@ -82,6 +82,7 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     MatchingEngine engine1 {MatchingEngine(book1, log3)};
 
     EXPECT_FALSE(engine1.simulateMarket());
+    EXPECT_FALSE(book1.isBuySideEmpty() && book1.isSellSideEmpty());
 
     // Total buy qty (4.0) equals total sell qty (4.0) and all buy prices are >= sell prices, so the market fully clears.
     // Other values are chosen at random.
@@ -107,7 +108,10 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     MatchingEngine engine2 {MatchingEngine(book2, log4)};
 
     EXPECT_TRUE(engine2.simulateMarket());
-
+    EXPECT_TRUE(book2.isBuySideEmpty());
+    EXPECT_TRUE(book2.isSellSideEmpty());
+    EXPECT_EQ(book2.getBuyDepth(), 0);
+    EXPECT_EQ(book2.getSellDepth(), 0);
 
     // Only buy-side orders are added to test that the method returns false when one side of the book is empty. Values are chosen at random.
     Order order13 {Order(typeBuy, 20.0, 1.0, 101, 111)};
@@ -126,6 +130,9 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     MatchingEngine engine3 {MatchingEngine(book3, log5)};
 
     EXPECT_FALSE(engine3.simulateMarket());
+    EXPECT_FALSE(book3.isBuySideEmpty());
+    EXPECT_TRUE(book3.isSellSideEmpty());
+    EXPECT_EQ(book3.getBuyDepth(), 2);
 
     // Total quantities match (4.0 each) but the buy at 15.0 cannot match the sell at 20.0, leaving unmatched orders.
     // This tests that the spread check prevents invalid matches. Other values are chosen at random.
@@ -151,21 +158,7 @@ TEST(TestMatchingEngine, TestSimulateMarket) {
     MatchingEngine engine4 {MatchingEngine(book4, log6)};
 
     EXPECT_FALSE(engine4.simulateMarket());
-
-
-
-
+    EXPECT_FALSE(book4.isBuySideEmpty());
+    EXPECT_FALSE(book4.isSellSideEmpty());
 }
 
-// Print statements to check for order quantity. Use for debug only
-/**
- *  std::cout << order7.quantity << std::endl;
-    std::cout << order8.quantity << std::endl;
-    std::cout << order9.quantity << std::endl;
-    std::cout << order10.quantity << std::endl;
-    std::cout << order11.quantity << std::endl;
-    std::cout << order12.quantity << std::endl;
-    std::cout << std::endl;
-    std::cout << book2.buyOffers.size() << std::endl;
-    std::cout << book2.sellOffers.size() << std::endl;
- */

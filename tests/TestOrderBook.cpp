@@ -6,8 +6,6 @@
 #include <thread>
 
 TEST(TestOrderBook, AddOrder) {
-    // Both orders share the same price (20.0) to verify that buy and sell sides are stored separately at the same price level.
-    // Other values are chosen at random. order2 is added twice to test that duplicate orders are correctly placed in the same price-level queue.
     Order::OrderType typeBuy = Order::OrderType::buy;
     Order order1 {Order(typeBuy, 20.0, 1.0, 101, 111)};
 
@@ -24,17 +22,61 @@ TEST(TestOrderBook, AddOrder) {
     EXPECT_TRUE(value2);
     EXPECT_TRUE(value3);
 
-    auto mapBuy = book.buyOffers;
-    auto mapSell = book.sellOffers;
+    EXPECT_FALSE(book.isBuySideEmpty());
+    EXPECT_FALSE(book.isSellSideEmpty());
+    EXPECT_EQ(book.getBuyDepth(), 1);
+    EXPECT_EQ(book.getSellDepth(), 1);
 
-    EXPECT_EQ(mapBuy[order1.price].top(), order1);
-    EXPECT_EQ(mapSell[order2.price].top(), order2);
+    EXPECT_EQ(book.getBestBid(), order1);
+    EXPECT_EQ(book.getBestAsk(), order2);
 
-    mapSell[order2.price].pop();
+    book.removeBestAsk();
+    EXPECT_EQ(book.getBestAsk(), order2);
+}
 
-    EXPECT_EQ(mapSell[order2.price].top(), order2);
+TEST(TestOrderBook, EmptyBook) {
+    OrderBook book {OrderBook()};
 
+    EXPECT_TRUE(book.isBuySideEmpty());
+    EXPECT_TRUE(book.isSellSideEmpty());
+    EXPECT_EQ(book.getBuyDepth(), 0);
+    EXPECT_EQ(book.getSellDepth(), 0);
 
+    EXPECT_THROW(book.getBestBid(), std::runtime_error);
+    EXPECT_THROW(book.getBestAsk(), std::runtime_error);
+}
 
+TEST(TestOrderBook, RemoveOrders) {
+    OrderBook book {OrderBook()};
 
+    Order buy {Order(Order::OrderType::buy, 20.0, 1.0, 101, 111)};
+    Order sell {Order(Order::OrderType::sell, 20.0, 1.0, 102, 112)};
+
+    book.addOrder(buy);
+    book.addOrder(sell);
+
+    book.removeBestBid();
+    EXPECT_TRUE(book.isBuySideEmpty());
+    EXPECT_FALSE(book.isSellSideEmpty());
+
+    book.removeBestAsk();
+    EXPECT_TRUE(book.isBuySideEmpty());
+    EXPECT_TRUE(book.isSellSideEmpty());
+
+    EXPECT_THROW(book.removeBestBid(), std::runtime_error);
+    EXPECT_THROW(book.removeBestAsk(), std::runtime_error);
+}
+
+TEST(TestOrderBook, DepthMultiplePriceLevels) {
+    OrderBook book {OrderBook()};
+
+    book.addOrder(Order(Order::OrderType::buy, 20.0, 1.0, 101, 111));
+    book.addOrder(Order(Order::OrderType::buy, 25.0, 1.0, 102, 112));
+
+    book.addOrder(Order(Order::OrderType::sell, 30.0, 1.0, 103, 113));
+    book.addOrder(Order(Order::OrderType::sell, 35.0, 1.0, 104, 114));
+    book.addOrder(Order(Order::OrderType::sell, 40.0, 1.0, 105, 115));
+
+    EXPECT_EQ(book.getBuyDepth(), 2);
+    EXPECT_EQ(book.getSellDepth(), 3);
 }

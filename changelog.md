@@ -20,7 +20,7 @@ These aren't features — they're the baseline that any strong C++ engineer woul
 - This eliminates the SQLite dependency from all unit tests and lets the test suite run without a database
 - Refactor all existing `MatchingEngine` tests to use the mock
 
-#### 2. Encapsulate OrderBook Internals
+#### 2. Encapsulate OrderBook Internals - DONE
 - Make `buyOffers` and `sellOffers` private
 - Expose a clean public interface: `addOrder()`, `getBestBid()`, `getBestAsk()`, `removeBestBid()`, `removeBestAsk()`, `isBuySideEmpty()`, `isSellSideEmpty()`, `getBuyDepth()`, `getSellDepth()`
 - Refactor `MatchingEngine::simulateMarket()` to use these methods instead of directly manipulating the maps

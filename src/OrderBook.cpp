@@ -97,19 +97,23 @@ Order OrderBook::getBestAsk() {
 }
 
 void OrderBook::removeBestBid() {
-    if (buyOffers.empty() || buyOffers.begin()->second.empty()) {
+    if (buyOffers.empty() || buyOffers.begin()->second.empty())
         throw std::runtime_error("Buy side is empty");
-    }
-
-    sellOffers.begin()->second.pop();
+    auto it = buyOffers.begin();
+    it->second.pop();
+    if (it->second.empty()) buyOffers.erase(it);
 }
-
 
 void OrderBook::removeBestAsk() {
-    if (sellOffers.empty() || sellOffers.begin()->second.empty()) {
+    if (sellOffers.empty() || sellOffers.begin()->second.empty())
         throw std::runtime_error("Sell side is empty");
-    }
-
-    sellOffers.begin()->second.pop();
+    auto it = sellOffers.begin();
+    it->second.pop();
+    if (it->second.empty()) sellOffers.erase(it);
 }
+
+bool OrderBook::isBuySideEmpty() { return buyOffers.empty(); }
+bool OrderBook::isSellSideEmpty() { return sellOffers.empty(); }
+int OrderBook::getBuyDepth() { return static_cast<int>(buyOffers.size()); }
+int OrderBook::getSellDepth() { return static_cast<int>(sellOffers.size()); }
 

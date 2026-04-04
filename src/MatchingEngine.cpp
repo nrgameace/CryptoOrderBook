@@ -57,56 +57,22 @@ bool MatchingEngine::simulateMarket() {
     // Return true if both sides are empty return false if not
     // After market open, on new order added run simulate Market
     // Go until the market is empty or buy price is less than sell price
-    while (!book.buyOffers.empty() && !book.sellOffers.empty()) {
+    while (!book.isBuySideEmpty() && !book.isSellSideEmpty()) {
+        Order highestBuy = book.getBestBid();
+        Order lowestSell = book.getBestAsk();
 
-        // Create an iterator to go through each pair in market
-        auto iteratorBuyOffers = book.buyOffers.begin();
-        auto iteratorSellOffers = book.sellOffers.begin();
+        if (highestBuy.price < lowestSell.price) break;
 
-        // If queue is empty, erase the entire key-value pair
-        if (iteratorBuyOffers->second.empty()) {
-            book.buyOffers.erase(iteratorBuyOffers);
-            continue;
-        }
-        if (iteratorSellOffers->second.empty()) {
-            book.sellOffers.erase(iteratorSellOffers);
-            continue;
-        }
-
-        // Get orders and check
-        Order highestBuy = iteratorBuyOffers->second.top();
-        Order lowestSell = iteratorSellOffers->second.top();
-
-        if (highestBuy.price < lowestSell.price) {
-            break;
-        }
-
-        
         processOrder(highestBuy, lowestSell);
 
-        // Check to see if quantity is equal to zero, if it is, remove off the hashmap
-        iteratorBuyOffers->second.pop();
-        if (highestBuy.quantity > 0)
-            iteratorBuyOffers->second.push(highestBuy);
-        else if (iteratorBuyOffers->second.empty())
-            book.buyOffers.erase(iteratorBuyOffers);
+        book.removeBestBid();
+        if (highestBuy.quantity > 0) book.addOrder(highestBuy);
 
-        iteratorSellOffers->second.pop();
-        if (lowestSell.quantity > 0)
-            iteratorSellOffers->second.push(lowestSell);
-        else if (iteratorSellOffers->second.empty())
-            book.sellOffers.erase(iteratorSellOffers);
-
+        book.removeBestAsk();
+        if (lowestSell.quantity > 0) book.addOrder(lowestSell);
     }
 
-    if (book.buyOffers.empty() && book.sellOffers.empty()){
-        //std::cout << "Market is fully empty" << std::endl;
-        return true;
-    }
-    else {
-        //std::cout << "Market is not fully empty" << std::endl;
-        return false;
-    }
+    return book.isBuySideEmpty() && book.isSellSideEmpty();
     
 }
 
