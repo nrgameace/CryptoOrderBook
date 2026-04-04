@@ -80,3 +80,36 @@ bool OrderBook::operator==(const OrderBook& other) const{
 
     return true;
 }
+
+Order OrderBook::getBestBid() {
+
+    if (buyOffers.empty() || buyOffers.begin()->second.empty()) {
+        throw std::runtime_error("Buy side is empty");
+    }
+    return buyOffers.begin()->second.top();
+}
+
+Order OrderBook::getBestAsk() {
+    if (sellOffers.empty() || sellOffers.begin()->second.empty()) {
+        throw std::runtime_error("Sell side is empty");
+    }
+    return sellOffers.begin()->second.top();
+}
+
+void OrderBook::removeBestBid() {
+    if (buyOffers.empty() || buyOffers.begin()->second.empty()) {
+        throw std::runtime_error("Buy side is empty");
+    }
+
+    sellOffers.begin()->second.pop();
+}
+
+
+void OrderBook::removeBestAsk() {
+    if (sellOffers.empty() || sellOffers.begin()->second.empty()) {
+        throw std::runtime_error("Sell side is empty");
+    }
+
+    sellOffers.begin()->second.pop();
+}
+

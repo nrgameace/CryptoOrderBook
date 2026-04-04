@@ -184,3 +184,14 @@ events:
     message: |
       The system is: Darwin - 25.3.0 - arm64
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      The system is: Darwin - 25.3.0 - arm64
+...

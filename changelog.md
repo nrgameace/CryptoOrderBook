@@ -12,7 +12,7 @@ Implement tests for Order, OrderBook, and Matching Engine
 ### Phase 1: Core Architecture Fixes (Days 1-3)
 These aren't features — they're the baseline that any strong C++ engineer would expect to see.
 
-#### 1. Dependency Injection for TransactionLogger
+#### 1. Dependency Injection for TransactionLogger - DONE
 - Define an `ITransactionLogger` abstract interface with a pure virtual `logTrade()` method
 - Have `TransactionLogger` inherit from `ITransactionLogger`
 - Change `MatchingEngine` to accept an `ITransactionLogger&` or `std::unique_ptr<ITransactionLogger>` instead of constructing one internally
