@@ -27,7 +27,7 @@ These aren't features — they're the baseline that any strong C++ engineer woul
 - Update all tests to use the new interface
 - This is the single biggest code quality signal — it shows you understand encapsulation and API design
 
-#### 3. Fix Priority Queue Ordering for Time Priority
+#### 3. Fix Priority Queue Ordering for Time Priority - DONE
 - `std::priority_queue` is a max-heap, so `operator<` putting earlier timestamps as "less" means the *latest* order sits on top — the opposite of FIFO
 - Either flip `operator<` to return `timestamp > b.timestamp`, or provide a custom comparator to the priority queue
 - Add a targeted unit test: create 3 orders at the same price with deliberate sleep gaps, add them to a price level, and assert that `top()` returns the earliest order

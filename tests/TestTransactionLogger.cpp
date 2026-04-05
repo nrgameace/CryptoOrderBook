@@ -1,11 +1,7 @@
 #include <gtest/gtest.h>
-#include "Order.h"
-#include "OrderBook.h"
 #include "TradeRecord.h"
 #include "MockTransactionLogger.h"
-#include <chrono>
-#include <thread>
-#include <iostream>
+
 
 TEST(TestTransactionLogger, TestLogTrade) {
 

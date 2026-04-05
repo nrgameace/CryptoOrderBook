@@ -1,20 +1,17 @@
 #include <sqlite3.h>
 #include "TransactionLogger.h"
 #include "Utils.h"
-#include <iostream>
 #include <stdexcept>
+#include <string>
 
 
 
 TransactionLogger::TransactionLogger() {
     int rc = sqlite3_open("../Database/TransactionHistory.db", &db);
     if (rc != 0) {
-        std::cout << "Error connecting to database: " << sqlite3_errmsg(db) << std::endl;    
+        throw std::runtime_error(std::string("Error connecting to database: ") + sqlite3_errmsg(db));    
         db = nullptr;
         throw std::runtime_error("Database Connection Failed");
-    }
-    else {
-        std::cout << "Database connection successful!" << std::endl;
     }
 }
 
@@ -55,8 +52,6 @@ void TransactionLogger::logTrade(int buyUserId, int sellUserId, int64_t quantity
     rc = sqlite3_step(stmt);
     if (rc != SQLITE_DONE) {
         throw std::runtime_error(sqlite3_errmsg(db));
-    } else {
-        std::cout << "Row inserted successfully." << std::endl;
     }
 
     sqlite3_finalize(stmt);

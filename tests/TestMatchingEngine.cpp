@@ -3,10 +3,8 @@
 #include "OrderBook.h"
 #include "MatchingEngine.h"
 #include "MockTransactionLogger.h"
-#include "Utils.h"
 #include <chrono>
 #include <thread>
-#include <iostream>
 
 TEST(TestMatchingEngine, TestConstructor) {
     // Values are chosen at random. Only one buy and one sell order are needed to verify the engine holds a correct reference to the order book.
