@@ -96,6 +96,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/my_lib.dir/DependInfo.cmake"
   "CMakeFiles/main.out.dir/DependInfo.cmake"
   "CMakeFiles/all_tests.dir/DependInfo.cmake"
+  "CMakeFiles/benchmarks.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"

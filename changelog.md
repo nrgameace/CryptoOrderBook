@@ -33,7 +33,7 @@ These aren't features — they're the baseline that any strong C++ engineer woul
 - Add a targeted unit test: create 3 orders at the same price with deliberate sleep gaps, add them to a price level, and assert that `top()` returns the earliest order
 - Document the fix in a commit message that explains the bug and the reasoning — this shows you understand data structure invariants
 
-#### 4. General Code Cleanup
+#### 4. General Code Cleanup - DONE
 - Remove all commented-out debug code from `Main.cpp`, test files, and `MatchingEngine.cpp`
 - Remove unnecessary includes: `<sqlite3.h>` from `OrderBook.h`, unused headers from source files
 - Add `const` to `getBook()` and `getLog()` method signatures

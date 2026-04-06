@@ -211,6 +211,19 @@ all_tests/fast:
 .PHONY : all_tests/fast
 
 #=============================================================================
+# Target rules for targets named benchmarks
+
+# Build rule for target.
+benchmarks: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmarks
+.PHONY : benchmarks
+
+# fast build rule for target.
+benchmarks/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarks.dir/build.make CMakeFiles/benchmarks.dir/build
+.PHONY : benchmarks/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -261,6 +274,30 @@ gtest_main: cmake_check_build_system
 gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
+
+benchmarks/Benchmarks.o: benchmarks/Benchmarks.cpp.o
+.PHONY : benchmarks/Benchmarks.o
+
+# target to build an object file
+benchmarks/Benchmarks.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarks.dir/build.make CMakeFiles/benchmarks.dir/benchmarks/Benchmarks.cpp.o
+.PHONY : benchmarks/Benchmarks.cpp.o
+
+benchmarks/Benchmarks.i: benchmarks/Benchmarks.cpp.i
+.PHONY : benchmarks/Benchmarks.i
+
+# target to preprocess a source file
+benchmarks/Benchmarks.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarks.dir/build.make CMakeFiles/benchmarks.dir/benchmarks/Benchmarks.cpp.i
+.PHONY : benchmarks/Benchmarks.cpp.i
+
+benchmarks/Benchmarks.s: benchmarks/Benchmarks.cpp.s
+.PHONY : benchmarks/Benchmarks.s
+
+# target to generate assembly for a file
+benchmarks/Benchmarks.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarks.dir/build.make CMakeFiles/benchmarks.dir/benchmarks/Benchmarks.cpp.s
+.PHONY : benchmarks/Benchmarks.cpp.s
 
 src/Main.o: src/Main.cpp.o
 .PHONY : src/Main.o
@@ -540,12 +577,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... all_tests"
+	@echo "... benchmarks"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... main.out"
 	@echo "... my_lib"
+	@echo "... benchmarks/Benchmarks.o"
+	@echo "... benchmarks/Benchmarks.i"
+	@echo "... benchmarks/Benchmarks.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"

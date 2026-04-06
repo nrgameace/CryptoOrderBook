@@ -28,5 +28,8 @@ target_link_libraries(main.out PRIVATE my_lib)
 add_executable(all_tests tests/TestOrder.cpp tests/TestOrderBook.cpp tests/TestMatchingEngine.cpp tests/TestTransactionLogger.cpp)
 target_link_libraries(all_tests PRIVATE my_lib gtest gtest_main)
 
+add_executable(benchmarks benchmarks/Benchmarks.cpp)
+target_link_libraries(benchmarks PRIVATE my_lib)
+
 enable_testing()
 add_test(NAME MyTests COMMAND all_tests)
