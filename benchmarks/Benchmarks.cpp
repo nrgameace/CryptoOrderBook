@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <chrono>
 #include <random>
@@ -10,21 +11,29 @@
 
 void benchmarkAddOrder(int N) {
     OrderBook book;
-   
-    std::mt19937 rng(42);
-    std::uniform_int_distribution<int> dist(90,110);
 
-    auto start = std::chrono::high_resolution_clock::now();
+    std::mt19937 rng(42);
+    std::uniform_int_distribution<int> dist(90, 110);
+
+    std::vector<int64_t> latencies;
+    latencies.reserve(N);
+
     for (int i {}; i < N; i++) {
+        auto start = std::chrono::high_resolution_clock::now();
         book.addOrder(Order(Order::OrderType::buy, dist(rng), 1.0, i, i));
+        auto end = std::chrono::high_resolution_clock::now();
+        latencies.push_back(std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count());
     }
 
-    auto end = std::chrono::high_resolution_clock::now();
-    auto total = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    std::sort(latencies.begin(), latencies.end());
+    int64_t total = 0;
+    for (int64_t t : latencies) total += t;
 
     std::cout << "addOrder x" << N
-              << " | total: " << total.count() << " ns"
-              << " | mean: "  << total.count() / N << " ns/op\n";
+              << " | total: " << total << " ns"
+              << " | mean: "  << total / N << " ns/op"
+              << " | p50: "   << latencies[N * 0.50] << " ns"
+              << " | p99: "   << latencies[N * 0.99] << " ns\n";
 }
 
 
@@ -41,21 +50,28 @@ void benchmarkProcessOrder(int N) {
     std::vector<Order> buyOrders, sellOrders;
     for (int i {}; i < N; ++i) {
         buyOrders.push_back(Order(Order::OrderType::buy,  dist(rng), 1.0, i, i));
-        sellOrders.push_back(Order(Order::OrderType::sell, dist(rng), 1.0, i, i));
+        sellOrders.push_back(Order(Order::OrderType::sell, dist(rng), 1.0, i + N, i));
     }
 
-    auto start = std::chrono::high_resolution_clock::now();
+    std::vector<int64_t> latencies;
+    latencies.reserve(N);
 
     for (int i = 0; i < N; ++i) {
+        auto start = std::chrono::high_resolution_clock::now();
         engine.processOrder(buyOrders[i], sellOrders[i]);
+        auto end = std::chrono::high_resolution_clock::now();
+        latencies.push_back(std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count());
     }
 
-    auto end = std::chrono::high_resolution_clock::now();
-    auto total = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    std::sort(latencies.begin(), latencies.end());
+    int64_t total = 0;
+    for (int64_t t : latencies) total += t;
 
     std::cout << "processOrder x" << N
-              << " | total: " << total.count() << " ns"
-              << " | mean: "  << total.count() / N << " ns/op\n";
+              << " | total: " << total << " ns"
+              << " | mean: "  << total / N << " ns/op"
+              << " | p50: "   << latencies[N * 0.50] << " ns"
+              << " | p99: "   << latencies[N * 0.99] << " ns\n";
 }
 
 void benchmarkSimulateMarket(int N) {
@@ -79,10 +95,10 @@ void benchmarkSimulateMarket(int N) {
     auto end = std::chrono::high_resolution_clock::now();
     auto total = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
     
-    auto throughput {N / total.count()};
+    auto throughput {(double)N / (total.count() / 1e9)};
 
     std::cout << "simulateMarket x" << N
-              << " | total: " << total.count() << " ns"
+              << " | total: " << total.count() << " order/sec"
               << " | throughput: "  << throughput << " ns/op\n";
     
 

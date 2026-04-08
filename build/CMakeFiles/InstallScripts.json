@@ -4,7 +4,9 @@
 		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/cmake_install.cmake",
 		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-build/cmake_install.cmake",
 		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-build/googlemock/cmake_install.cmake",
-		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-build/googletest/cmake_install.cmake"
+		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-build/googletest/cmake_install.cmake",
+		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/httplib-build/cmake_install.cmake",
+		"/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/nlohmann_json-build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

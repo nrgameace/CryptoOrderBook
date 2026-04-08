@@ -65,6 +65,26 @@ CMAKE_BINARY_DIR = /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrder
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
+	/opt/homebrew/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
+	/opt/homebrew/bin/cpack --config ./CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+.PHONY : package_source/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
@@ -97,7 +117,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"gmock\" \"gtest\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -419,6 +439,30 @@ src/OrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/OrderBook.cpp.s
 .PHONY : src/OrderBook.cpp.s
 
+src/PriceGenerator.o: src/PriceGenerator.cpp.o
+.PHONY : src/PriceGenerator.o
+
+# target to build an object file
+src/PriceGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/PriceGenerator.cpp.o
+.PHONY : src/PriceGenerator.cpp.o
+
+src/PriceGenerator.i: src/PriceGenerator.cpp.i
+.PHONY : src/PriceGenerator.i
+
+# target to preprocess a source file
+src/PriceGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/PriceGenerator.cpp.i
+.PHONY : src/PriceGenerator.cpp.i
+
+src/PriceGenerator.s: src/PriceGenerator.cpp.s
+.PHONY : src/PriceGenerator.s
+
+# target to generate assembly for a file
+src/PriceGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/PriceGenerator.cpp.s
+.PHONY : src/PriceGenerator.cpp.s
+
 src/TransactionLogger.o: src/TransactionLogger.cpp.o
 .PHONY : src/TransactionLogger.o
 
@@ -574,6 +618,8 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... package"
+	@echo "... package_source"
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... all_tests"
@@ -602,6 +648,9 @@ help:
 	@echo "... src/OrderBook.o"
 	@echo "... src/OrderBook.i"
 	@echo "... src/OrderBook.s"
+	@echo "... src/PriceGenerator.o"
+	@echo "... src/PriceGenerator.i"
+	@echo "... src/PriceGenerator.s"
 	@echo "... src/TransactionLogger.o"
 	@echo "... src/TransactionLogger.i"
 	@echo "... src/TransactionLogger.s"
