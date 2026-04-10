@@ -14,8 +14,14 @@
 # EXTERNAL cache entries
 ########################
 
+//Build documentation
+BUILD_DOCS:BOOL=ON
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
+
+//Build tests cases
+BUILD_TESTS:BOOL=OFF
 
 //The path to Brotli's include directory.
 Brotli_INCLUDE_DIR:PATH=/opt/homebrew/include
@@ -350,6 +356,12 @@ CryptoOrderBook_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 CryptoOrderBook_SOURCE_DIR:STATIC=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook
 
+//Dot tool for use with Doxygen
+DOXYGEN_DOT_EXECUTABLE:FILEPATH=DOXYGEN_DOT_EXECUTABLE-NOTFOUND
+
+//Doxygen documentation generation tool (https://www.doxygen.nl)
+DOXYGEN_EXECUTABLE:FILEPATH=DOXYGEN_EXECUTABLE-NOTFOUND
+
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps
 
@@ -359,6 +371,10 @@ FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
 
 //Enables QUIET option for all content population
 FETCHCONTENT_QUIET:BOOL=ON
+
+//When not empty, overrides where to find pre-populated content
+// for dotenv-cpp
+FETCHCONTENT_SOURCE_DIR_DOTENV-CPP:PATH=
 
 //When not empty, overrides where to find pre-populated content
 // for googletest
@@ -374,6 +390,9 @@ FETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON:PATH=
 
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of dotenv-cpp
+FETCHCONTENT_UPDATES_DISCONNECTED_DOTENV-CPP:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
@@ -561,6 +580,15 @@ httplib_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 httplib_SOURCE_DIR:STATIC=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/httplib-src
+
+//Value Computed by CMake
+laserpants_dotenv_BINARY_DIR:STATIC=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/dotenv-cpp-build
+
+//Value Computed by CMake
+laserpants_dotenv_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+laserpants_dotenv_SOURCE_DIR:STATIC=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/dotenv-cpp-src
 
 //Value Computed by CMake
 nlohmann_json_BINARY_DIR:STATIC=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/nlohmann_json-build
@@ -912,6 +940,10 @@ CPACK_SOURCE_TXZ-ADVANCED:INTERNAL=1
 CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_SOURCE_ZIP
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DOXYGEN_DOT_EXECUTABLE
+DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DOXYGEN_EXECUTABLE
+DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14][found components: Interpreter ][v3.14.3()]
 //Details about finding Threads

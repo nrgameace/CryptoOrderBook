@@ -1,25 +1,45 @@
 #include "PriceGenerator.h"
 #include "httplib.h"
+#include "dotenv.h"
 #include <nlohmann/json.hpp>
 #include "Order.h"
+#include "Utils.h"
 #include <vector>
 #include <stdexcept>
 #include <iostream>
+#include <string>
+#include <cstdlib>
+#include <random>
+
+
 
 
 PriceGenerator::PriceGenerator() 
-    : currentPrice(0.0), orders(std::vector<Order>()) {}
+    :currentPrice(0.0), orders(std::vector<Order>()) {}
 
 
 void PriceGenerator::updatePrice() {
     httplib::Client cli("https://pro-api.coinmarketcap.com");
 
-    auto response = cli.Get("/v1/cryptocurrency/listings/latest?symbol=BTC");
+    dotenv::init("../.env"); 
+
+    const char* apiKey = std::getenv("COIN_MARKET_API_KEY");
+
+    if (!apiKey) {
+        throw std::runtime_error("API Key Not Loaded");
+    }
+
+    httplib::Headers headers = {
+      {"X-CMC_PRO_API_KEY", apiKey},
+    };
+
+    auto response = cli.Get("/v1/cryptocurrency/listings/latest?symbol=BTC", headers);
 
     if (response && response->status == 200) {
         auto json = nlohmann::json::parse(response->body);
-        auto currentPrice = json["data"][0]["quote"]["USD"]["price"];
-        std::cout << currentPrice << std::endl;
+        auto currentPriceTemp = json["data"][0]["quote"]["USD"]["price"];
+
+        currentPrice = currentPriceTemp;
     }
     else {
         std::cout << response->status << std::endl;
@@ -27,108 +47,34 @@ void PriceGenerator::updatePrice() {
     }
 
 }
-/** 
 
-{
-  "data": [
-    {
-      "id": 1,
-      "name": "Bitcoin",
-      "symbol": "BTC",
-      "slug": "bitcoin",
-      "cmc_rank": 5,
-      "num_market_pairs": 500,
-      "circulating_supply": 16950100,
-      "total_supply": 16950100,
-      "max_supply": 21000000,
-      "infinite_supply": false,
-      "last_updated": "2018-06-02T22:51:28.209Z",
-      "date_added": "2013-04-28T00:00:00.000Z",
-      "tags": [
-        "mineable"
-      ],
-      "platform": null,
-      "self_reported_circulating_supply": null,
-      "self_reported_market_cap": null,
-      "minted_market_cap": 1802955697670.94,
-      "quote": {
-        "USD": {
-          "price": 9283.92,
-          "volume_24h": 7155680000,
-          "volume_change_24h": -0.152774,
-          "percent_change_1h": -0.152774,
-          "percent_change_24h": 0.518894,
-          "percent_change_7d": 0.986573,
-          "market_cap": 852164659250.2758,
-          "market_cap_dominance": 51,
-          "fully_diluted_market_cap": 952835089431.14,
-          "last_updated": "2018-08-09T22:53:32.000Z"
-        },
-        "BTC": {
-          "price": 1,
-          "volume_24h": 772012,
-          "volume_change_24h": 0,
-          "percent_change_1h": 0,
-          "percent_change_24h": 0,
-          "percent_change_7d": 0,
-          "market_cap": 17024600,
-          "market_cap_dominance": 12,
-          "fully_diluted_market_cap": 952835089431.14,
-          "last_updated": "2018-08-09T22:53:32.000Z"
-        }
-      }
-    },
-    {
-      "id": 1027,
-      "name": "Ethereum",
-      "symbol": "ETH",
-      "slug": "ethereum",
-      "num_market_pairs": 6360,
-      "circulating_supply": 16950100,
-      "total_supply": 16950100,
-      "max_supply": 21000000,
-      "infinite_supply": false,
-      "last_updated": "2018-06-02T22:51:28.209Z",
-      "date_added": "2013-04-28T00:00:00.000Z",
-      "tags": [
-        "mineable"
-      ],
-      "platform": null,
-      "minted_market_cap": 364793475572.53,
-      "quote": {
-        "USD": {
-          "price": 1283.92,
-          "volume_24h": 7155680000,
-          "volume_change_24h": -0.152774,
-          "percent_change_1h": -0.152774,
-          "percent_change_24h": 0.518894,
-          "percent_change_7d": 0.986573,
-          "market_cap": 158055024432,
-          "market_cap_dominance": 51,
-          "fully_diluted_market_cap": 952835089431.14,
-          "last_updated": "2018-08-09T22:53:32.000Z"
-        },
-        "ETH": {
-          "price": 1,
-          "volume_24h": 772012,
-          "volume_change_24h": -0.152774,
-          "percent_change_1h": 0,
-          "percent_change_24h": 0,
-          "percent_change_7d": 0,
-          "market_cap": 17024600,
-          "market_cap_dominance": 12,
-          "fully_diluted_market_cap": 952835089431.14,
-          "last_updated": "2018-08-09T22:53:32.000Z"
-        }
-      }
-    }
-  ],
-  "status": {
-    "timestamp": "2018-06-02T22:51:28.209Z",
-    "error_code": 0,
-    "error_message": "",
-    "elapsed": 10,
-    "credit_count": 1
-  }
+std::vector<Order> PriceGenerator::getOrders() {
+    return orders;
 }
-*/
+
+void PriceGenerator::generateOrders(int numOrders) {
+    std::random_device seed;
+    std::mt19937 gen(seed());
+
+	updatePrice();
+	
+    std::normal_distribution<double> priceDist(currentPrice, 15);
+    std::uniform_int_distribution<int> sideDist{0, 1};
+
+
+
+    for (int i {}; i < numOrders; i++) {
+        int priceTemp = priceDist(seed);
+        int randomSide = sideDist(seed);
+
+        Order::OrderType side = Order::OrderType::buy;
+        double quantity = 2.0;
+
+        if (randomSide == 1)
+          side = Order::OrderType::sell;
+
+        Order temp {Order(side, priceTemp, quantity, 1, 1)};
+		orders.push_back(temp);
+    }
+
+}

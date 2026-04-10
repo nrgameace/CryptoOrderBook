@@ -6,6 +6,7 @@
 #include <ctime>
 #include <chrono>
 #include <thread>
+#include <vector>
 #include <sqlite3.h>
 #include "MatchingEngine.h"
 #include "PriceGenerator.h"
@@ -13,9 +14,10 @@
 int main() {
     PriceGenerator gen {PriceGenerator()};
 
-    gen.updatePrice();
-    
-    std::cout << "No error" << std::endl;
-    return 0;
+    gen.generateOrders(100);
+
+    std::vector<Order> arr = gen.getOrders();
+
+    std::cout << arr.size() << std::endl;
 
 }

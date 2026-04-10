@@ -6,14 +6,14 @@
 class PriceGenerator {
 
     private:
-        int64_t currentPrice;
+        double currentPrice;
         std::vector<Order> orders;
 
     public:
         PriceGenerator();
         void updatePrice();
         std::vector<Order> getOrders();
-        void generateOrders();
+        void generateOrders(int numOrders);
 
 
 };
