@@ -45,7 +45,7 @@ These aren't features — they're the baseline that any strong C++ engineer woul
 ### Phase 2: Performance Benchmarking (Days 4-6)
 This is the highest-signal addition for quant recruiting. Every quant firm cares about latency.
 
-#### 5. Microbenchmark the Matching Engine - DONE
+#### 5. Microbenchmark the Matching Engine - DONE!
 - Create a `benchmarks/` directory with a dedicated benchmark binary
 - Use `std::chrono::high_resolution_clock` to measure:
   - Order insertion latency (time to call `addOrder()` for a single order)
