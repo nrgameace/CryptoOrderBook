@@ -2,6 +2,9 @@
 #include "TransactionLoggerInterface.h"
 #include "OrderBook.h"
 #include "Order.h"
+
+class MarketStats;
+
 class MatchingEngine {
 
     OrderBook& book;
@@ -11,7 +14,7 @@ class MatchingEngine {
     public:
         MatchingEngine(OrderBook& book, TransactionLoggerInterface& log);
         bool processOrder(Order& orderBuy, Order& orderSell);
-        bool simulateMarket();
+        bool simulateMarket(MarketStats* stats = nullptr);
         const OrderBook& getBook();
         const TransactionLoggerInterface& getLog();
 

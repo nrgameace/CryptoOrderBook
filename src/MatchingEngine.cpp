@@ -1,4 +1,5 @@
 #include "MatchingEngine.h"
+#include "MarketStats.h"
 #include "OrderBook.h"
 #include "Order.h"
 #include "TransactionLogger.h"
@@ -51,19 +52,19 @@ bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
  * @brief simulates the entire market by repeadetly processing orders based on timestamp and price
  * @return True if all orders have been fufilled and market is empty, False if not
  */
-bool MatchingEngine::simulateMarket() {
-    // Goes until one hashmap is empty
-    // While loop that goes through and processes the order using the function
-    // Return true if both sides are empty return false if not
-    // After market open, on new order added run simulate Market
-    // Go until the market is empty or buy price is less than sell price
+bool MatchingEngine::simulateMarket(MarketStats* stats) {
     while (!book.isBuySideEmpty() && !book.isSellSideEmpty()) {
         Order highestBuy = book.getBestBid();
         Order lowestSell = book.getBestAsk();
 
         if (highestBuy.price < lowestSell.price) break;
 
+        int64_t tradeQty   = std::min(highestBuy.quantity, lowestSell.quantity);
+        int64_t tradePrice = (lowestSell.getTimestamp() < highestBuy.getTimestamp())
+                               ? lowestSell.price : highestBuy.price;
+
         processOrder(highestBuy, lowestSell);
+        if (stats) stats->recordTrade(tradePrice, tradeQty);
 
         book.removeBestBid();
         if (highestBuy.quantity > 0) book.addOrder(highestBuy);
@@ -72,8 +73,13 @@ bool MatchingEngine::simulateMarket() {
         if (lowestSell.quantity > 0) book.addOrder(lowestSell);
     }
 
+    if (stats) {
+        if (!book.isBuySideEmpty() && !book.isSellSideEmpty())
+            stats->updateSpread(book.getBestBid().price, book.getBestAsk().price);
+        stats->printSummary();
+    }
+
     return book.isBuySideEmpty() && book.isSellSideEmpty();
-    
 }
 
 

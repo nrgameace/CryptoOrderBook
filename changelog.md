@@ -68,7 +68,7 @@ This is the highest-signal addition for quant recruiting. Every quant firm cares
 ### Phase 3: Quantitative Features (Days 7-10)
 This adds the "quant" to your project and gives you something mathematical to discuss in interviews.
 
-#### 7. Real-Time Market Statistics Engine
+#### 7. Real-Time Market Statistics Engine - Done
 - Create a `MarketStats` class that computes rolling statistics from executed trades:
   - **VWAP** (Volume-Weighted Average Price): `sum(price * quantity) / sum(quantity)` over a configurable window
   - **Bid-ask spread**: difference between best bid and best ask, tracked over time
@@ -79,7 +79,7 @@ This adds the "quant" to your project and gives you something mathematical to di
 - Print a market summary after each `simulateMarket()` call showing current VWAP, spread, volume, and volatility
 - Add unit tests that verify statistical calculations against hand-computed expected values
 
-#### 8. Live Price Feed Integration
+#### 8. Live Price Feed Integration - Done
 - Use `cpp-httplib` (header-only, no build complexity) to make HTTP GET requests to the CoinGecko free API (`/api/v3/simple/price`)
 - Fetch real BTC/ETH/SOL prices on startup
 - Create an `OrderGenerator` class that produces randomized orders around the real price:

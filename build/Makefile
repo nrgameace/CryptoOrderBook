@@ -343,6 +343,30 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.out.dir/build.make CMakeFiles/main.out.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
+src/MarketStats.o: src/MarketStats.cpp.o
+.PHONY : src/MarketStats.o
+
+# target to build an object file
+src/MarketStats.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MarketStats.cpp.o
+.PHONY : src/MarketStats.cpp.o
+
+src/MarketStats.i: src/MarketStats.cpp.i
+.PHONY : src/MarketStats.i
+
+# target to preprocess a source file
+src/MarketStats.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MarketStats.cpp.i
+.PHONY : src/MarketStats.cpp.i
+
+src/MarketStats.s: src/MarketStats.cpp.s
+.PHONY : src/MarketStats.s
+
+# target to generate assembly for a file
+src/MarketStats.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/MarketStats.cpp.s
+.PHONY : src/MarketStats.cpp.s
+
 src/MatchingEngine.o: src/MatchingEngine.cpp.o
 .PHONY : src/MatchingEngine.o
 
@@ -511,6 +535,30 @@ src/Utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Utils.cpp.s
 .PHONY : src/Utils.cpp.s
 
+tests/TestMarketStats.o: tests/TestMarketStats.cpp.o
+.PHONY : tests/TestMarketStats.o
+
+# target to build an object file
+tests/TestMarketStats.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestMarketStats.cpp.o
+.PHONY : tests/TestMarketStats.cpp.o
+
+tests/TestMarketStats.i: tests/TestMarketStats.cpp.i
+.PHONY : tests/TestMarketStats.i
+
+# target to preprocess a source file
+tests/TestMarketStats.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestMarketStats.cpp.i
+.PHONY : tests/TestMarketStats.cpp.i
+
+tests/TestMarketStats.s: tests/TestMarketStats.cpp.s
+.PHONY : tests/TestMarketStats.s
+
+# target to generate assembly for a file
+tests/TestMarketStats.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestMarketStats.cpp.s
+.PHONY : tests/TestMarketStats.cpp.s
+
 tests/TestMatchingEngine.o: tests/TestMatchingEngine.cpp.o
 .PHONY : tests/TestMatchingEngine.o
 
@@ -636,6 +684,9 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
+	@echo "... src/MarketStats.o"
+	@echo "... src/MarketStats.i"
+	@echo "... src/MarketStats.s"
 	@echo "... src/MatchingEngine.o"
 	@echo "... src/MatchingEngine.i"
 	@echo "... src/MatchingEngine.s"
@@ -657,6 +708,9 @@ help:
 	@echo "... src/Utils.o"
 	@echo "... src/Utils.i"
 	@echo "... src/Utils.s"
+	@echo "... tests/TestMarketStats.o"
+	@echo "... tests/TestMarketStats.i"
+	@echo "... tests/TestMarketStats.s"
 	@echo "... tests/TestMatchingEngine.o"
 	@echo "... tests/TestMatchingEngine.i"
 	@echo "... tests/TestMatchingEngine.s"

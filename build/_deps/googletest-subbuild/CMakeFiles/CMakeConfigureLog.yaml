@@ -36,11 +36,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pkg/env/active/bin/"
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
       - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
+      - "/Users/nickolasregas/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/uname"
       - "/opt/homebrew/opt/openjdk/bin/uname"
@@ -70,6 +72,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pkg/env/active/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
@@ -81,6 +84,7 @@ events:
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Users/nickolasregas/.lmstudio/bin"
+        - "/Users/nickolasregas/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -88,11 +92,11 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
       - "CMakeLists.txt:16 (project)"
     message: |
-      The system is: Darwin - 25.3.0 - arm64
+      The system is: Darwin - 25.4.0 - arm64
   -
     kind: "find-v1"
     backtrace:
-      - "/opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake:76 (find_program)"
+      - "/opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake:66 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
       - "CMakeLists.txt:16 (project)"
     mode: "program"
@@ -125,11 +129,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pkg/env/active/bin/"
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
       - "/opt/homebrew/Caskroom/miniconda/base/condabin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
+      - "/Users/nickolasregas/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/install_name_tool"
       - "/opt/homebrew/opt/openjdk/bin/install_name_tool"
@@ -159,6 +165,7 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pkg/env/active/bin"
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
@@ -170,28 +177,7 @@ events:
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Users/nickolasregas/.lmstudio/bin"
+        - "/Users/nickolasregas/.vscode/extensions/vscjava.vscode-java-debug-0.58.5/bundled/scripts/noConfigScripts"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
-...
-
----
-events:
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:16 (project)"
-    message: |
-      The system is: Darwin - 25.3.0 - arm64
-...
-
----
-events:
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:16 (project)"
-    message: |
-      The system is: Darwin - 25.3.0 - arm64
 ...

@@ -9,7 +9,11 @@
 #include <vector>
 #include <sqlite3.h>
 #include "MatchingEngine.h"
+#include "MarketStats.h"
 #include "PriceGenerator.h"
+#include "TransactionLogger.h"
+#include "TransactionLoggerInterface.h"
+#include "httplib.h"
 
 int main() {
     PriceGenerator gen {PriceGenerator()};
@@ -18,6 +22,23 @@ int main() {
 
     std::vector<Order> arr = gen.getOrders();
 
+    TransactionLogger log {TransactionLogger()};
+    
+    TransactionLoggerInterface& logPerm = log;
+
+
+    OrderBook book {OrderBook()};
+    MatchingEngine eng {MatchingEngine(book, logPerm)};
+
+    for (Order order : arr) {
+        book.addOrder(order);
+    }
+
+    MarketStats stats;
+    eng.simulateMarket(&stats);
+
     std::cout << arr.size() << std::endl;
+    
+    return 0;
 
 }
