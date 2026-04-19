@@ -47,7 +47,8 @@ double MarketStats::getVolume() const {
     for (int i = 0; i < count; i++) {
         const TradePoint& t = buffer[(start + i) % windowTrades];
         double age = std::chrono::duration<double>(now - t.time).count();
-        if (age < windowSeconds) sumQ += convertToDouble(t.quantity);
+        if (age < windowSeconds) 
+            sumQ += convertToDouble(t.quantity);
     }
     return sumQ;
 }
@@ -55,7 +56,8 @@ double MarketStats::getVolume() const {
 double MarketStats::getVolatility() const {
     int count = full ? windowTrades : static_cast<int>(head);
     int start = full ? static_cast<int>(head) : 0;
-    if (count < 2) return 0.0;
+    if (count < 2) 
+        return 0.0;
     double mean = 0.0, M2 = 0.0;
     for (int i = 0; i < count; i++) {
         double p = convertToDouble(buffer[(start + i) % windowTrades].price);
