@@ -9,13 +9,13 @@
 
 class Simulator {
     std::queue<Order> transitionQueue;
-    MatchingEngine engine;
+    MatchingEngine& engine;
     std::mutex mtx;
     std::condition_variable empty;
     std::atomic<bool> running;
 
     public:
-        Simulator();
+        Simulator(MatchingEngine& eng);
         void producerLoop();
         void consumerLoop();
         void start();

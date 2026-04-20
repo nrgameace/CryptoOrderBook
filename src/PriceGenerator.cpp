@@ -61,6 +61,8 @@ void PriceGenerator::generateOrders(int numOrders) {
     std::normal_distribution<double> priceDist(currentPrice, 15);
     std::uniform_int_distribution<int> sideDist{0, 1};
 
+    orders = std::vector<Order>();
+
 
 
     for (int i {}; i < numOrders; i++) {
