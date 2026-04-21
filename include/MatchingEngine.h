@@ -17,6 +17,7 @@ class MatchingEngine {
         bool simulateMarket(MarketStats* stats = nullptr);
         const OrderBook& getBook();
         const TransactionLoggerInterface& getLog();
+        void addOrder(Order& order);
 
 
 };

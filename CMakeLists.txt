@@ -32,7 +32,7 @@ FetchContent_MakeAvailable(googletest httplib nlohmann_json)
 include_directories(include)
 
 # Shared source files as a library
-add_library(my_lib src/Order.cpp src/MatchingEngine.cpp src/OrderBook.cpp src/TransactionLogger.cpp src/Utils.cpp src/MockTransactionLogger.cpp src/PriceGenerator.cpp src/MarketStats.cpp)
+add_library(my_lib src/Order.cpp src/MatchingEngine.cpp src/OrderBook.cpp src/TransactionLogger.cpp src/Utils.cpp src/MockTransactionLogger.cpp src/PriceGenerator.cpp src/MarketStats.cpp src/Simulator.cpp)
 target_link_libraries(my_lib PRIVATE sqlite3 httplib::httplib nlohmann_json::nlohmann_json)
 
 # Main executable

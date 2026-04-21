@@ -14,8 +14,36 @@
 #include "TransactionLogger.h"
 #include "TransactionLoggerInterface.h"
 #include "httplib.h"
+#include "Simulator.h"
 
 int main() {
+
+    PriceGenerator gen {PriceGenerator()};
+
+    gen.generateOrders(100);
+
+    std::vector<Order> arr = gen.getOrders();
+
+    TransactionLogger log {TransactionLogger()};
+    
+    TransactionLoggerInterface& logPerm = log;
+
+
+    OrderBook book {OrderBook()};
+    MatchingEngine eng {MatchingEngine(book, logPerm)};
+
+    Simulator simulator {Simulator(eng)};
+
+
+    std::thread stopper([&] {
+        std::cin.get();  // wait for Enter key
+        simulator.stop();
+    });
+
+    simulator.start();
+    stopper.join();
+
+    /** 
     PriceGenerator gen {PriceGenerator()};
 
     gen.generateOrders(100);
@@ -40,5 +68,6 @@ int main() {
     std::cout << arr.size() << std::endl;
     
     return 0;
+    */
 
 }

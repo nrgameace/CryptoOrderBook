@@ -487,6 +487,30 @@ src/PriceGenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/PriceGenerator.cpp.s
 .PHONY : src/PriceGenerator.cpp.s
 
+src/Simulator.o: src/Simulator.cpp.o
+.PHONY : src/Simulator.o
+
+# target to build an object file
+src/Simulator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Simulator.cpp.o
+.PHONY : src/Simulator.cpp.o
+
+src/Simulator.i: src/Simulator.cpp.i
+.PHONY : src/Simulator.i
+
+# target to preprocess a source file
+src/Simulator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Simulator.cpp.i
+.PHONY : src/Simulator.cpp.i
+
+src/Simulator.s: src/Simulator.cpp.s
+.PHONY : src/Simulator.s
+
+# target to generate assembly for a file
+src/Simulator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/Simulator.cpp.s
+.PHONY : src/Simulator.cpp.s
+
 src/TransactionLogger.o: src/TransactionLogger.cpp.o
 .PHONY : src/TransactionLogger.o
 
@@ -702,6 +726,9 @@ help:
 	@echo "... src/PriceGenerator.o"
 	@echo "... src/PriceGenerator.i"
 	@echo "... src/PriceGenerator.s"
+	@echo "... src/Simulator.o"
+	@echo "... src/Simulator.i"
+	@echo "... src/Simulator.s"
 	@echo "... src/TransactionLogger.o"
 	@echo "... src/TransactionLogger.i"
 	@echo "... src/TransactionLogger.s"

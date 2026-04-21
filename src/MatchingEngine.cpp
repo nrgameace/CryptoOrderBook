@@ -90,3 +90,7 @@ const OrderBook& MatchingEngine::getBook() {
 const TransactionLoggerInterface& MatchingEngine::getLog() {
     return log;
 }
+
+void MatchingEngine::addOrder(Order& order) {
+    book.addOrder(order);
+}
