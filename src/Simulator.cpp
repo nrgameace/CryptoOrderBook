@@ -3,16 +3,13 @@
 #include "PriceGenerator.h"
 #include <vector>
 #include "Order.h"
-#include "OrderBook.h"
 
-Simulator::Simulator(MatchingEngine& eng) 
-    : engine(eng), running(false) {}
-
+Simulator::Simulator(MatchingEngine& eng, IPriceFetcher& fetcher)
+    : engine(eng), priceFetcher(fetcher), running(false) {}
 
 void Simulator::producerLoop() {
-    
     while (running) {
-        PriceGenerator priceGen {PriceGenerator()};
+        PriceGenerator priceGen(priceFetcher);
         priceGen.generateOrders(10);
         std::vector<Order> orders = priceGen.getOrders();
 
@@ -28,35 +25,23 @@ void Simulator::producerLoop() {
 }
 
 void Simulator::consumerLoop() {
-
     while (running) {
-
         auto shouldWake = [this] {
-            bool hasOrders = !transitionQueue.empty();
-            bool isStopping = !running;
-            return hasOrders || isStopping;
+            return !transitionQueue.empty() || !running;
         };
-
-        
 
         std::unique_lock<std::mutex> lock(mtx);
         empty.wait(lock, shouldWake);
-        
-        
+
         while (!transitionQueue.empty()) {
             engine.addOrder(transitionQueue.front());
             transitionQueue.pop();
         }
 
         lock.unlock();
-        
-
         engine.simulateMarket();
-
-        
     }
 }
-
 
 MatchingEngine& Simulator::getMatchingEngine() {
     return engine;

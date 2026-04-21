@@ -319,6 +319,30 @@ benchmarks/Benchmarks.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmarks.dir/build.make CMakeFiles/benchmarks.dir/benchmarks/Benchmarks.cpp.s
 .PHONY : benchmarks/Benchmarks.cpp.s
 
+src/CoinMarketCapFetcher.o: src/CoinMarketCapFetcher.cpp.o
+.PHONY : src/CoinMarketCapFetcher.o
+
+# target to build an object file
+src/CoinMarketCapFetcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/CoinMarketCapFetcher.cpp.o
+.PHONY : src/CoinMarketCapFetcher.cpp.o
+
+src/CoinMarketCapFetcher.i: src/CoinMarketCapFetcher.cpp.i
+.PHONY : src/CoinMarketCapFetcher.i
+
+# target to preprocess a source file
+src/CoinMarketCapFetcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/CoinMarketCapFetcher.cpp.i
+.PHONY : src/CoinMarketCapFetcher.cpp.i
+
+src/CoinMarketCapFetcher.s: src/CoinMarketCapFetcher.cpp.s
+.PHONY : src/CoinMarketCapFetcher.s
+
+# target to generate assembly for a file
+src/CoinMarketCapFetcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_lib.dir/build.make CMakeFiles/my_lib.dir/src/CoinMarketCapFetcher.cpp.s
+.PHONY : src/CoinMarketCapFetcher.cpp.s
+
 src/Main.o: src/Main.cpp.o
 .PHONY : src/Main.o
 
@@ -655,6 +679,54 @@ tests/TestOrderBook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestOrderBook.cpp.s
 .PHONY : tests/TestOrderBook.cpp.s
 
+tests/TestPriceGenerator.o: tests/TestPriceGenerator.cpp.o
+.PHONY : tests/TestPriceGenerator.o
+
+# target to build an object file
+tests/TestPriceGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestPriceGenerator.cpp.o
+.PHONY : tests/TestPriceGenerator.cpp.o
+
+tests/TestPriceGenerator.i: tests/TestPriceGenerator.cpp.i
+.PHONY : tests/TestPriceGenerator.i
+
+# target to preprocess a source file
+tests/TestPriceGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestPriceGenerator.cpp.i
+.PHONY : tests/TestPriceGenerator.cpp.i
+
+tests/TestPriceGenerator.s: tests/TestPriceGenerator.cpp.s
+.PHONY : tests/TestPriceGenerator.s
+
+# target to generate assembly for a file
+tests/TestPriceGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestPriceGenerator.cpp.s
+.PHONY : tests/TestPriceGenerator.cpp.s
+
+tests/TestSimulator.o: tests/TestSimulator.cpp.o
+.PHONY : tests/TestSimulator.o
+
+# target to build an object file
+tests/TestSimulator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestSimulator.cpp.o
+.PHONY : tests/TestSimulator.cpp.o
+
+tests/TestSimulator.i: tests/TestSimulator.cpp.i
+.PHONY : tests/TestSimulator.i
+
+# target to preprocess a source file
+tests/TestSimulator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestSimulator.cpp.i
+.PHONY : tests/TestSimulator.cpp.i
+
+tests/TestSimulator.s: tests/TestSimulator.cpp.s
+.PHONY : tests/TestSimulator.s
+
+# target to generate assembly for a file
+tests/TestSimulator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestSimulator.cpp.s
+.PHONY : tests/TestSimulator.cpp.s
+
 tests/TestTransactionLogger.o: tests/TestTransactionLogger.cpp.o
 .PHONY : tests/TestTransactionLogger.o
 
@@ -678,6 +750,30 @@ tests/TestTransactionLogger.s: tests/TestTransactionLogger.cpp.s
 tests/TestTransactionLogger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestTransactionLogger.cpp.s
 .PHONY : tests/TestTransactionLogger.cpp.s
+
+tests/TestUtils.o: tests/TestUtils.cpp.o
+.PHONY : tests/TestUtils.o
+
+# target to build an object file
+tests/TestUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestUtils.cpp.o
+.PHONY : tests/TestUtils.cpp.o
+
+tests/TestUtils.i: tests/TestUtils.cpp.i
+.PHONY : tests/TestUtils.i
+
+# target to preprocess a source file
+tests/TestUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestUtils.cpp.i
+.PHONY : tests/TestUtils.cpp.i
+
+tests/TestUtils.s: tests/TestUtils.cpp.s
+.PHONY : tests/TestUtils.s
+
+# target to generate assembly for a file
+tests/TestUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all_tests.dir/build.make CMakeFiles/all_tests.dir/tests/TestUtils.cpp.s
+.PHONY : tests/TestUtils.cpp.s
 
 # Help Target
 help:
@@ -705,6 +801,9 @@ help:
 	@echo "... benchmarks/Benchmarks.o"
 	@echo "... benchmarks/Benchmarks.i"
 	@echo "... benchmarks/Benchmarks.s"
+	@echo "... src/CoinMarketCapFetcher.o"
+	@echo "... src/CoinMarketCapFetcher.i"
+	@echo "... src/CoinMarketCapFetcher.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
@@ -747,9 +846,18 @@ help:
 	@echo "... tests/TestOrderBook.o"
 	@echo "... tests/TestOrderBook.i"
 	@echo "... tests/TestOrderBook.s"
+	@echo "... tests/TestPriceGenerator.o"
+	@echo "... tests/TestPriceGenerator.i"
+	@echo "... tests/TestPriceGenerator.s"
+	@echo "... tests/TestSimulator.o"
+	@echo "... tests/TestSimulator.i"
+	@echo "... tests/TestSimulator.s"
 	@echo "... tests/TestTransactionLogger.o"
 	@echo "... tests/TestTransactionLogger.i"
 	@echo "... tests/TestTransactionLogger.s"
+	@echo "... tests/TestUtils.o"
+	@echo "... tests/TestUtils.i"
+	@echo "... tests/TestUtils.s"
 .PHONY : help
 
 
