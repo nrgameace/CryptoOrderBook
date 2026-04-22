@@ -5,5 +5,5 @@
 class TransactionLoggerInterface {
     public:
         virtual ~TransactionLoggerInterface() = default;
-        virtual void logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int timestamp) = 0;
+        virtual void logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int64_t timestamp) = 0;
 };

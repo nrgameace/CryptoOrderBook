@@ -13,13 +13,9 @@ TEST(TestOrderBook, AddOrder) {
 
     OrderBook book {OrderBook()};
 
-    bool value1 = book.addOrder(order1);
-    bool value2 = book.addOrder(order2);
-    bool value3 = book.addOrder(order2);
-
-    EXPECT_TRUE(value1);
-    EXPECT_TRUE(value2);
-    EXPECT_TRUE(value3);
+    book.addOrder(order1);
+    book.addOrder(order2);
+    book.addOrder(order2);
 
     EXPECT_FALSE(book.isBuySideEmpty());
     EXPECT_FALSE(book.isSellSideEmpty());

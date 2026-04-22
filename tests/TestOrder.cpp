@@ -36,6 +36,6 @@ TEST(TestOrder, LessThanOpperand) {
     std::this_thread::sleep_for(std::chrono::seconds(1));
     Order order2 {Order(type, 20.0, 1.0, 102, 112)};
 
-    EXPECT_TRUE(order2 < order1);
+    EXPECT_TRUE(order1 < order2);
 
 }

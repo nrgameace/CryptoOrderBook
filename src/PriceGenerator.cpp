@@ -2,7 +2,7 @@
 #include <random>
 
 PriceGenerator::PriceGenerator(IPriceFetcher& fetcher)
-    : fetcher(fetcher), currentPrice(0.0), orders() {}
+    : fetcher(fetcher), currentPrice(0.0), orders(), rng(std::random_device{}()) {}
 
 void PriceGenerator::updatePrice() {
     currentPrice = fetcher.fetchPrice();
@@ -13,7 +13,6 @@ std::vector<Order> PriceGenerator::getOrders() {
 }
 
 void PriceGenerator::generateOrders(int numOrders) {
-    std::random_device seed;
     updatePrice();
 
     std::normal_distribution<double> priceDist(currentPrice, 15);
@@ -22,8 +21,8 @@ void PriceGenerator::generateOrders(int numOrders) {
     orders.clear();
 
     for (int i {}; i < numOrders; i++) {
-        int priceTemp = priceDist(seed);
-        int randomSide = sideDist(seed);
+        double priceTemp = priceDist(rng);
+        int randomSide = sideDist(rng);
 
         Order::OrderType side = (randomSide == 1) ? Order::OrderType::sell : Order::OrderType::buy;
         orders.push_back(Order(side, priceTemp, 2.0, 1, 1));

@@ -6,12 +6,10 @@
 
 
 
-TransactionLogger::TransactionLogger() {
-    int rc = sqlite3_open("../Database/TransactionHistory.db", &db);
+TransactionLogger::TransactionLogger(const std::string& dbPath) {
+    int rc = sqlite3_open(dbPath.c_str(), &db);
     if (rc != 0) {
-        throw std::runtime_error(std::string("Error connecting to database: ") + sqlite3_errmsg(db));    
-        db = nullptr;
-        throw std::runtime_error("Database Connection Failed");
+        throw std::runtime_error(std::string("Error connecting to database: ") + sqlite3_errmsg(db));
     }
 }
 
@@ -30,7 +28,7 @@ TransactionLogger::~TransactionLogger() {
  * @param price The agreed upon price
  * @param timestamp The time at which the transaction occurred
  */
-void TransactionLogger::logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int timestamp) {
+void TransactionLogger::logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int64_t timestamp) {
     const char* sql = "INSERT INTO TRADES (buyUserId, sellUserId, quantity, price, timestamp) VALUES (?, ?, ?, ?, ?);";
     sqlite3_stmt* stmt;
 
@@ -46,7 +44,7 @@ void TransactionLogger::logTrade(int buyUserId, int sellUserId, int64_t quantity
     bindCheck(stmt, sqlite3_bind_int(stmt, 2, sellUserId));
     bindCheck(stmt, sqlite3_bind_double(stmt, 3, convertToDouble(quantity)));
     bindCheck(stmt, sqlite3_bind_double(stmt, 4, convertToDouble(price)));
-    bindCheck(stmt, sqlite3_bind_int(stmt, 5, timestamp));
+    bindCheck(stmt, sqlite3_bind_int64(stmt, 5, timestamp));
 
     // 4. Execute the statement
     rc = sqlite3_step(stmt);

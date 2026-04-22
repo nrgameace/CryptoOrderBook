@@ -7,9 +7,9 @@ struct TradeRecord {
     int sellUserId;
     int64_t quantity;
     int64_t price;
-    int timestamp;
+    int64_t timestamp;
 
-    TradeRecord(int buyUserIdTemp, int sellUserIdTemp, int64_t quantityTemp, int64_t priceTemp, int timestampTemp)
+    TradeRecord(int buyUserIdTemp, int sellUserIdTemp, int64_t quantityTemp, int64_t priceTemp, int64_t timestampTemp)
     : buyUserId(buyUserIdTemp), sellUserId(sellUserIdTemp), quantity(quantityTemp), price(priceTemp), timestamp(timestampTemp)
     {}
 

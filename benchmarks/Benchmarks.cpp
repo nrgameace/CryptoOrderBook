@@ -32,12 +32,13 @@ void benchmarkAddOrder(int N) {
     std::cout << "addOrder x" << N
               << " | total: " << total << " ns"
               << " | mean: "  << total / N << " ns/op"
-              << " | p50: "   << latencies[N * 0.50] << " ns"
-              << " | p99: "   << latencies[N * 0.99] << " ns\n";
+              << " | p50: "   << latencies[N / 2] << " ns"
+              << " | p99: "   << latencies[(N * 99) / 100] << " ns\n";
 }
 
 
-void benchmarkProcessOrder(int N) {
+// This benchmarks the executeTrade path only — orders are not inserted into the book, so the priority queue and map traversal costs are not measured.
+void benchmarkExecuteTrade(int N) {
     std::mt19937 rng(42);
     std::uniform_int_distribution<int> dist(90, 110);
 
@@ -67,11 +68,11 @@ void benchmarkProcessOrder(int N) {
     int64_t total = 0;
     for (int64_t t : latencies) total += t;
 
-    std::cout << "processOrder x" << N
+    std::cout << "executeTrade x" << N
               << " | total: " << total << " ns"
               << " | mean: "  << total / N << " ns/op"
-              << " | p50: "   << latencies[N * 0.50] << " ns"
-              << " | p99: "   << latencies[N * 0.99] << " ns\n";
+              << " | p50: "   << latencies[N / 2] << " ns"
+              << " | p99: "   << latencies[(N * 99) / 100] << " ns\n";
 }
 
 void benchmarkSimulateMarket(int N) {
@@ -98,8 +99,8 @@ void benchmarkSimulateMarket(int N) {
     auto throughput {(double)N / (total.count() / 1e9)};
 
     std::cout << "simulateMarket x" << N
-              << " | total: " << total.count() << " order/sec"
-              << " | throughput: "  << throughput << " ns/op\n";
+              << " | total: " << total.count() << " ns"
+              << " | throughput: "  << throughput << " orders/sec\n";
     
 
 }
@@ -122,16 +123,16 @@ int main() {
     std::cout << std::endl;
 
     //Benchmark for one order process
-    benchmarkProcessOrder(1);
+    benchmarkExecuteTrade(1);
 
     // Benchmark for 1,000 order processes
-    benchmarkProcessOrder(1000);
+    benchmarkExecuteTrade(1000);
 
     // Benchmark for 10,000 order processes
-    benchmarkProcessOrder(10000);
+    benchmarkExecuteTrade(10000);
 
     // Benchmark for 100,000 order processes
-    benchmarkProcessOrder(100000);
+    benchmarkExecuteTrade(100000);
 
     std::cout << std::endl;
 

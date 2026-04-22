@@ -23,7 +23,8 @@ TEST(TestMatchingEngine, TestConstructor) {
     TransactionLoggerInterface& log1 = logTemp;
     MatchingEngine engine {MatchingEngine(book, log1)};
 
-    EXPECT_EQ(engine.getBook(), book);
+    EXPECT_EQ(engine.getBook().getBuyDepth(), book.getBuyDepth());
+    EXPECT_EQ(engine.getBook().getSellDepth(), book.getSellDepth());
 }
 
 
@@ -45,9 +46,9 @@ TEST(TestMatchingEngine, TestProcessOrder) {
     TransactionLoggerInterface& log2 = logTemp;
 
     MatchingEngine engine {MatchingEngine(book, log2)};
-    EXPECT_FALSE(engine.processOrder(order1, order4));
+    EXPECT_GT(engine.processOrder(order1, order4).quantity, 0);
     EXPECT_THROW(engine.processOrder(order1, order2), std::runtime_error);
-    EXPECT_TRUE(engine.processOrder(order3, order5));
+    EXPECT_GT(engine.processOrder(order3, order5).quantity, 0);
 
 
 }

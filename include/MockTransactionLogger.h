@@ -9,7 +9,7 @@ class MockTransactionLogger : public TransactionLoggerInterface {
 
     public:
         MockTransactionLogger();
-        void logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int timestamp);
+        void logTrade(int buyUserId, int sellUserId, int64_t quantity, int64_t price, int64_t timestamp) override;
         TradeRecord getRecord(int index);
 
 };

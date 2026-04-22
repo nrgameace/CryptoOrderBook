@@ -1,5 +1,6 @@
 #pragma once
 #include <queue>
+#include <thread>
 #include "Order.h"
 #include "MatchingEngine.h"
 #include "IPriceFetcher.h"
@@ -15,8 +16,14 @@ class Simulator {
     std::condition_variable empty;
     std::atomic<bool> running;
 
+    std::thread producerThread;
+    std::thread consumerThread;
+
 public:
     Simulator(MatchingEngine& eng, IPriceFetcher& fetcher);
+    ~Simulator();
+    Simulator(const Simulator&) = delete;
+    Simulator& operator=(const Simulator&) = delete;
     void producerLoop();
     void consumerLoop();
     void start();

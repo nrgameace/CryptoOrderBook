@@ -3,6 +3,7 @@
 #include <queue>
 #include <map>
 #include <ctime>
+#include <shared_mutex>
 
 
 OrderBook::OrderBook() 
@@ -15,71 +16,18 @@ OrderBook::OrderBook()
  * @param order Pass through a singular order by constant reference in order to add it to the market
  * @return True if the order was successfully added, False if not
  */
-bool OrderBook::addOrder(const Order& order) {
+void OrderBook::addOrder(const Order& order) {
+    std::unique_lock<std::shared_mutex> lock(mtx);
 
     if (order.transactionSide == Order::OrderType::buy) {
-
         buyOffers[order.price].push(order);
-        return true;
-    }
-
-    else if (order.transactionSide == Order::OrderType::sell) {
+    } else {
         sellOffers[order.price].push(order);
-        return true;
-        
     }
-    return false;
 }
 
-// For testing only 
-bool OrderBook::operator==(const OrderBook& other) const{
-    if (sellOffers.size() != other.sellOffers.size()) {
-        return false;
-    }
-
-    if (buyOffers.size() != other.buyOffers.size()) {
-        return false;
-    }
-
-
-    for (auto& [price, queue] : sellOffers) {
-        if (other.sellOffers.find(price) == other.sellOffers.end())
-            return false;
-        
-        auto q1 = queue;
-        auto q2 = other.sellOffers.at(price);
-
-        if (q1.size() != q2.size()) return false;
-
-        while (!q1.empty()) {
-            if (!(q1.top() == q2.top()))
-                return false;
-            q1.pop();
-            q2.pop();
-        }
-    }
-
-    for (auto& [price, queue] : buyOffers) {
-        if (other.buyOffers.find(price) == other.buyOffers.end())
-            return false;
-        
-        auto q1 = queue;
-        auto q2 = other.buyOffers.at(price);
-
-        if (q1.size() != q2.size()) return false;
-
-        while (!q1.empty()) {
-            if (!(q1.top() == q2.top()))
-                return false;
-            q1.pop();
-            q2.pop();
-        }
-    }
-
-    return true;
-}
-
-Order OrderBook::getBestBid() {
+Order OrderBook::getBestBid() const {
+    std::shared_lock<std::shared_mutex> lock(mtx);
 
     if (buyOffers.empty() || buyOffers.begin()->second.empty()) {
         throw std::runtime_error("Buy side is empty");
@@ -87,7 +35,9 @@ Order OrderBook::getBestBid() {
     return buyOffers.begin()->second.top();
 }
 
-Order OrderBook::getBestAsk() {
+Order OrderBook::getBestAsk() const {
+    std::shared_lock<std::shared_mutex> lock(mtx);
+
     if (sellOffers.empty() || sellOffers.begin()->second.empty()) {
         throw std::runtime_error("Sell side is empty");
     }
@@ -95,6 +45,7 @@ Order OrderBook::getBestAsk() {
 }
 
 void OrderBook::removeBestBid() {
+    std::unique_lock<std::shared_mutex> lock(mtx);
     if (buyOffers.empty() || buyOffers.begin()->second.empty())
         throw std::runtime_error("Buy side is empty");
     auto it = buyOffers.begin();
@@ -103,6 +54,7 @@ void OrderBook::removeBestBid() {
 }
 
 void OrderBook::removeBestAsk() {
+    std::unique_lock<std::shared_mutex> lock(mtx);
     if (sellOffers.empty() || sellOffers.begin()->second.empty())
         throw std::runtime_error("Sell side is empty");
     auto it = sellOffers.begin();
@@ -110,8 +62,23 @@ void OrderBook::removeBestAsk() {
     if (it->second.empty()) sellOffers.erase(it);
 }
 
-bool OrderBook::isBuySideEmpty() { return buyOffers.empty(); }
-bool OrderBook::isSellSideEmpty() { return sellOffers.empty(); }
-int OrderBook::getBuyDepth() { return static_cast<int>(buyOffers.size()); }
-int OrderBook::getSellDepth() { return static_cast<int>(sellOffers.size()); }
+bool OrderBook::isBuySideEmpty() const {
+    std::shared_lock<std::shared_mutex> lock(mtx);
+    return buyOffers.empty();
+}
+
+bool OrderBook::isSellSideEmpty() const {
+    std::shared_lock<std::shared_mutex> lock(mtx);
+    return sellOffers.empty();
+}
+
+int OrderBook::getBuyDepth() const {
+    std::shared_lock<std::shared_mutex> lock(mtx);
+    return static_cast<int>(buyOffers.size());
+}
+
+int OrderBook::getSellDepth() const {
+    std::shared_lock<std::shared_mutex> lock(mtx);
+    return static_cast<int>(sellOffers.size());
+}
 

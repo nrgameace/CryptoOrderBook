@@ -3,9 +3,12 @@
 #include <cmath>
 #include <iostream>
 #include <iomanip>
+#include <stdexcept>
 
 MarketStats::MarketStats(int windowTrades, double windowSeconds)
     : windowTrades(windowTrades), windowSeconds(windowSeconds) {
+    if (windowTrades <= 0)
+        throw std::invalid_argument("windowTrades must be positive");
     buffer.resize(windowTrades);
 }
 
@@ -54,18 +57,23 @@ double MarketStats::getVolume() const {
 }
 
 double MarketStats::getVolatility() const {
+    auto now = std::chrono::system_clock::now();
     int count = full ? windowTrades : static_cast<int>(head);
     int start = full ? static_cast<int>(head) : 0;
-    if (count < 2) 
-        return 0.0;
     double mean = 0.0, M2 = 0.0;
+    int n = 0;
     for (int i = 0; i < count; i++) {
-        double p = convertToDouble(buffer[(start + i) % windowTrades].price);
+        const TradePoint& t = buffer[(start + i) % windowTrades];
+        double age = std::chrono::duration<double>(now - t.time).count();
+        if (age >= windowSeconds) continue;
+        double p = convertToDouble(t.price);
+        n++;
         double delta = p - mean;
-        mean += delta / (i + 1);
+        mean += delta / n;
         M2 += delta * (p - mean);
     }
-    return std::sqrt(M2 / (count - 1));
+    if (n < 2) return 0.0;
+    return std::sqrt(M2 / (n - 1));
 }
 
 void MarketStats::printSummary() const {

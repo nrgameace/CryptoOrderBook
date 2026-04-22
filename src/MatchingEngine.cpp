@@ -10,16 +10,16 @@ MatchingEngine::MatchingEngine(OrderBook& book, TransactionLoggerInterface& log)
     {}
 
 
-bool MatchingEngine::executeTrade(Order& buy, Order& sell, int64_t tradePrice) {
+MatchingEngine::TradeResult MatchingEngine::executeTrade(Order& buy, Order& sell, int64_t tradePrice) {
     int64_t difference = sell.quantity - buy.quantity;
     int64_t tradeQty = (difference <= 0) ? sell.quantity : buy.quantity;
 
-    log.logTrade(buy.userId, sell.userId, tradeQty, tradePrice, std::time(nullptr));
+    log.logTrade(buy.userId, sell.userId, tradeQty, tradePrice, static_cast<int64_t>(std::time(nullptr)));
 
     if (difference == 0) {
         buy.quantity = 0;
         sell.quantity = 0;
-        return true;
+        return TradeResult{tradePrice, tradeQty};
     }
 
     if (difference < 0) {
@@ -29,16 +29,16 @@ bool MatchingEngine::executeTrade(Order& buy, Order& sell, int64_t tradePrice) {
         sell.quantity = sell.quantity - buy.quantity;
         buy.quantity = 0;
     }
-    return false;
+    return TradeResult{tradePrice, tradeQty};
 }
 
-bool MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
+MatchingEngine::TradeResult MatchingEngine::processOrder(Order& orderBuy, Order& orderSell) {
     if (orderBuy.transactionSide == Order::OrderType::sell || orderSell.transactionSide == Order::OrderType::buy) {
         throw std::runtime_error("Wrong side is in one order.");
     }
 
     if (orderBuy.price < orderSell.price) {
-        return false;
+        return TradeResult{0, 0};
     }
 
     int64_t tradePrice = (orderSell.getTimestamp() < orderBuy.getTimestamp()) ? orderSell.price : orderBuy.price;
@@ -59,12 +59,9 @@ bool MatchingEngine::simulateMarket(MarketStats* stats) {
 
         if (highestBuy.price < lowestSell.price) break;
 
-        int64_t tradeQty   = std::min(highestBuy.quantity, lowestSell.quantity);
-        int64_t tradePrice = (lowestSell.getTimestamp() < highestBuy.getTimestamp())
-                               ? lowestSell.price : highestBuy.price;
-
-        processOrder(highestBuy, lowestSell);
-        if (stats) stats->recordTrade(tradePrice, tradeQty);
+        auto result = processOrder(highestBuy, lowestSell);
+        if (result.quantity == 0) break;
+        if (stats) stats->recordTrade(result.price, result.quantity);
 
         book.removeBestBid();
         if (highestBuy.quantity > 0) book.addOrder(highestBuy);

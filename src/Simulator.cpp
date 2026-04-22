@@ -48,15 +48,23 @@ MatchingEngine& Simulator::getMatchingEngine() {
 }
 
 void Simulator::start() {
-    running = true;
-    std::thread Consumer(&Simulator::consumerLoop, this);
-    std::thread Producer(&Simulator::producerLoop, this);
-
-    Consumer.join();
-    Producer.join();
+    if (!running.exchange(true))
+        return;
+    producerThread = std::thread(&Simulator::producerLoop, this);
+    consumerThread = std::thread(&Simulator::consumerLoop, this);
 }
 
 void Simulator::stop() {
-    running = false;
+    if (!running.exchange(false))
+        return;
     empty.notify_all();
+
+    if (producerThread.joinable())
+        producerThread.join();
+    if (consumerThread.joinable())
+        consumerThread.join();
+}
+
+Simulator::~Simulator() {
+    stop();
 }

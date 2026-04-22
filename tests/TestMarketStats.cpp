@@ -2,6 +2,11 @@
 #include "MarketStats.h"
 #include "Utils.h"
 
+TEST(TestMarketStats, TestInvalidWindowTrades) {
+    EXPECT_THROW(MarketStats(0), std::invalid_argument);
+    EXPECT_THROW(MarketStats(-1), std::invalid_argument);
+}
+
 TEST(TestMarketStats, TestEmptyStats) {
     // No trades recorded — all stats should return 0.
     MarketStats stats;

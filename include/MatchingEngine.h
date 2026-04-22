@@ -6,14 +6,17 @@
 class MarketStats;
 
 class MatchingEngine {
+    public:
+        struct TradeResult { int64_t price; int64_t quantity; };
 
-    OrderBook& book;
-    TransactionLoggerInterface& log;
-    bool executeTrade(Order& buy, Order& sell, int64_t tradePrice);
+    private:
+        OrderBook& book;
+        TransactionLoggerInterface& log;
+        TradeResult executeTrade(Order& buy, Order& sell, int64_t tradePrice);
 
     public:
         MatchingEngine(OrderBook& book, TransactionLoggerInterface& log);
-        bool processOrder(Order& orderBuy, Order& orderSell);
+        TradeResult processOrder(Order& orderBuy, Order& orderSell);
         bool simulateMarket(MarketStats* stats = nullptr);
         const OrderBook& getBook();
         const TransactionLoggerInterface& getLog();
