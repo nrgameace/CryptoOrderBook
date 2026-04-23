@@ -18,7 +18,11 @@ double CoinMarketCapFetcher::fetchFromApi() {
     httplib::Headers headers = {{"X-CMC_PRO_API_KEY", apiKey}};
     auto response = cli.Get("/v1/cryptocurrency/listings/latest?symbol=BTC", headers);
 
-    if (response && response->status == 200) {
+    if (!response) {
+        throw std::runtime_error("CMC Request Failed");
+    }
+
+    else if (response && response->status == 200) {
         auto json = nlohmann::json::parse(response->body);
         return json["data"][0]["quote"]["USD"]["price"];
     }

@@ -25,7 +25,9 @@ void Simulator::producerLoop() {
 }
 
 void Simulator::consumerLoop() {
-    while (running) {
+    while (true) {
+        std::vector<Order> batch;
+
         auto shouldWake = [this] {
             return !transitionQueue.empty() || !running;
         };
@@ -33,13 +35,22 @@ void Simulator::consumerLoop() {
         std::unique_lock<std::mutex> lock(mtx);
         empty.wait(lock, shouldWake);
 
+        if (!running && transitionQueue.empty())
+            return;
+
         while (!transitionQueue.empty()) {
-            engine.addOrder(transitionQueue.front());
+            batch.push_back(std::move(transitionQueue.front()));
             transitionQueue.pop();
         }
 
         lock.unlock();
+
+        for (Order& order : batch)
+            engine.addOrder(order);
+
         engine.simulateMarket();
+
+
     }
 }
 
@@ -48,7 +59,7 @@ MatchingEngine& Simulator::getMatchingEngine() {
 }
 
 void Simulator::start() {
-    if (!running.exchange(true))
+    if (running.exchange(true))
         return;
     producerThread = std::thread(&Simulator::producerLoop, this);
     consumerThread = std::thread(&Simulator::consumerLoop, this);
