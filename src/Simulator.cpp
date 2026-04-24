@@ -1,14 +1,16 @@
 #include "Simulator.h"
 #include <thread>
+
 #include "PriceGenerator.h"
 #include <vector>
 #include "Order.h"
 
 Simulator::Simulator(MatchingEngine& eng, IPriceFetcher& fetcher)
-    : engine(eng), priceFetcher(fetcher), running(false) {}
+    : engine(eng), priceFetcher(fetcher) {}
 
-void Simulator::producerLoop() {
-    while (running) {
+void Simulator::producerLoop(std::stop_token st) {
+    while (!st.stop_requested()) {
+
         PriceGenerator priceGen(priceFetcher);
         priceGen.generateOrders(10);
         std::vector<Order> orders = priceGen.getOrders();
@@ -24,18 +26,18 @@ void Simulator::producerLoop() {
     }
 }
 
-void Simulator::consumerLoop() {
+void Simulator::consumerLoop(std::stop_token st) {
     while (true) {
         std::vector<Order> batch;
 
-        auto shouldWake = [this] {
-            return !transitionQueue.empty() || !running;
+        auto shouldWake = [this, st] {
+            return !transitionQueue.empty() || !st.stop_requested();
         };
 
         std::unique_lock<std::mutex> lock(mtx);
         empty.wait(lock, shouldWake);
 
-        if (!running && transitionQueue.empty())
+        if (transitionQueue.empty() && !st.stop_requested())
             return;
 
         while (!transitionQueue.empty()) {
@@ -59,21 +61,14 @@ MatchingEngine& Simulator::getMatchingEngine() {
 }
 
 void Simulator::start() {
-    if (running.exchange(true))
-        return;
-    producerThread = std::thread(&Simulator::producerLoop, this);
-    consumerThread = std::thread(&Simulator::consumerLoop, this);
+
+    producerThread = std::jthread([this](std::stop_token st){producerLoop(st); });
+    consumerThread = std::jthread([this](std::stop_token st){consumerLoop(st); });
 }
 
 void Simulator::stop() {
-    if (!running.exchange(false))
-        return;
-    empty.notify_all();
-
-    if (producerThread.joinable())
-        producerThread.join();
-    if (consumerThread.joinable())
-        consumerThread.join();
+    producerThread.request_stop();
+    consumerThread.request_stop();
 }
 
 Simulator::~Simulator() {

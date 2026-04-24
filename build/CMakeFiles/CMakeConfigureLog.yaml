@@ -38,6 +38,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/uname"
@@ -68,6 +69,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -115,6 +117,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/gmake"
@@ -135,6 +138,7 @@ events:
       - "/opt/pmk/env/global/bin/gmake"
       - "/Library/Apple/usr/bin/gmake"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/gmake"
+      - "/Users/nickolasregas/.cargo/bin/gmake"
       - "/Users/nickolasregas/.lmstudio/bin/gmake"
       - "/Users/nickolasregas/.local/bin/make"
       - "/opt/homebrew/opt/openjdk/bin/make"
@@ -164,6 +168,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -210,6 +215,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -312,6 +318,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/ar"
     search_context:
@@ -334,6 +341,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -373,6 +381,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/ranlib"
     search_context:
@@ -395,6 +404,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -434,6 +444,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/strip"
     search_context:
@@ -456,6 +467,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -495,6 +507,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/ld"
     search_context:
@@ -517,6 +530,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -556,6 +570,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/nm"
     search_context:
@@ -578,6 +593,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -617,6 +633,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     found: "/usr/bin/objdump"
     search_context:
@@ -639,6 +656,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -678,6 +696,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/objcopy"
@@ -698,6 +717,7 @@ events:
       - "/opt/pmk/env/global/bin/objcopy"
       - "/Library/Apple/usr/bin/objcopy"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/objcopy"
+      - "/Users/nickolasregas/.cargo/bin/objcopy"
       - "/Users/nickolasregas/.lmstudio/bin/objcopy"
     found: false
     search_context:
@@ -720,6 +740,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -759,6 +780,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/readelf"
@@ -779,6 +801,7 @@ events:
       - "/opt/pmk/env/global/bin/readelf"
       - "/Library/Apple/usr/bin/readelf"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/readelf"
+      - "/Users/nickolasregas/.cargo/bin/readelf"
       - "/Users/nickolasregas/.lmstudio/bin/readelf"
     found: false
     search_context:
@@ -801,6 +824,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -840,6 +864,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/dlltool"
@@ -860,6 +885,7 @@ events:
       - "/opt/pmk/env/global/bin/dlltool"
       - "/Library/Apple/usr/bin/dlltool"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/dlltool"
+      - "/Users/nickolasregas/.cargo/bin/dlltool"
       - "/Users/nickolasregas/.lmstudio/bin/dlltool"
     found: false
     search_context:
@@ -882,6 +908,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -921,6 +948,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/addr2line"
@@ -941,6 +969,7 @@ events:
       - "/opt/pmk/env/global/bin/addr2line"
       - "/Library/Apple/usr/bin/addr2line"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/addr2line"
+      - "/Users/nickolasregas/.cargo/bin/addr2line"
       - "/Users/nickolasregas/.lmstudio/bin/addr2line"
     found: false
     search_context:
@@ -963,6 +992,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -1002,6 +1032,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/usr/bin/tapi"
@@ -1022,6 +1053,7 @@ events:
       - "/opt/pmk/env/global/bin/tapi"
       - "/Library/Apple/usr/bin/tapi"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/tapi"
+      - "/Users/nickolasregas/.cargo/bin/tapi"
       - "/Users/nickolasregas/.lmstudio/bin/tapi"
     found: false
     search_context:
@@ -1044,6 +1076,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "find-v1"
@@ -1090,6 +1123,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
   -
     kind: "message-v1"
@@ -1192,6 +1226,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
     searched_directories:
       - "/Users/nickolasregas/.local/bin/install_name_tool"
@@ -1222,6 +1257,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
@@ -1233,8 +1269,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW"
-      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW"
+      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ"
+      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -1247,18 +1283,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW'
+        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d4137/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d4137.dir/build.make CMakeFiles/cmTC_d4137.dir/build
-        Building C object CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o
-        /usr/bin/clang   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0606d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0606d.dir/build.make CMakeFiles/cmTC_0606d.dir/build
+        Building C object CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Apple clang version 21.0.0 (clang-2100.0.123.102)
         Target: arm64-apple-darwin25.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 21.0.0 (clang-2100.0.123.102) default target arm64-apple-darwin25.4.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1271,13 +1307,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_d4137
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4137.dir/link.txt --verbose=1
+        Linking C executable cmTC_0606d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0606d.dir/link.txt --verbose=1
         Apple clang version 21.0.0 (clang-2100.0.123.102)
         Target: arm64-apple-darwin25.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_d4137 -L/usr/local/lib -v CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0606d -L/usr/local/lib -v CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1266.8
         BUILD 16:03:08 Mar  6 2026
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1289,7 +1325,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/clang  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -o cmTC_d4137
+        /usr/bin/clang  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -o cmTC_0606d
         
       exitCode: 0
   -
@@ -1331,18 +1367,18 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW']
+        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d4137/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d4137.dir/build.make CMakeFiles/cmTC_d4137.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/clang   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0606d/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0606d.dir/build.make CMakeFiles/cmTC_0606d.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Apple clang version 21.0.0 (clang-2100.0.123.102)]
         ignore line: [Target: arm64-apple-darwin25.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-RUKHDW -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-4BAZaJ -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 21.0.0 (clang-2100.0.123.102) default target arm64-apple-darwin25.4.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1355,13 +1391,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_d4137]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4137.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_0606d]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0606d.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 21.0.0 (clang-2100.0.123.102)]
         ignore line: [Target: arm64-apple-darwin25.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_d4137 -L/usr/local/lib -v CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_0606d -L/usr/local/lib -v CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1378,10 +1414,10 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_d4137] ==> ignore
+          arg [cmTC_0606d] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_d4137.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_0606d.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
         linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld
@@ -1423,8 +1459,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ"
-      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ"
+      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa"
+      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1438,19 +1474,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ'
+        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e27eb/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e27eb.dir/build.make CMakeFiles/cmTC_e27eb.dir/build
-        Building CXX object CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3ac69/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3ac69.dir/build.make CMakeFiles/cmTC_3ac69.dir/build
+        Building CXX object CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 21.0.0 (clang-2100.0.123.102)
         Target: arm64-apple-darwin25.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 21.0.0 (clang-2100.0.123.102) default target arm64-apple-darwin25.4.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1464,13 +1500,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_e27eb
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e27eb.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_3ac69
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ac69.dir/link.txt --verbose=1
         Apple clang version 21.0.0 (clang-2100.0.123.102)
         Target: arm64-apple-darwin25.4.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_e27eb -L/usr/local/lib -v CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_3ac69 -L/usr/local/lib -v CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1266.8
         BUILD 16:03:08 Mar  6 2026
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1482,7 +1518,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/clang++  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_e27eb
+        /usr/bin/clang++  -arch arm64  -v -Wl,-v CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_3ac69
         
       exitCode: 0
   -
@@ -1526,19 +1562,19 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ']
+        ignore line: [Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e27eb/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_e27eb.dir/build.make CMakeFiles/cmTC_e27eb.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3ac69/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3ac69.dir/build.make CMakeFiles/cmTC_3ac69.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 21.0.0 (clang-2100.0.123.102)]
         ignore line: [Target: arm64-apple-darwin25.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-2uV9kJ -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -fno-sized-deallocation -target-sdk-version=26.4 -fvisibility-inlines-hidden-static-local-var -fno-modulemap-allow-subdirectory-search -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -enable-tlsdesc -target-cpu apple-m1 -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +ccpp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +flagm -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa -target-linker-version 1266.8 -v -fcoverage-compilation-dir=/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-y8vXaa -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/21/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -Wno-error=allocator-wrappers -fdwarf2-cfi-asm -o CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 21.0.0 (clang-2100.0.123.102) default target arm64-apple-darwin25.4.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1552,13 +1588,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_e27eb]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e27eb.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_3ac69]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ac69.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 21.0.0 (clang-2100.0.123.102)]
         ignore line: [Target: arm64-apple-darwin25.4.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_e27eb -L/usr/local/lib -v CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.4 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_3ac69 -L/usr/local/lib -v CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1575,10 +1611,10 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_e27eb] ==> ignore
+          arg [cmTC_3ac69] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_e27eb.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_3ac69.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/21/lib/darwin/libclang_rt.osx.a]
@@ -1621,7 +1657,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:2158:EVAL:2 (__FetchContent_doPopulation)"
       - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:2158 (cmake_language)"
       - "/opt/homebrew/share/cmake/Modules/FetchContent.cmake:2399 (__FetchContent_Populate)"
-      - "CMakeLists.txt:28 (FetchContent_MakeAvailable)"
+      - "CMakeLists.txt:29 (FetchContent_MakeAvailable)"
     mode: "program"
     variable: "GIT_EXECUTABLE"
     description: "Git command line client"
@@ -1654,6 +1690,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
@@ -1715,6 +1752,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -1783,6 +1821,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -1859,6 +1898,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -1889,8 +1929,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-GJzgG3"
-      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-GJzgG3"
+      source: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-gnCv15"
+      binary: "/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-gnCv15"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -1903,15 +1943,15 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-GJzgG3'
+        Change Dir: '/Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-gnCv15'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_04063/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_04063.dir/build.make CMakeFiles/cmTC_04063.dir/build
-        Building C object CMakeFiles/cmTC_04063.dir/src.c.o
-        /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_04063.dir/src.c.o -MF CMakeFiles/cmTC_04063.dir/src.c.o.d -o CMakeFiles/cmTC_04063.dir/src.c.o -c /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-GJzgG3/src.c
-        Linking C executable cmTC_04063
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04063.dir/link.txt --verbose=1
-        /usr/bin/clang  -arch arm64 CMakeFiles/cmTC_04063.dir/src.c.o -o cmTC_04063
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b8b63/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b8b63.dir/build.make CMakeFiles/cmTC_b8b63.dir/build
+        Building C object CMakeFiles/cmTC_b8b63.dir/src.c.o
+        /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_b8b63.dir/src.c.o -MF CMakeFiles/cmTC_b8b63.dir/src.c.o.d -o CMakeFiles/cmTC_b8b63.dir/src.c.o -c /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/CMakeFiles/CMakeScratch/TryCompile-gnCv15/src.c
+        Linking C executable cmTC_b8b63
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8b63.dir/link.txt --verbose=1
+        /usr/bin/clang  -arch arm64 CMakeFiles/cmTC_b8b63.dir/src.c.o -o cmTC_b8b63
         
       exitCode: 0
   -
@@ -1953,6 +1993,7 @@ events:
       - "/opt/pmk/env/global/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/sbin/"
@@ -2013,6 +2054,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2076,6 +2118,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2148,6 +2191,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2232,6 +2276,8 @@ events:
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/include/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/include/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/include/"
@@ -2329,6 +2375,8 @@ events:
       - "/Library/Apple/usr/bin/openssl.framework/Headers/ssl.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/openssl.framework/Headers/ssl.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/openssl.framework/Headers/ssl.h"
+      - "/Users/nickolasregas/.cargo/bin/include/openssl.framework/Headers/ssl.h"
+      - "/Users/nickolasregas/.cargo/bin/openssl.framework/Headers/ssl.h"
       - "/Users/nickolasregas/.lmstudio/bin/include/openssl.framework/Headers/ssl.h"
       - "/Users/nickolasregas/.lmstudio/bin/openssl.framework/Headers/ssl.h"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/include/openssl.framework/Headers/ssl.h"
@@ -2409,6 +2457,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2470,6 +2519,7 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
@@ -2507,6 +2557,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2566,6 +2617,7 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
@@ -2603,6 +2655,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2685,6 +2738,8 @@ events:
       - "/Library/Apple/usr/bin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/include/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/include/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/include/"
@@ -2782,6 +2837,8 @@ events:
       - "/Library/Apple/usr/bin/zlib.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/zlib.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/zlib.h"
+      - "/Users/nickolasregas/.cargo/bin/include/zlib.h"
+      - "/Users/nickolasregas/.cargo/bin/zlib.h"
       - "/Users/nickolasregas/.lmstudio/bin/include/zlib.h"
       - "/Users/nickolasregas/.lmstudio/bin/zlib.h"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/include/zlib.h"
@@ -2806,6 +2863,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -2871,6 +2929,7 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
@@ -2984,6 +3043,14 @@ events:
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
@@ -3013,6 +3080,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -3079,6 +3147,7 @@ events:
       - "/usr/sbin/"
       - "/sbin/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
       - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
@@ -3204,6 +3273,15 @@ events:
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/"
@@ -3369,6 +3447,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -3470,6 +3549,9 @@ events:
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/includes/"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/"
+      - "/Users/nickolasregas/.cargo/bin/include/"
+      - "/Users/nickolasregas/.cargo/bin/includes/"
+      - "/Users/nickolasregas/.cargo/bin/"
       - "/Users/nickolasregas/.lmstudio/bin/include/"
       - "/Users/nickolasregas/.lmstudio/bin/includes/"
       - "/Users/nickolasregas/.lmstudio/bin/"
@@ -3612,6 +3694,9 @@ events:
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/brotli.framework/Headers/decode.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/includes/brotli.framework/Headers/decode.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/brotli.framework/Headers/decode.h"
+      - "/Users/nickolasregas/.cargo/bin/include/brotli.framework/Headers/decode.h"
+      - "/Users/nickolasregas/.cargo/bin/includes/brotli.framework/Headers/decode.h"
+      - "/Users/nickolasregas/.cargo/bin/brotli.framework/Headers/decode.h"
       - "/Users/nickolasregas/.lmstudio/bin/include/brotli.framework/Headers/decode.h"
       - "/Users/nickolasregas/.lmstudio/bin/includes/brotli.framework/Headers/decode.h"
       - "/Users/nickolasregas/.lmstudio/bin/brotli.framework/Headers/decode.h"
@@ -3753,6 +3838,9 @@ events:
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/brotli.framework/Headers/encode.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/includes/brotli.framework/Headers/encode.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/brotli.framework/Headers/encode.h"
+      - "/Users/nickolasregas/.cargo/bin/include/brotli.framework/Headers/encode.h"
+      - "/Users/nickolasregas/.cargo/bin/includes/brotli.framework/Headers/encode.h"
+      - "/Users/nickolasregas/.cargo/bin/brotli.framework/Headers/encode.h"
       - "/Users/nickolasregas/.lmstudio/bin/include/brotli.framework/Headers/encode.h"
       - "/Users/nickolasregas/.lmstudio/bin/includes/brotli.framework/Headers/encode.h"
       - "/Users/nickolasregas/.lmstudio/bin/brotli.framework/Headers/encode.h"
@@ -3894,6 +3982,9 @@ events:
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/include/brotli/decode.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/includes/brotli/decode.h"
       - "/Library/Frameworks/Mono.framework/Versions/Current/Commands/brotli/decode.h"
+      - "/Users/nickolasregas/.cargo/bin/include/brotli/decode.h"
+      - "/Users/nickolasregas/.cargo/bin/includes/brotli/decode.h"
+      - "/Users/nickolasregas/.cargo/bin/brotli/decode.h"
       - "/Users/nickolasregas/.lmstudio/bin/include/brotli/decode.h"
       - "/Users/nickolasregas/.lmstudio/bin/includes/brotli/decode.h"
       - "/Users/nickolasregas/.lmstudio/bin/brotli/decode.h"
@@ -3926,6 +4017,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -3998,6 +4090,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -4070,6 +4163,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -4142,6 +4236,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
@@ -4333,6 +4428,7 @@ events:
         - "/opt/pmk/env/global/bin"
         - "/Library/Apple/usr/bin"
         - "/Library/Frameworks/Mono.framework/Versions/Current/Commands"
+        - "/Users/nickolasregas/.cargo/bin"
         - "/Users/nickolasregas/.lmstudio/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:

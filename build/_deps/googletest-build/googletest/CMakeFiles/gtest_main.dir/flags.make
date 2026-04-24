@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -isystem /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-src/googletest/include -isystem /Users/nickolasregas/Desktop/Coding/CryptoProject/CryptoOrderBook/build/_deps/googletest-src/googletest
 
-CXX_FLAGSarm64 = -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1  
+CXX_FLAGSarm64 = -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1  
 
-CXX_FLAGS = -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1  
+CXX_FLAGS = -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1  
 

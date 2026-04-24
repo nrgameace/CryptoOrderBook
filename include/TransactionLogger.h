@@ -9,7 +9,7 @@ class TransactionLogger : public TransactionLoggerInterface{
     sqlite3* db;
 
     public:
-    TransactionLogger(const std::string& dbPath = "Database/TransactionHistory.db");
+    TransactionLogger(const std::string& dbPath = "../Database/TransactionHistory.db");
     ~TransactionLogger();
 
     // Prevent copying operations
