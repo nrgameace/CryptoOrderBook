@@ -32,8 +32,8 @@
 
   Shared State
   ┌──────────────────────────────────────────────────────────────────────┐
-  │  transitionQueue (std::queue<Order>)  ── guarded by std::mutex       │
-  │  OrderBook::buyOffers / sellOffers    ── guarded by std::shared_mutex│
+  │  transitionQueue (std::queue<Order>) ── guarded by std::mutex        │
+  │  OrderBook::buyOffers / sellOffers   ── guarded by std::shared_mutex │
   │    shared_lock  → getBestBid, getBestAsk, isBuySideEmpty, depths     │
   │    unique_lock  → addOrder, removeBestBid, removeBestAsk             │
   └──────────────────────────────────────────────────────────────────────┘
