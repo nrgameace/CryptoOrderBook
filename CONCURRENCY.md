@@ -67,3 +67,5 @@ The `transitionQueue` is guarded by a `std::mutex` that must be held for all rea
 ### OrderBook Mutex
 
 The `OrderBook` is guarded by its own shared mutex unique to that object's instance. This lock is a `shared_mutex` which allows any thread from the `Simulator` class to call the method and activate the lock preventing the other from accessing it. This design ultimately allows for an easier approach of preventing double-accessing of the orderbook while allowing for future improvements down the line. One important dis-advantage to this strategy is that if a class were to first acquire the lock for the orderbook, then the lock for the transition queue, this could create a deadlock between the two. As a result, all concurrent tasks must be run from the `Simulator` class as it prevents this deadlock condition and is more logical in the scope of the entire order book.
+
+### Tradeoffs
