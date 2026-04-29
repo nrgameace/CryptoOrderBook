@@ -31,7 +31,7 @@ void Simulator::consumerLoop(std::stop_token st) {
         std::vector<Order> batch;
 
         auto shouldWake = [this, st] {
-            return !transitionQueue.empty() || !st.stop_requested();
+            return !transitionQueue.empty() || st.stop_requested();
         };
 
         std::unique_lock<std::mutex> lock(mtx);
