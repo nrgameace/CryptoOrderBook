@@ -1,140 +1,107 @@
-## Completed List
+# Changelog
 
+All notable changes to CryptoOrderBook are documented here.
+Entries are derived strictly from commit diffs and tagged ranges.
 
+## [Unreleased]
 
-## In Progress List
-Implement tests for Order, OrderBook, and Matching Engine
+No commits after v1.0.
 
+---
 
+## [v0.1] — Initial implementation — 2026-02-23
 
-## Changes List
+### Added
+- `Order` struct with price, quantity, side (buy/sell), and timestamp (`include/Order.h`)
+- `OrderBook` class with `addOrder`, `cancelOrder`, `processOrder`, and `simulateMarket` (`include/OrderBook.h`, `src/OrderBook.cpp`)
+- SQL-backed `TransactionLogger` for recording completed trades (`src/OrderBook.cpp`, `9fc1682`)
+- `simulateMarket` function to replay order sequences against the book (`41a587f`)
+- Initial test scaffolding in `tests/TestOrder.cpp` (`4e332d1`)
+- `src/` and `include/` directory structure; headers relocated from project root (`4533d3f`, `7685424`)
 
-### Phase 1: Core Architecture Fixes (Days 1-3)
-These aren't features — they're the baseline that any strong C++ engineer would expect to see.
+### Fixed
+- Bug in `addOrder` that caused incorrect order insertion (`dae7fde`)
+- `simulateMarket` crashed when attempting to mutate an existing order — resolved by treating placed orders as immutable (`a5f0da7`)
 
-#### 1. Dependency Injection for TransactionLogger - DONE
-- Define an `ITransactionLogger` abstract interface with a pure virtual `logTrade()` method
-- Have `TransactionLogger` inherit from `ITransactionLogger`
-- Change `MatchingEngine` to accept an `ITransactionLogger&` or `std::unique_ptr<ITransactionLogger>` instead of constructing one internally
-- Create a `MockTransactionLogger` that implements the interface and records calls in a `std::vector<TradeRecord>` for test assertions
-- This eliminates the SQLite dependency from all unit tests and lets the test suite run without a database
-- Refactor all existing `MatchingEngine` tests to use the mock
+### Design Decisions
+- Headers separated into `include/` immediately to follow conventional C++ project layout rather than co-locating them with sources (`4533d3f`)
 
-#### 2. Encapsulate OrderBook Internals - DONE
-- Make `buyOffers` and `sellOffers` private
-- Expose a clean public interface: `addOrder()`, `getBestBid()`, `getBestAsk()`, `removeBestBid()`, `removeBestAsk()`, `isBuySideEmpty()`, `isSellSideEmpty()`, `getBuyDepth()`, `getSellDepth()`
-- Refactor `MatchingEngine::simulateMarket()` to use these methods instead of directly manipulating the maps
-- Update all tests to use the new interface
-- This is the single biggest code quality signal — it shows you understand encapsulation and API design
+---
 
-#### 3. Fix Priority Queue Ordering for Time Priority - DONE
-- `std::priority_queue` is a max-heap, so `operator<` putting earlier timestamps as "less" means the *latest* order sits on top — the opposite of FIFO
-- Either flip `operator<` to return `timestamp > b.timestamp`, or provide a custom comparator to the priority queue
-- Add a targeted unit test: create 3 orders at the same price with deliberate sleep gaps, add them to a price level, and assert that `top()` returns the earliest order
-- Document the fix in a commit message that explains the bug and the reasoning — this shows you understand data structure invariants
+## [v0.2] — Architecture refactor — 2026-04-04
 
-#### 4. General Code Cleanup - DONE
-- Remove all commented-out debug code from `Main.cpp`, test files, and `MatchingEngine.cpp`
-- Remove unnecessary includes: `<sqlite3.h>` from `OrderBook.h`, unused headers from source files
-- Add `const` to `getBook()` and `getLog()` method signatures
-- Rename constructor parameters from `priceTemp`/`quantityTemp` to `rawPrice`/`rawQuantity`
-- Simplify brace initialization: `Order order1(type, 20.0, 1.0, 101, 111)` instead of `Order order1 {Order(type, 20.0, 1.0, 101, 111)}`
+### Added
+- `MatchingEngine` class extracted from `OrderBook` into its own `include/MatchingEngine.h` / `src/MatchingEngine.cpp` (`219936c`)
+- `TransactionLoggerInterface` — pure abstract interface for the logger (`include/TransactionLoggerInterface.h`, `2937c7e`)
+- `MockTransactionLogger` — test double implementing `TransactionLoggerInterface` (`include/MockTransactionLogger.h`, `src/MockTransactionLogger.cpp`, `24c6592`)
+- `TradeRecord` struct to represent a completed trade (`include/TradeRecord.h`, `2937c7e`)
+- `Utils.h` / `src/Utils.cpp` — shared helper functions (`f44f5bb`)
+- Google Test suite via CMake `FetchContent`: `TestMatchingEngine`, `TestOrderBook`, `TestTransactionLogger`, `TestOrder` (`1ae6176` onward)
+- Equality operator on `OrderBook` to support test assertions (`7e703b3`)
+- OrderBook encapsulation pass — internal representation hidden behind public interface (`ecf1805`, `7c4771b`)
 
+### Fixed
+- Bug in `processOrder` method causing incorrect match behavior (`de7471f`)
+- Prices changed from `double` to `int` to eliminate floating-point precision errors in financial calculations (`f44f5bb`)
 
+### Design Decisions
+- `MatchingEngine` extracted from `OrderBook` so matching logic and book management can be tested in isolation from each other (`219936c`)
+- `TransactionLoggerInterface` introduced to enable constructor injection — `MockTransactionLogger` swaps in for tests without touching the database (`2937c7e`, `24c6592`)
+- Prices stored as integers (smallest currency unit) rather than `double` to avoid rounding errors that compound across many trades (`f44f5bb`)
 
-### Phase 2: Performance Benchmarking (Days 4-6)
-This is the highest-signal addition for quant recruiting. Every quant firm cares about latency.
+---
 
-#### 5. Microbenchmark the Matching Engine - DONE!
-- Create a `benchmarks/` directory with a dedicated benchmark binary
-- Use `std::chrono::high_resolution_clock` to measure:
-  - Order insertion latency (time to call `addOrder()` for a single order)
-  - Single match latency (time for one `processOrder()` call)
-  - Full market simulation throughput (orders matched per second with N=1000, 10000, 100000 orders)
-- Generate randomized orders with realistic price distributions (normal distribution around a center price using `<random>`)
-- Print results in a clean table: operation, N, mean latency, p50, p99, throughput
-- Run benchmarks with compiler optimizations on (`-O2`)
+## [v0.3] — Benchmarking — 2026-04-06
 
-#### 6. Profile, Identify a Bottleneck, and Optimize
-- Profile with `perf` or `valgrind --tool=callgrind` to find where time is spent
-- Likely bottleneck candidates: `std::map` node allocation overhead, priority queue copy overhead, or the `operator==` on OrderBook draining full queues
-- Investigate whether replacing `std::map` with a flat sorted container or using `std::unordered_map` with a separate best-price tracker improves insertion latency
-- Investigate whether adding move semantics to `Order` reduces matching overhead
-- Document the results: write a `PERFORMANCE.md` with before/after measurements, what you tried, and why you chose the final approach
-- Even if the optimization is modest, the *process* of measure → hypothesize → test → document is exactly what quant firms want to see
+### Added
+- `benchmarks/Benchmarks.cpp` — standalone harness measuring order book throughput (`4a8ca7e`)
+- `CMakeLists.txt` updated with a dedicated `benchmarks` build target (`4a8ca7e`)
 
+### Design Decisions
+- Benchmarks built as a separate CMake target so they run independently of the test suite and do not appear in `ctest` output (`4a8ca7e`)
 
+---
 
-### Phase 3: Quantitative Features (Days 7-10)
-This adds the "quant" to your project and gives you something mathematical to discuss in interviews.
+## [v0.4] — Quant features — 2026-04-15
 
-#### 7. Real-Time Market Statistics Engine - Done
-- Create a `MarketStats` class that computes rolling statistics from executed trades:
-  - **VWAP** (Volume-Weighted Average Price): `sum(price * quantity) / sum(quantity)` over a configurable window
-  - **Bid-ask spread**: difference between best bid and best ask, tracked over time
-  - **Trade volume**: rolling sum of quantity traded in the last N seconds
-  - **Simple volatility**: standard deviation of trade prices over the last N trades
-- Use efficient online algorithms — Welford's algorithm for running variance, not naive recompute-from-scratch
-- Store statistics in a ring buffer or sliding window structure to avoid unbounded memory growth
-- Print a market summary after each `simulateMarket()` call showing current VWAP, spread, volume, and volatility
-- Add unit tests that verify statistical calculations against hand-computed expected values
+### Added
+- `PriceGenerator` — generates synthetic price sequences for simulation (`include/PriceGenerator.h`, `src/PriceGenerator.cpp`, `08aef24`, `2926a50`)
+- `dotenv.h` header for loading API credentials from environment files without hardcoding them (`2926a50`)
+- `MarketStats` — computes market statistics over the order book (`include/MarketStats.h`, `src/MarketStats.cpp`, `a847fd1`)
+- `tests/TestMarketStats.cpp` — test coverage for `MarketStats` (`a847fd1`)
+- `src/Main.cpp` extended to exercise `PriceGenerator` and `MarketStats` (`08aef24`, `a847fd1`)
 
-#### 8. Live Price Feed Integration - Done
-- Use `cpp-httplib` (header-only, no build complexity) to make HTTP GET requests to the CoinGecko free API (`/api/v3/simple/price`)
-- Fetch real BTC/ETH/SOL prices on startup
-- Create an `OrderGenerator` class that produces randomized orders around the real price:
-  - Buy orders: price drawn from `N(market_price * 0.999, sigma)` (slightly below market)
-  - Sell orders: price drawn from `N(market_price * 1.001, sigma)` (slightly above market)
-  - Quantities drawn from a log-normal distribution to simulate realistic order sizes
-  - Use `<random>` with `std::mt19937` and proper seeding
-- Generate batches of 100-1000 orders and feed them through the matching engine
-- This replaces the hardcoded orders in `Main.cpp` and makes the demo actually compelling
+### Design Decisions
+- `dotenv.h` used to keep API keys out of source control while still supporting local development with live credentials (`2926a50`)
 
+---
 
+## [v1.0] — Concurrency — 2026-04-30
 
-### Phase 4: Concurrency (Days 11-16)
-This is the feature that makes the project memorable. Correct concurrent code is hard and recruiters know it.
+### Added
+- `Simulator` class — drives concurrent order book simulation using `jthread`, `shared_mutex`, and `condition_variable_any` (`include/Simulator.h`, `src/Simulator.cpp`, `cf01e6c`, `24f08a1`)
+- `CoinMarketCapFetcher` — fetches live price data from the CoinMarketCap API (`include/CoinMarketCapFetcher.h`, `src/CoinMarketCapFetcher.cpp`, `2646c2e`)
+- `IPriceFetcher` interface — abstraction over real and synthetic price sources (`include/IPriceFetcher.h`, `2646c2e`)
+- API rate limiter in `MatchingEngine` and `Simulator` to respect CoinMarketCap request quotas (`cda7096`)
+- Tests: `TestSimulator.cpp`, `TestPriceGenerator.cpp`, `TestUtils.cpp` (`2646c2e`)
+- `CONCURRENCY.md` — documents the threading model, synchronization primitives, and design rationale (`0255b9c`–`7451b8b`)
+- `README.md` expanded with full project documentation (`4077d2b`)
+- `benchmarks/Benchmarks.cpp` updated to cover the concurrent simulation path (`32cdb3f`)
 
-#### 9. Thread-Safe Order Book
-- Add a `std::shared_mutex` to `OrderBook` for reader-writer locking
-- Read operations (`getBestBid()`, `getBestAsk()`, depth queries) take a shared lock
-- Write operations (`addOrder()`, `removeBestBid()`, `removeBestAsk()`) take an exclusive lock
-- Alternatively, use a `std::mutex` with `std::lock_guard` if reader-writer distinction isn't needed yet — correctness first, optimization second
-- Add stress tests: multiple threads calling `addOrder()` concurrently, verify no data corruption
+### Fixed
+- Database corruption bug in `Simulator` triggered under concurrent writes (`379e130`)
 
-#### 10. Producer-Consumer Architecture
-- Producer thread: runs the `OrderGenerator` from Phase 3, generates orders at a configurable rate (e.g., 100 orders/second), pushes them into a thread-safe queue
-- Consumer thread: pulls orders from the queue, adds them to the order book, and runs the matching engine
-- Use `std::condition_variable` to avoid busy-waiting — producer notifies consumer when orders are available
-- Add a `std::atomic<bool>` shutdown flag for clean termination
-- Create a simple command-line interface: start/stop the market, print statistics, adjust order generation rate
-- Log throughput: "Processed N orders in M seconds, average latency X microseconds"
+### Design Decisions
+- `jthread` chosen over `std::thread` so threads join automatically on `Simulator` destruction, preventing resource leaks on exceptions or early exit (`cf01e6c`)
+- `shared_mutex` used so multiple reader threads can query market data simultaneously; order insertions take exclusive write locks (`cf01e6c`)
+- `condition_variable_any` preferred over `condition_variable` because it is compatible with `shared_lock`, which `condition_variable` is not — required by the reader/writer pattern here (`cf01e6c`)
+- `IPriceFetcher` interface introduced so `Simulator` accepts both `CoinMarketCapFetcher` (live) and `PriceGenerator` (synthetic), keeping concurrency logic price-source-agnostic (`2646c2e`)
+- Rate limiter placed in `MatchingEngine` rather than only at the fetch layer so burst order submission is capped end-to-end, not just at the API boundary (`cda7096`)
 
-#### 11. Document the Concurrency Model
-- Add a section to `README.md` explaining the threading model with a diagram
-- Describe what's locked, when, and why
-- Mention any race conditions you encountered and how you fixed them
-- If you tried lock-free approaches and they didn't work out, say so — that's a great interview talking point
+---
 
-
-
-### Phase 5: Polish (Days 17-19)
-
-#### 12. Order Cancellation
-- Add a `std::unordered_map<int, OrderStatus>` mapping `transactionId` to status (active, cancelled, filled)
-- Add a `cancelOrder(int transactionId)` method to `OrderBook` that marks the order as cancelled
-- Modify `simulateMarket()` to skip cancelled orders when they reach the top of the queue (lazy deletion)
-- Add tests: cancel an order, verify it doesn't match; cancel a non-existent order, verify error handling
-
-#### 13. README Rewrite
-- Add a Performance section with benchmark results and the optimization story from Phase 2
-- Add a Concurrency section with the threading architecture diagram from Phase 4
-- Add a Market Statistics section explaining VWAP, spread, and volatility calculations
-- Include sample output showing the system running with live prices, concurrent order generation, and real-time statistics
-- Remove the current demo code walkthrough and replace it with something that reflects the actual system
-
-#### 14. Clean Git History
-- Each phase should be its own set of well-structured commits with clear messages
-- Squash any "fix typo" or "oops" commits before making the repo public
-- Tag releases: `v0.1` (current state), `v0.2` (architecture fixes), `v0.3` (benchmarking), `v0.4` (quant features), `v1.0` (concurrency + polish)
-- A recruiter will look at your commit history — make it tell a story of deliberate, incremental improvement
+[v1.0]: https://github.com/nrgameace/CryptoOrderBook/releases/tag/v1.0
+[v0.4]: https://github.com/nrgameace/CryptoOrderBook/releases/tag/v0.4
+[v0.3]: https://github.com/nrgameace/CryptoOrderBook/releases/tag/v0.3
+[v0.2]: https://github.com/nrgameace/CryptoOrderBook/releases/tag/v0.2
+[v0.1]: https://github.com/nrgameace/CryptoOrderBook/releases/tag/v0.1
