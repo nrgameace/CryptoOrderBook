@@ -8,7 +8,7 @@ This document records benchmark results, profiling findings, and optimization de
 
 | Property | Value |
 |----------|-------|
-| CPU | [e.g. Intel Core i7-12700K] |
+| CPU | AMD Ryzen 7 3700x|
 | OS | [e.g. Ubuntu 22.04] |
 | Compiler | [e.g. GCC 13.1] |
 | Build flags | `-O2 -std=c++20` |
