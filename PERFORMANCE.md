@@ -33,8 +33,7 @@ Measures the time to call `OrderBook::addOrder()` for a single buy order with a 
 
 **Observations:**
 
-[Describe what you notice — e.g. how mean and p99 diverge at scale, whether latency grows sub-linearly or super-linearly with N, and what that tells you about `std::map` insertion cost.]
-99th percentiles are very high.
+Analyzing the add order method highlights the linear time complexity. Furthermore, it is important to note that the high 99th percentile of adding one order, is a side effect of including the time to instantiate the ordered map.
 ---
 
 ### `executeTrade` — Single Match Latency
