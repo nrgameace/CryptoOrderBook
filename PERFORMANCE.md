@@ -49,7 +49,7 @@ Measures the time for one `MatchingEngine::processOrder()` call against pre-gene
 
 **Observations:**
 
-[Describe what you see — e.g. how stable or noisy the per-op latency is, whether the p99 tail is much wider than p50, and what the MockTransactionLogger overhead looks like versus a real SQLite logger.]
+Execute trade appears to stay consistent across order sizes.
 
 ---
 
