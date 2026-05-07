@@ -33,7 +33,7 @@ Measures the time to call `OrderBook::addOrder()` for a single buy order with a 
 
 **Observations:**
 
-Analyzing the add order method highlights the linear time complexity. Furthermore, it is important to note that the high 99th percentile of adding one order, is a side effect of including the time to instantiate the ordered map.
+The N=1 result (13,636 ns) is a cold-start artifact and not representative of steady-state performance; by N=1,000 the allocator and cache are warm and insertion settles into a consistent 300-580 ns/op range. The mean decreasing from N=1k to N=10k is expected given the [90, 110] price range produces only 21 distinct map buckets: once all price levels exist, each call reduces to a heap push into an already-allocated node, flattening the per-call cost. At N=100k, slight mean growth reflects memory pressure as large priority queues begin causing cache misses, though p99 actually improves at that scale because the backing vectors have stopped resizing. Note that the narrow price range makes these numbers artificially favorable; a production order book with thousands of distinct price levels would see O(log n) map traversal become the dominant cost rather than the heap push.
 ---
 
 ### `executeTrade` — Single Match Latency
@@ -49,8 +49,7 @@ Measures the time for one `MatchingEngine::processOrder()` call against pre-gene
 
 **Observations:**
 
-Execute trade appears to stay consistent across order sizes. This is due to the constant runtime as each access method in a map is O(1). 
-
+`processOrder` is significantly faster than `addOrder` at every scale (50-81 ns/op vs 300-580 ns/op), which makes sense given the execution path is pure arithmetic: a price comparison, some integer subtraction, and a `logTrade` call with no heap allocation or tree traversal involved. The p99 spike at N=1,000 (320 ns) is the same backing-vector reallocation story as `addOrder`, collapsing to 70-100 ns by N=10k-100k once the mock logger's internal vector has stabilized. The slight mean increase at N=100k is likely the mock logger's `std::vector<TradeRecord>` growing large enough to cause occasional cache misses on push. In a production configuration using the real `TransactionLogger`, these numbers would be meaningfully higher given each call would involve a SQLite prepared statement execution rather than a vector push.
 ---
 
 ### `simulateMarket` — Full Market Throughput
@@ -66,7 +65,7 @@ Measures the total time and throughput (orders/sec) for `MatchingEngine::simulat
 
 **Observations:**
 
-[Describe throughput scaling — does it grow linearly with N? Where does it plateau? How does the match rate change as the book gets deeper?]
+Throughput peaks at N=1,000 (2.15M orders/sec) rather than N=1, which reflects the same cache warming pattern seen in `addOrder`: the first run pays cold-start costs that are amortized away once the allocator and map nodes are warm. The gradual decline from N=1,000 to N=100,000 (2.15M to 1.39M orders/sec) is expected given `simulateMarket` calls `getBestBid`, `getBestAsk`, `removeBestBid`, and `removeBestAsk` in a tight loop, each acquiring a lock and touching the map, so as the priority queues grow deeper the cache miss pressure from `addOrder` compounds across every iteration. The throughput staying in the 1.4-2.2M orders/sec range across three orders of magnitude of input is actually a strong result, suggesting the price-time priority matching loop scales gracefully. Note that these numbers reflect a pre-loaded book with a narrow [90, 110] price range and uniform order sizes, so real-world throughput would be lower given partial fills, wider spreads, and the overhead of the live producer-consumer queue.
 
 ---
 
