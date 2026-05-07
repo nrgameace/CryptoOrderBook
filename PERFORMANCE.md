@@ -49,7 +49,7 @@ Measures the time for one `MatchingEngine::processOrder()` call against pre-gene
 
 **Observations:**
 
-Execute trade appears to stay consistent across order sizes.
+Execute trade appears to stay consistent across order sizes. This is due to the constant runtime as each access method in a map is O(1). 
 
 ---
 
