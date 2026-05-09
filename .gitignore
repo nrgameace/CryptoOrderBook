@@ -3,7 +3,7 @@
 .env
 
 build/
-
+.cache/
 # Compiled Object files
 *.slo
 *.lo
