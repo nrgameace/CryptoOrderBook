@@ -195,10 +195,10 @@ Constructor parameters: `windowTrades` (ring buffer capacity, default 100) and `
 
 Implements the producer-consumer architecture that drives continuous live order flow.
 
-- **Producer thread** (`producerLoop`): constructs a `PriceGenerator`, generates 10 orders per batch, pushes them onto `transitionQueue`, sleeps 100 ms, repeats while `running`.
-- **Consumer thread** (`consumerLoop`): waits on `empty` condition variable, drains the full queue into a local batch, calls `engine.addOrder()` for each order, then calls `engine.simulateMarket()`.
-- **`start()`** / **`stop()`**: set `running` atomically, notify the condition variable, and join both threads. The destructor calls `stop()`.
-- Copy and assignment are deleted; `running` is `std::atomic<bool>`.
+- **Producer thread** (`producerLoop`): constructs a `PriceGenerator`, generates 10 orders per batch, pushes them onto `transitionQueue`, sleeps 100 ms, repeats until the stop token is requested.
+- **Consumer thread** (`consumerLoop`): waits on `empty` condition variable (stop-token-aware overload), drains the full queue into a local batch, calls `engine.addOrder()` for each order, then calls `engine.simulateMarket()`. Prints market statistics to stdout every 2 seconds via `MarketStats::printSummary()`.
+- **`start()`** / **`stop()`**: launches both threads as `std::jthread`; `stop()` calls `request_stop()` on each, which wakes the consumer immediately via the stop-token-aware `condition_variable_any::wait`. The destructor calls `stop()`.
+- Copy and assignment are deleted.
 
 ### PriceGenerator
 
@@ -206,7 +206,8 @@ Generates randomized buy and sell orders centered around the current market pric
 
 - Calls `IPriceFetcher::fetchPrice()` on each `generateOrders()` call to refresh the reference price.
 - Prices drawn from `N(currentPrice, σ=15)` using `std::normal_distribution` and a seeded `std::mt19937`.
-- Buy/sell side assigned uniformly at random. All orders are generated with a fixed quantity of 2.0.
+- Quantities drawn from `N(0.3228, σ=√0.15)`, clamped to a minimum of 0.0001. Mean and variance derived from real BTC spot trade data.
+- Buy/sell side assigned uniformly at random.
 
 ### IPriceFetcher / CoinMarketCapFetcher
 
@@ -263,7 +264,7 @@ Shared fixed-point conversion functions used across all components.
 
 **`std::shared_mutex` for Read-Heavy Order Book Access**: Most order book operations in a running simulation are reads (checking best bid/ask, depth queries). `std::shared_mutex` allows multiple reader threads to hold a shared lock simultaneously, blocking only when a write lock is needed. This avoids unnecessary serialization of concurrent reads.
 
-**Condition Variable + Atomic Shutdown Pattern**: The consumer thread blocks on a `std::condition_variable` rather than busy-waiting. The producer notifies after each batch. `stop()` sets `running` to `false`, calls `notify_all()`, and joins both threads — guaranteeing the consumer drains any remaining orders before exit.
+**`std::jthread` + Stop-Token Shutdown**: The consumer thread blocks on `std::condition_variable_any::wait(lock, stop_token, pred)` rather than busy-waiting. This overload automatically wakes the consumer when `request_stop()` is called — no explicit `notify_all()` needed. The producer notifies normally after each batch. `stop()` calls `request_stop()` on both jthreads; the consumer drains any remaining orders then exits, and the jthread destructors join cleanly.
 
 ---
 
@@ -317,8 +318,9 @@ From the `build/` directory:
 This starts the producer-consumer simulator:
 - The producer thread fetches the live BTC price from CoinMarketCap and generates batches of 10 orders every 100 ms.
 - The consumer thread matches orders and logs executed trades to `Database/TransactionHistory.db`.
+- Market statistics (VWAP, spread, volume, volatility) are printed to the terminal every 2 seconds.
 
-Press **Enter** to stop the simulator cleanly. The stopper thread calls `simulator.stop()`, which sets the shutdown flag, wakes the consumer, and joins both threads before the process exits.
+Press **Enter** to stop the simulator cleanly. The consumer drains any remaining queued orders, then both threads exit and the process terminates.
 
 ---
 

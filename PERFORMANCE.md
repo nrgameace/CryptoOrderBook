@@ -9,10 +9,10 @@ This document records benchmark results, profiling findings, and optimization de
 | Property | Value |
 |----------|-------|
 | CPU | AMD Ryzen 7 3700x|
-| OS | [e.g. Ubuntu 22.04] |
-| Compiler | [e.g. GCC 13.1] |
+| OS | Linux Mint 22.3|
+| Compiler | GCC 16.1|
 | Build flags | `-O2 -std=c++20` |
-| Commit | [git hash] |
+| Commit | ac5b179 |
 
 All benchmarks were run with the `benchmarks` binary built in Release mode (`cmake -DCMAKE_BUILD_TYPE=Release ..`). Each result is the median of [N] runs to reduce noise from OS scheduling.
 
@@ -68,85 +68,3 @@ Measures the total time and throughput (orders/sec) for `MatchingEngine::simulat
 Throughput peaks at N=1,000 (2.15M orders/sec) rather than N=1, which reflects the same cache warming pattern seen in `addOrder`: the first run pays cold-start costs that are amortized away once the allocator and map nodes are warm. The gradual decline from N=1,000 to N=100,000 (2.15M to 1.39M orders/sec) is expected given `simulateMarket` calls `getBestBid`, `getBestAsk`, `removeBestBid`, and `removeBestAsk` in a tight loop, each acquiring a lock and touching the map, so as the priority queues grow deeper the cache miss pressure from `addOrder` compounds across every iteration. The throughput staying in the 1.4-2.2M orders/sec range across three orders of magnitude of input is actually a strong result, suggesting the price-time priority matching loop scales gracefully. Note that these numbers reflect a pre-loaded book with a narrow [90, 110] price range and uniform order sizes, so real-world throughput would be lower given partial fills, wider spreads, and the overhead of the live producer-consumer queue.
 
 ---
-
-## Profiling
-
-### Tool
-
-[e.g. `perf stat`, `valgrind --tool=callgrind`, `gprof`]
-
-### Hotspots
-
-[Paste or summarize the top entries from your profiler output here. Example format:]
-
-```
-[function name]         [% time]    [description of what it's doing]
-```
-
-### Analysis
-
-[Describe what the profiler told you. Which functions dominated? Was the bottleneck where you expected it to be? Common candidates in this architecture:]
-
-- `std::map` node allocation and tree rebalancing on `addOrder`
-- `std::priority_queue` copy overhead during push/pop
-- Lock contention on `std::shared_mutex` under concurrent access
-- `MockTransactionLogger::logTrade` vector push overhead
-
----
-
-## Optimization Attempts
-
-### Attempt 1: [Name of what you tried]
-
-**Hypothesis:** [What did you think would be slow and why?]
-
-**Change:** [What did you actually modify?]
-
-**Result:**
-
-| Benchmark | Before | After | Delta |
-|-----------|--------|-------|-------|
-| addOrder p50 | | | |
-| addOrder p99 | | | |
-| simulateMarket throughput | | | |
-
-**Conclusion:** [Did it help? Why or why not? Did it introduce any tradeoffs — complexity, correctness risk, cache behavior?]
-
----
-
-### Attempt 2: [Name of what you tried]
-
-**Hypothesis:**
-
-**Change:**
-
-**Result:**
-
-| Benchmark | Before | After | Delta |
-|-----------|--------|-------|-------|
-| addOrder p50 | | | |
-| addOrder p99 | | | |
-| simulateMarket throughput | | | |
-
-**Conclusion:**
-
----
-
-## Final State
-
-[Summarize what the final optimized version looks like and what you decided to keep. If you reverted an optimization, explain why — correctness, maintainability, and marginal gains are all valid reasons.]
-
-### Key Takeaways
-
-- [One sentence on the biggest bottleneck you found]
-- [One sentence on the most effective change you made]
-- [One sentence on something you tried that didn't work and why]
-
----
-
-## Future Work
-
-- [ ] Profile under concurrent load (multiple producer threads) — the `std::shared_mutex` contention profile will look very different under real concurrency than in the single-threaded benchmark
-- [ ] Investigate replacing `std::map` with a flat sorted container (`std::vector` + binary search) for small books where cache locality may outweigh tree traversal cost
-- [ ] Investigate lock-free queue for `transitionQueue` to reduce producer-consumer handoff latency
-- [ ] Measure real `TransactionLogger` (SQLite) overhead vs `MockTransactionLogger` to quantify the database write cost per trade

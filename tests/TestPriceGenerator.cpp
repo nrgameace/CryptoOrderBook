@@ -43,9 +43,9 @@ TEST(TestPriceGenerator, TestOrderSides) {
 TEST(TestPriceGenerator, TestOrderQuantity) {
     MockPriceFetcher fetcher(50000.0);
     PriceGenerator gen(fetcher);
-    gen.generateOrders(10);
+    gen.generateOrders(100);
     for (const Order& order : gen.getOrders()) {
-        EXPECT_EQ(order.quantity, convertToInternal(2.0));
+        EXPECT_GT(order.quantity, 0);
     }
 }
 

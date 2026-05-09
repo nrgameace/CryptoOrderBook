@@ -6,7 +6,7 @@
 #include "Order.h"
 
 Simulator::Simulator(MatchingEngine& eng, IPriceFetcher& fetcher)
-    : engine(eng), priceFetcher(fetcher) {}
+    : engine(eng), priceFetcher(fetcher), lastPrint(std::chrono::system_clock::now()) {}
 
 void Simulator::producerLoop(std::stop_token st) {
     while (!st.stop_requested()) {
@@ -35,9 +35,9 @@ void Simulator::consumerLoop(std::stop_token st) {
         };
 
         std::unique_lock<std::mutex> lock(mtx);
-        empty.wait(lock, shouldWake);
+        empty.wait(lock, st, shouldWake);
 
-        if (transitionQueue.empty() && !st.stop_requested())
+        if (st.stop_requested() && transitionQueue.empty())
             return;
 
         while (!transitionQueue.empty()) {
@@ -50,9 +50,13 @@ void Simulator::consumerLoop(std::stop_token st) {
         for (Order& order : batch)
             engine.addOrder(order);
 
-        engine.simulateMarket();
+        engine.simulateMarket(&stats);
 
-
+        auto now = std::chrono::system_clock::now();
+        if (std::chrono::duration<double>(now - lastPrint).count() >= 2.0) {
+            stats.printSummary();
+            lastPrint = now;
+        }
     }
 }
 
