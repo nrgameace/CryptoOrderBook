@@ -21,6 +21,7 @@ double CoinMarketCapFetcher::fetchFromApi() {
     if (!response) {
         throw std::runtime_error("CMC Request Failed");
     }
+    
 
     else if (response && response->status == 200) {
         auto json = nlohmann::json::parse(response->body);
